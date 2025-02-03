@@ -25,7 +25,7 @@
       general = {
         always = true;
         extra = true;
-        theme = "onedark";
+        theme = "gruvbox-material";
         # Specific plugins
         cmp = true;
         git = true;

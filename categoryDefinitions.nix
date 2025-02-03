@@ -80,6 +80,7 @@
         builtins.getAttr (categories.general.theme or "onedark") {
           # Theme switcher without creating a new category
           "onedark" = onedark-nvim;
+          "gruvbox-material" = catppuccin-nvim;
           "catppuccin" = catppuccin-nvim; # TODO: add this to non_nix_download
           "catppuccin-mocha" = catppuccin-nvim;
           "catppuccin-latte" = catppuccin-nvim;
