@@ -106,7 +106,7 @@
       ;
     };
     nixosModule = utils.mkNixosModules inheritVars;
-    homeModule = utils.mkHomeModules inheritVars;
+    homeManagerModule = utils.mkHomeModules inheritVars;
   in {
     # these outputs will be NOT wrapped with ${system}
 
@@ -119,9 +119,9 @@
     } categoryDefinitions packageDefinitions defaultPackageName;
 
     nixosModules.default = nixosModule;
-    homeManagerModules.default = homeModule;
+    homeManagerModules.default = homeManagerModule;
 
-    inherit utils nixosModule homeModule;
+    inherit utils;
     inherit (utils) templates;
 
   });

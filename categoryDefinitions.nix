@@ -64,15 +64,15 @@
         lze # Lazy loader for plugins
         vim-repeat # Allows plugins to invoke .
         plenary-nvim # Library for most other plugins
-        mkdir-nvim
-        bufdelete-nvim
-        nvim-scrollbar
+        mkdir-nvim # TODO: add this to non_nix_download
+        bufdelete-nvim # TODO: add this to non_nix_download
+        nvim-scrollbar # TODO: add this to non_nix_download
       ];
       extra = [
-        nvim-tree-lua
+        nvim-tree-lua # TODO: add this to non_nix_download
         nvim-web-devicons
         lualine-nvim
-        lualine-lsp-progress
+        lualine-lsp-progress # TODO: add this to non_nix_download
         fidget-nvim
         nvim-notify
       ];
@@ -80,7 +80,7 @@
         builtins.getAttr (categories.general.theme or "onedark") {
           # Theme switcher without creating a new category
           "onedark" = onedark-nvim;
-          "catppuccin" = catppuccin-nvim;
+          "catppuccin" = catppuccin-nvim; # TODO: add this to non_nix_download
           "catppuccin-mocha" = catppuccin-nvim;
           "catppuccin-latte" = catppuccin-nvim;
         }
@@ -89,7 +89,7 @@
         telescope-nvim
         telescope-fzf-native-nvim
         telescope-ui-select-nvim
-        urlview-nvim
+        urlview-nvim # TODO: add this to non_nix_download
       ];
     };
   };
@@ -105,19 +105,18 @@
         nvim-lspconfig
         nvim-surround
         which-key-nvim
-        trouble-nvim
-        aerial-nvim
+        trouble-nvim # TODO: add this to non_nix_download
+        aerial-nvim # TODO: add this to non_nix_download
         conform-nvim
         nvim-lint
       ];
       extra = with pkgs.vimPlugins; [
         comment-nvim
         undotree
-        indent-blankline-nvim
-        vim-startuptime
-        zen-mode-nvim
-        twilight-nvim
-        toggleterm-nvim
+        vim-startuptime # TODO: add this to non_nix_download
+        zen-mode-nvim # TODO: add this to non_nix_download
+        twilight-nvim # TODO: add this to non_nix_download
+        toggleterm-nvim # TODO: add this to non_nix_download
       ];
       cmp = with pkgs.vimPlugins; [
         nvim-cmp
@@ -127,10 +126,10 @@
         cmp-nvim-lsp
         cmp-nvim-lsp-signature-help
         cmp-nvim-lua
-        cmp-spell
-        cmp-async-path
-        cmp-vimtex
-        cmp-emoji
+        cmp-spell # TODO: add this to non_nix_download
+        cmp-async-path # TODO: add this to non_nix_download
+        cmp-vimtex # TODO: add this to non_nix_download
+        cmp-emoji # TODO: add this to non_nix_download
         #cmp-nerdfont
         cmp-cmdline
         cmp-cmdline-history
@@ -145,7 +144,7 @@
       treesitter = with pkgs.vimPlugins; [
         nvim-treesitter-textobjects
         nvim-treesitter.withAllGrammars
-        indent-blankline-nvim
+        indent-blankline-nvim # TODO: add this to non_nix_download
       ];
     };
     languages = {
@@ -153,14 +152,14 @@
         lazydev-nvim
       ];
       latex = with pkgs.vimPlugins; [
-        vimtex
-        nabla-nvim
+        vimtex # TODO: add this to non_nix_download
+        nabla-nvim # TODO: add this to non_nix_download
       ];
       markdown = with pkgs.vimPlugins; [
-        mkdnflow-nvim
+        mkdnflow-nvim # TODO: add this to non_nix_download
         markdown-preview-nvim
-        glow-nvim
-        obsidian-nvim
+        glow-nvim # TODO: add this to non_nix_download
+        obsidian-nvim # TODO: add this to non_nix_download
       ];
     };
   };
