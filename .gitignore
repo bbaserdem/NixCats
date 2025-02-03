@@ -1,0 +1,18 @@
+# Gitignore file
+*
+
+# Get us
+!/.gitignore
+
+# Get all markdown
+!/**.md
+
+# Get all lua files
+!/lua
+!/**.lua
+
+# Right now, get all base directory nix files
+!/*.nix
+
+# Get the flake.lock file
+!/flake.lock
