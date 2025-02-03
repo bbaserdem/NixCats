@@ -59,6 +59,16 @@
     debug = with pkgs.vimPlugins; [
       nvim-nio
     ];
+    theme = with pkgs.vimPlugins; (
+      builtins.getAttr (categories.general.theme or "onedark") {
+        # Theme switcher without creating a new category
+        "onedark" = onedark-nvim;
+        "gruvbox-material" = catppuccin-nvim;
+        "catppuccin" = catppuccin-nvim; # TODO: add this to non_nix_download
+        "catppuccin-mocha" = catppuccin-nvim;
+        "catppuccin-latte" = catppuccin-nvim;
+      }
+    );
     general = with pkgs.vimPlugins; {
       always = [
         lze # Lazy loader for plugins
@@ -77,16 +87,6 @@
         fidget-nvim
         nvim-notify
       ];
-      theme = with pkgs.vimPlugins; (
-        builtins.getAttr (categories.general.theme or "onedark") {
-          # Theme switcher without creating a new category
-          "onedark" = onedark-nvim;
-          "gruvbox-material" = catppuccin-nvim;
-          "catppuccin" = catppuccin-nvim; # TODO: add this to non_nix_download
-          "catppuccin-mocha" = catppuccin-nvim;
-          "catppuccin-latte" = catppuccin-nvim;
-        }
-      );
       telescope = with pkgs.vimPlugins; [
         telescope-nvim
         telescope-fzf-native-nvim

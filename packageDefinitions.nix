@@ -22,10 +22,10 @@
     # (and other information to pass to lua)
     categories = {
       debug = true;
+      theme = "gruvbox-material";
       general = {
         always = true;
         extra = true;
-        theme = "gruvbox-material";
         # Specific plugins
         cmp = true;
         git = true;
