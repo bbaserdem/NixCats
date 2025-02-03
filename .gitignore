@@ -9,6 +9,7 @@
 
 # Get all lua files
 !/lua
+!/lua/**
 !/**.lua
 
 # Right now, get all base directory nix files
