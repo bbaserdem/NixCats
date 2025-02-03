@@ -9,7 +9,7 @@ require('nixCatsUtils').setup {
 }
 
 -- This lets paq-nvim manage plugins if not managed through nix
-require('luaConf.non_nix_download')
+require('luaConf.noNix')
 
 -- Main entry for config files is lua/luaConf/init.lua
 require('luaConf')

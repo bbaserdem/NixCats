@@ -16,38 +16,25 @@ local M = {}
 -- opt directory for lazy loading, and add the build steps so that when theres no nix the steps are ran
 function M.setup(v)
   if not require('nixCatsUtils').isNixCats then
-
-    -- Function to clone paq if not here already
     local function clone_paq()
       local path = vim.fn.stdpath("data") .. "/site/pack/paqs/start/paq-nvim"
       local is_installed = vim.fn.empty(vim.fn.glob(path)) == 0
       if not is_installed then
-        vim.fn.system {
-          'git',
-          'clone',
-          '--depth=1',
-          'https://github.com/savq/paq-nvim.git',
-          path
-        }
+        vim.fn.system { "git", "clone", "--depth=1", "https://github.com/savq/paq-nvim.git", path }
         return true
       end
     end
-
-    -- Function to bootstrap paq
     local function bootstrap_paq(packages)
       local first_install = clone_paq()
-      vim.cmd.packadd('paq-nvim')
-      local paq = require('paq')
+      vim.cmd.packadd("paq-nvim")
+      local paq = require("paq")
       if first_install then
-        vim.notify('Installing plugins... If prompted, hit Enter to continue.')
+        vim.notify("Installing plugins... If prompted, hit Enter to continue.")
       end
       paq(packages)
       paq.install()
     end
-
-    -- Do the bootstrapping of paq if required
-    bootstrap_paq(vim.list_extend({'savq/paq-nvim', v))
+    bootstrap_paq(vim.list_extend({"savq/paq-nvim"},v))
   end
 end
-
 return M
