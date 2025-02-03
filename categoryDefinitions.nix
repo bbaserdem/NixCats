@@ -67,6 +67,7 @@
         mkdir-nvim # TODO: add this to non_nix_download
         bufdelete-nvim # TODO: add this to non_nix_download
         nvim-scrollbar # TODO: add this to non_nix_download
+        catppuccin-nvim
       ];
       extra = [
         nvim-tree-lua # TODO: add this to non_nix_download
