@@ -11,157 +11,195 @@
   # The way the tree is established is;
   # <category>
   # ├─ debug
-  # ├─ general
-  # │  ├─ always
-  # │  ├─ extra
-  # │  ├─ theme
-  # │  └─ <specific big plugin like cmp>
-  # └─ language
+  # ├─ main
+  # ├─ ...
+  # └─ languages
   #    └─ <specific language settings>
 
   # System level requirements
   # These packages should be available to the nixCat instance
   # Similar to programs.neovim.extraPackages in homeManager
-  lspsAndRuntimeDeps = {
-    general = with pkgs; {
-      always = [
-        universal-ctags # Tag generation for multiple languages
-        ripgrep # Fast grep implementation
-        fd # Fast find implementation
-        wl-clipboard # Wayland clipboard communication
-        xclip # Xorg clipboard communication
-        libnotify # Allows neovim to send notifications to desktop
-      ];
-    };
+  lspsAndRuntimeDeps = with pkgs; {
+    main = [
+      universal-ctags   # Tag generation for multiple languages
+      ripgrep           # Fast grep implementation
+      fd                # Fast find implementation
+      wl-clipboard      # Wayland clipboard communication
+      xclip             # Xorg clipboard communication
+      libnotify         # Allows neovim to send notifications to desktop
+    ];
+    treesitter = [
+      tree-sitter
+    ];
+
     languages = {
-      lua = with pkgs; [
+      c = [
+        clang-tools
+      ];
+      latex = [
+        pplatex         # Latex log parsing tool
+        neovim-remote   # Client server for vimtex to run latexmk
+      ];
+      lua = [
         lua-language-server
       ];
-      nix = with pkgs; [
+      markdown = [
+        glow            # Markdown typesetter for terminal
+      ];
+      nix = [
         nix-doc
         nixd
       ];
-      markdown = with pkgs; [
-        glow
-      ];
-      ts = with pkgs; [
+      ts = [
         nodePackages.typescript-language-server
       ];
-      latex = with pkgs; [
-        pplatex
-        neovim-remote
-      ];
     };
   };
 
-  # Plugins that need to be operational at start
-  startupPlugins = {
-    debug = with pkgs.vimPlugins; [
-      nvim-nio
+  # Plugins that don't need lazy loading
+  startupPlugins = with pkgs.vimPlugins; {
+
+    # Main plugins to have
+    main = [
+      lze               # Lazy loader for plugins (NEEDED)
+      plenary-nvim      # Library for most other plugins
     ];
-    theme = with pkgs.vimPlugins; (
-      builtins.getAttr (categories.general.theme or "onedark") {
+
+    # Debug tools
+    debug = [
+      nvim-nio          # Library for asyncronous IO for nvim
+      vim-startuptime   # Time items in nvim
+    ];
+
+    # Theme related things
+    theme = [
+      nvim-web-devicons
+      (builtins.getAttr (categories.theme or "onedark") {
         # Theme switcher without creating a new category
-        "onedark" = onedark-nvim;
-        "gruvbox-material" = catppuccin-nvim;
-        "catppuccin" = catppuccin-nvim; # TODO: add this to non_nix_download
-        "catppuccin-mocha" = catppuccin-nvim;
-        "catppuccin-latte" = catppuccin-nvim;
-      }
-    );
-    general = with pkgs.vimPlugins; {
-      always = [
-        lze # Lazy loader for plugins
-        vim-repeat # Allows plugins to invoke .
-        plenary-nvim # Library for most other plugins
-        mkdir-nvim # TODO: add this to non_nix_download
-        bufdelete-nvim # TODO: add this to non_nix_download
-        nvim-scrollbar # TODO: add this to non_nix_download
-        catppuccin-nvim
-      ];
-      extra = [
-        nvim-tree-lua # TODO: add this to non_nix_download
-        nvim-web-devicons
-        lualine-nvim
-        lualine-lsp-progress # TODO: add this to non_nix_download
-        fidget-nvim
-        nvim-notify
-      ];
-      telescope = with pkgs.vimPlugins; [
-        telescope-nvim
-        telescope-fzf-native-nvim
-        telescope-ui-select-nvim
-        urlview-nvim # TODO: add this to non_nix_download
-      ];
-    };
+        "onedark"           = onedark-nvim;
+        "gruvbox-material"  = catppuccin-nvim;
+        "catppuccin"        = catppuccin-nvim;
+        "catppuccin-mocha"  = catppuccin-nvim;
+        "catppuccin-latte"  = catppuccin-nvim;
+      })
+    ];
+
+    # Filebrowser
+    filebrowser = [
+      nvim-tree-lua         # File browser
+    ];
+
+    # Status indication
+    status = [
+      lualine-nvim          # Info bar at the bottom of screen
+      nvim-scrollbar        # Scrollbar to the side menu
+      indent-blankline-nvim # Indentation level visualizer
+    ];
+
+    # Notification menu
+    notifications = [
+      fidget-nvim           # Shows LSP progress in a text box
+      nvim-notify           # Notification area
+      which-key-nvim        # Shows keybind groups
+    ];
+
+    # Search functionality
+    search = with pkgs.vimPlugins; [
+      telescope-nvim
+      telescope-fzf-native-nvim
+      telescope-ui-select-nvim
+    ];
   };
 
-  optionalPlugins = {
-    debug = with pkgs.vimPlugins; [
-      nvim-dap
-      nvim-dap-ui
-      nvim-dap-virtual-text
+  # Lazy loading plugins
+  optionalPlugins = with pkgs.vimPlugins; {
+
+    # Main plugins to have
+    main = with pkgs.vimPlugins; [
+      nvim-lspconfig      # Configures LSPs
+      conform-nvim        # Code formatter
+      nvim-lint           # Linter without LSP
     ];
-    general = {
-      always = with pkgs.vimPlugins; [
-        nvim-lspconfig
-        nvim-surround
-        which-key-nvim
-        trouble-nvim # TODO: add this to non_nix_download
-        aerial-nvim # TODO: add this to non_nix_download
-        conform-nvim
-        nvim-lint
-      ];
-      extra = with pkgs.vimPlugins; [
-        comment-nvim
-        undotree
-        vim-startuptime # TODO: add this to non_nix_download
-        zen-mode-nvim # TODO: add this to non_nix_download
-        twilight-nvim # TODO: add this to non_nix_download
-        toggleterm-nvim # TODO: add this to non_nix_download
-      ];
-      cmp = with pkgs.vimPlugins; [
-        nvim-cmp
-        luasnip
-        cmp_luasnip
-        friendly-snippets
-        cmp-nvim-lsp
-        cmp-nvim-lsp-signature-help
-        cmp-nvim-lua
-        cmp-spell # TODO: add this to non_nix_download
-        cmp-async-path # TODO: add this to non_nix_download
-        cmp-vimtex # TODO: add this to non_nix_download
-        cmp-emoji # TODO: add this to non_nix_download
-        #cmp-nerdfont
-        cmp-cmdline
-        cmp-cmdline-history
-        cmp-buffer
-        lspkind-nvim
-      ];
-      git = with pkgs.vimPlugins; [
-        gitsigns-nvim
-        vim-fugitive
-        vim-rhubarb
-      ];
-      treesitter = with pkgs.vimPlugins; [
-        nvim-treesitter-textobjects
-        nvim-treesitter.withAllGrammars
-        indent-blankline-nvim # TODO: add this to non_nix_download
-      ];
-    };
+
+    # We want to have treesitter
+    treesitter = [
+      nvim-treesitter.withAllGrammars
+      nvim-treesitter-context
+      nvim-treesitter-refactor
+      nvim-treesitter-textobjects
+    ];
+
+    # Debug tools
+    debug = [
+      nvim-dap                # Debug adapter protocol for nvim
+      nvim-dap-ui             # DAP ui
+      nvim-dap-virtual-text   # DAP virtual text support
+    ];
+
+    status = [
+      trouble-nvim        # Sidebar that shows diagnostics and such
+      aerial-nvim         # Code outline window
+      undotree          # Visualize undo history
+    ];
+
+    functionality = with pkgs.vimPlugins; [
+      nvim-surround     # Quickly surround text with delimiters
+      vim-repeat        # Allows plugins to invoke . to repeat
+      mkdir-nvim        # Automatically make directories when saving files
+      bufdelete-nvim    # Delete buffers without changing window layout
+      comment-nvim      # Comment text
+    ];
+
+    ui = [
+      zen-mode-nvim     # Reduces distraction
+      twilight-nvim     # Dims inactive code blocks
+      toggleterm-nvim   # Launch terminal in nvim
+    ];
+
+    # Search items
+    search = [
+      urlview-nvim
+    ];
+
+    # Autocompletion engines
+    autocomplete = [
+      nvim-cmp
+      luasnip
+      cmp_luasnip
+      friendly-snippets
+      cmp-nvim-lsp
+      cmp-nvim-lsp-signature-help
+      cmp-nvim-lua
+      cmp-spell                     # Autocomplete from spelllang
+      cmp-async-path                # Autocomplete from filesystem (no-block)
+      cmp-vimtex                    # Vimtex source for cmp
+      cmp-cmdline
+      cmp-cmdline-history
+      cmp-buffer
+      lspkind-nvim
+    ];
+
+    # Git related toolkit
+    git = [
+      gitsigns-nvim
+      vim-fugitive
+      vim-rhubarb
+    ];
+
+    # Plugins to lazy load on given languages
     languages = {
-      lua = with pkgs.vimPlugins; [
-        lazydev-nvim
+      latex = [
+        vimtex          # LaTeX suite
+        nabla-nvim      # Render latex equations
       ];
-      latex = with pkgs.vimPlugins; [
-        vimtex # TODO: add this to non_nix_download
-        nabla-nvim # TODO: add this to non_nix_download
+      lua = [
+        lazydev-nvim    # Configure editing nvim configuration files
       ];
-      markdown = with pkgs.vimPlugins; [
-        mkdnflow-nvim # TODO: add this to non_nix_download
-        markdown-preview-nvim
-        glow-nvim # TODO: add this to non_nix_download
-        obsidian-nvim # TODO: add this to non_nix_download
+      markdown = [
+        mkdnflow-nvim           # Navigate wiki links
+        markdown-preview-nvim   # Render markdown in browser
+        glow-nvim               # Render markdown in nvim terminal
+        obsidian-nvim           # Interact with obsidian vault
       ];
     };
   };
@@ -169,38 +207,33 @@
   # shared libraries to be added to LD_LIBRARY_PATH
   # variable available to nvim runtime
   sharedLibraries = {
-    general = with pkgs; [
+    main = with pkgs; [
       libgit2
     ];
   };
 
   environmentVariables = {
-    test = {
-      CATTESTVAR = "It worked!";
-    };
   };
 
   extraWrapperArgs = {
     # https://github.com/NixOS/nixpkgs/blob/master/pkgs/build-support/setup-hooks/make-wrapper.sh
-    test = [
-      ''--set CATTESTVAR2 "It worked again!"''
-    ];
   };
 
   # lists of the functions you would have passed to
   # python.withPackages or lua.withPackages
   extraPython3Packages = {
-    general.always = python-pkgs: [
+    main = python-pkgs: [
       python-pkgs.pynvim
     ];
   };
+
   # populates $LUA_PATH and $LUA_CPATH
   extraLuaPackages = {
-    general.always = [(_: [])];
+    main = [(_: [])];
   };
+
+  # Defining language = [ "language" "default"]; in this attrset would
+  # cause any import of a subcategory of language to import language.default as well
   extraCats = {
-    general = [
-      ["general" "always"]
-    ];
   };
 }

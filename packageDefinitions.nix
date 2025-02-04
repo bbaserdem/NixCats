@@ -8,31 +8,34 @@
 }: {
   # Full neovim instance
   nixCats-full = {pkgs, ...} @ misc: {
+
     # they contain a settings set defined above
     # see :help nixCats.flake.outputs.settings
+    # IMPORTANT: your alias may not conflict with your other packages.
     settings = {
       wrapRc = true;
-      # IMPORTANT:
-      # your alias may not conflict with your other packages.
-      aliases = ["fullCat"];
+      aliases = ["nvimCat"];
       configDirName = "nvim-nixCats";
       neovim-unwrapped = inputs.neovim-nightly-overlay.packages.${pkgs.system}.neovim;
     };
+
     # and a set of categories that you want
     # (and other information to pass to lua)
     categories = {
-      debug = true;
       theme = "gruvbox-material";
-      general = {
-        always = true;
-        extra = true;
-        # Specific plugins
-        cmp = true;
-        git = true;
-        telescope = true;
-        treesitter = true;
-      };
+      main = true;
+      treesitter = true;
+      debug = true;
+      filebrowser = true;
+      status = true;
+      functionality = true;
+      ui = true;
+      notifications = true;
+      search = true;
+      autocomplete = true;
+      git = true;
       languages = {
+        c = true;
         latex = true;
         lua = true;
         markdown = true;
@@ -40,9 +43,6 @@
         ts = true;
       };
     };
-
-    # Extra info to provide
-    extra = {};
   };
 
   # An empty installation of neovim
@@ -53,9 +53,6 @@
       aliases = ["baseCat"];
     };
     categories = {
-      debug = false;
-      general = false;
-      languages = false;
     };
   };
 }

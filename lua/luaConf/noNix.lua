@@ -22,8 +22,10 @@ require('nixCatsUtils.catPaq').setup({
   { 'tpope/vim-repeat', },
   { 'rcarriga/nvim-notify', },
 
-  { 'nvim-treesitter/nvim-treesitter-textobjects', opt = true, },
   { 'nvim-treesitter/nvim-treesitter', build = ':TSUpdate', opt = true, },
+  { 'nvim-treesitter/nvim-treesitter-context', opt = true, },
+  { 'nvim-treesitter/nvim-treesitter-refactor', opt = true, },
+  { 'nvim-treesitter/nvim-treesitter-textobjects', opt = true, },
 
   { 'nvim-telescope/telescope-fzf-native.nvim', build = ':!which make && make', opt = true, },
   { 'nvim-telescope/telescope-ui-select.nvim', opt = true, },
@@ -78,5 +80,29 @@ require('nixCatsUtils.catPaq').setup({
     build = ':call mkdp#util#install()',
     opt = true,
   },
+
+  -- Organize these later
+  { 'jghauser/mkdir.nvim', },
+  { 'famiu/bufdelete.nvim', },
+  { 'petertriho/nvim-scrollbar', },
+  { 'nvim-tree/nvim-tree.lua', },
+  { 'catppuccin/nvim', },
+  { 'axieax/urlview.nvim', opt = true, },
+  { 'folke/trouble.nvim', opt = true, },
+  { 'stevearc/aerial.nvim', opt = true, },
+  { 'stevearc/conform.nvim', opt = true, },
+  { 'dstein65/vim-startuptime', opt = true, },
+  { 'folke/zen-mode.nvim', opt = true, },
+  { 'folke/twilight.nvim', opt = true, },
+  { 'akinsho/toggleterm.nvim', opt = true, },
+  { 'f3fora/cmp-spell', },
+  { url = 'https://codeberg.org/FelipeLema/cmp-async-path.git', },
+  { 'micangl/cmp-vimtex', opt = true, },
+  { 'lukas-reineke/indent-blankline.nvim', },
+  { 'lervag/vimtex', opt = true, },
+  { 'jbyuki/nabla.nvim', opt = true, },
+  { 'jakewvincent/mkdnflow.nvim', opt = true, },
+  { 'ellisonleao/glow.nvim', opt = true, },
+
 
 })
