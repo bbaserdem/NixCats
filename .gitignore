@@ -4,16 +4,20 @@
 # Get us
 !/.gitignore
 
-# Get all markdown
-!/**.md
-
 # Get all lua files
+!/after
+!/after/**
+!/ftplugin
+!/ftplugin/**
 !/lua
 !/lua/**
 !/**.lua
 
-# Right now, get all base directory nix files
+# Get all base directory nix files
 !/*.nix
 
 # Get the flake.lock file
 !/flake.lock
+
+# Get all markdown
+!/**.md
