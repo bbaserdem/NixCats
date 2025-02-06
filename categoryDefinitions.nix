@@ -275,12 +275,12 @@
   # Defining language = [ "language" "default"]; in this attrset would
   # cause any import of a subcategory of language to import language.default as well
   extraCats = {
-    autocomplete = {
+    completion = {
       blink = [
-        [ "autocomplete" "luasnip" ]
+        [ "completion" "luasnip" ]
       ];
       cmp = [
-        [ "autocomplete" "luasnip" ]
+        [ "completion" "luasnip" ]
       ];
     };
   };
