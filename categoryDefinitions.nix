@@ -78,7 +78,7 @@
     # Theme related things
     theme = [
       nvim-web-devicons
-      (builtins.getAttr (categories.theme or "onedark") {
+      (builtins.getAttr (categories.colorscheme or "onedark") {
         # Theme switcher without creating a new category
         "onedark" = onedark-nvim;
         "gruvbox-material" = catppuccin-nvim;

@@ -1,7 +1,7 @@
 -- Colorscheme setter, this one is a bit convoluted
 
 -- Get colorscheme from nixcats, or default
-local colorschemeName = nixCats('theme')
+local colorschemeName = nixCats('colorscheme')
 if not require('nixCatsUtils').isNixCats then
   colorschemeName = 'gruvbox-material'
 end

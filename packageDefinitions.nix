@@ -22,7 +22,10 @@
     # and a set of categories that you want
     # (and other information to pass to lua)
     categories = {
-      theme = "gruvbox-material";
+      # Arguments to pass
+      colorscheme = "gruvbox-material";
+      # Package sets to include
+      theme = true;
       main = true;
       treesitter = true;
       debug = true;
