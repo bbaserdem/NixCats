@@ -22,12 +22,12 @@ return {
   },
   -- Main plugin
   {
-    'blink-cmp',
+    'blink.cmp',
     for_cat = 'completion.blink',
     event = { "DeferredUIEnter" },
     on_require = { 'blink', },
     after = function (plugin)
-      local bl = require('blink-cmp')
+      local bl = require('blink.cmp')
       bl.setup {
         -- General completion settings
         completion  = {
