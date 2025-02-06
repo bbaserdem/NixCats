@@ -103,6 +103,4 @@ require('nixCatsUtils.catPaq').setup({
   { 'jbyuki/nabla.nvim', opt = true, },
   { 'jakewvincent/mkdnflow.nvim', opt = true, },
   { 'ellisonleao/glow.nvim', opt = true, },
-
-
 })

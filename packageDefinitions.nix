@@ -35,7 +35,7 @@
       ui = true;
       notifications = true;
       search = true;
-      autocomplete = true;
+      autocomplete.cmp = true;
       git = true;
       languages = {
         c = true;

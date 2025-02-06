@@ -77,8 +77,7 @@
 
     # Theme related things
     theme = [
-      nvim-web-devicons
-      lspkind-nvim
+      lspkind-nvim      # Add pictograms to built-in lsp
       (builtins.getAttr (categories.colorscheme or "onedark") {
         # Theme switcher without creating a new category
         "onedark" = onedark-nvim;
@@ -133,10 +132,15 @@
   optionalPlugins = with pkgs.vimPlugins; {
 
     # Main plugins to have
-    main = with pkgs.vimPlugins; [
+    main = [
       nvim-lspconfig      # Configures LSPs
       conform-nvim        # Code formatter
       nvim-lint           # Linter without LSP
+    ];
+
+    # Theme-ing related plugins
+    theme = [
+      nvim-web-devicons
     ];
 
     # We want to have treesitter
@@ -157,10 +161,10 @@
     status = [
       trouble-nvim        # Sidebar that shows diagnostics and such
       aerial-nvim         # Code outline window
-      undotree          # Visualize undo history
+      undotree            # Visualize undo history
     ];
 
-    functionality = with pkgs.vimPlugins; [
+    functionality = [
       nvim-surround     # Quickly surround text with delimiters
       vim-repeat        # Allows plugins to invoke . to repeat
       mkdir-nvim        # Automatically make directories when saving files
@@ -180,23 +184,34 @@
     ];
 
     # Autocompletion engines
-    autocomplete = [
-      blink-cmp
-      # Snippets
-      luasnip
-      cmp_luasnip
-      friendly-snippets
-      # Completion engines
-      cmp-nvim-lsp
-      cmp-nvim-lsp-signature-help
-      cmp-nvim-lua
-      cmp-spell                     # Autocomplete from spelllang
-      cmp-async-path                # Autocomplete from filesystem (no-block)
-      cmp-vimtex                    # Vimtex source for cmp
-      cmp-cmdline
-      cmp-cmdline-history
-      cmp-buffer
-    ];
+    autocomplete = {
+      blink = [
+        blink-cmp                     # Completion plugin
+        # Engines
+        blink-ripgrep-nvim            # Ripgrep completion from entire project
+        blink-emoji-nvim              # Emoji inserter
+        blink-cmp-spell               # Suggestions from spellsuggest
+        blink-compat                  # Enables compatibility with cmp
+        cmp-vimtex                    # Vimtex source for cmp
+      ];
+      cmp = [
+        cmp-nvim-lua
+        # Completion engines
+        cmp_luasnip                   # Snippet suggestions
+        cmp-nvim-lsp                  # LSP suggestions
+        cmp-nvim-lsp-signature-help   # LSP signature help
+        cmp-spell                     # Autocomplete from spelllang
+        cmp-async-path                # Autocomplete from filesystem (no-block)
+        cmp-vimtex                    # Vimtex source for cmp
+        cmp-cmdline                   # Commandline completion
+        cmp-cmdline-history           # Commandline history completion
+        cmp-buffer                    # Buffer completion
+      ];
+      luasnip = [
+        luasnip
+        friendly-snippets
+      ];
+    };
 
     # Git related toolkit
     git = [
@@ -254,5 +269,13 @@
   # Defining language = [ "language" "default"]; in this attrset would
   # cause any import of a subcategory of language to import language.default as well
   extraCats = {
+    autocomplete = {
+      blink = [
+        [ "autocomplete" "luasnip" ]
+      ];
+      cmp = [
+        [ "autocomplete" "luasnip" ]
+      ];
+    };
   };
 }
