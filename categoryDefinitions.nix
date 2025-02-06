@@ -1,5 +1,9 @@
 # The category definitions
+# Import inputs from the main flake, and return the function
 {
+  inputs,
+  ...
+}: {
   pkgs,
   settings,
   categories,
@@ -109,6 +113,17 @@
       telescope-fzf-native-nvim
       telescope-ui-select-nvim
     ];
+
+    # Language specific
+    languages = {
+      vimspell = [(
+        pkgs.runCommand "vimspell-lang" { } ''
+          mkdir -p $out/spell
+          cp ${inputs.vimspell-tr} $out/spell/tr.utf-8.spl
+          cp ${inputs.vimspell-en} $out/spell/en.utf-8.spl
+        ''
+      )];
+    };
   };
 
   # Lazy loading plugins

@@ -51,7 +51,7 @@
     ];
 
     # Category definitions are here; this variable should be a function!
-    categoryDefinitions = import ./categoryDefinitions.nix;
+    categoryDefinitions = import ./categoryDefinitions.nix {inherit inputs;};
 
     # Package definitions are here, this should be an attrset
     packageDefinitions = import ./packageDefinitions.nix {
