@@ -3,3 +3,8 @@
 
 -- We do requires, and let plugins call lze.load on their own
 require('pluginConf.completion')
+
+-- Plugin configs
+require('lze').load {
+    { import = 'pluginConf.lazydev', },
+}

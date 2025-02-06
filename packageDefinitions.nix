@@ -23,10 +23,7 @@
     };
 
     # and a set of categories that you want
-    # (and other information to pass to lua)
     categories = {
-      # Arguments to pass
-      colorscheme = "gruvbox-material";
       # Package sets to include
       theme = true;
       main = true;
@@ -49,6 +46,12 @@
         ts = true;
         vimspell = true;
       };
+    };
+
+    # Extra arguments ta be made available to nixCats
+    extra = {
+      colorscheme = "gruvbox-material";
+      nixpkgs = nixpkgs;
     };
   };
 

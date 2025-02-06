@@ -2,7 +2,7 @@
 local M = {}
 
 -- Get colorscheme from nixcats, or default
-local colorschemeName = nixCats('colorscheme')
+local colorschemeName = nixCats.extra('colorscheme')
 if not require('nixCatsUtils').isNixCats then
   colorschemeName = 'gruvbox-material'
 end

@@ -67,6 +67,7 @@ return {
             'buffer',
             'ripgrep',
             'emoji',
+            'lazydev',
           },
           providers = {
             path = {
@@ -93,6 +94,11 @@ return {
               opts = {
                 insert = true,
               },
+            },
+            lazydev = {
+              name = 'LazyDev',
+              module = 'lazydev.integrations.blink',
+              score_offset = 100,
             },
           },
         },

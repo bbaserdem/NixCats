@@ -1,0 +1,19 @@
+-- <nixCats>/lua/pluginConf/lazydev.lua
+-- Lazydev config
+
+return {
+  'lazydev.nvim',
+  for_cat = 'languages.lua',
+  cmd = { 'LazyDev' },
+  ft = 'lua',
+  after = function(plugin)
+    require('lazydev').setup({
+      library = {
+        {
+          words = { 'nixCats' },
+          path = (require('nixCats').nixCatsPath or "") .. '/lua'
+        },
+      },
+    })
+  end,
+}
