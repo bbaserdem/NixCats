@@ -77,7 +77,7 @@
     # Theme related things
     theme = [
       lspkind-nvim      # Add pictograms to built-in lsp
-      (builtins.getAttr (categories.colorscheme or "onedark") {
+      (builtins.getAttr (extra.colorscheme or "onedark") {
         # Theme switcher without creating a new category
         "onedark" = onedark-nvim;
         "gruvbox-material" = catppuccin-nvim;
