@@ -19,7 +19,7 @@ require('lze').load {
         for_cat = 'completion.luasnip',
         on_plugin = { 'LuaSnip', },
     }, {
-        'LuaSnip',
+        'luasnip',
         for_cat = 'completion.luasnip',
         on_plugin = {
             'blink.cmp',
