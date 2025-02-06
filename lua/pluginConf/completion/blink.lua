@@ -4,21 +4,21 @@
 return {
   -- Completion engines
   {
-    'blink-ripgrep-nvim',
+    'blink-ripgrep.nvim',
     for_cat = 'completion.blink',
-    on_plugin = { 'blink-cmp', },
+    on_plugin = { 'blink.cmp', },
   }, {
-    'blink-emoji-nvim',
+    'blink-emoji.nvim',
     for_cat = 'completion.blink',
-    on_plugin = { 'blink-cmp', },
+    on_plugin = { 'blink.cmp', },
   }, {
     'blink-cmp-spell',
     for_cat = 'completion.blink',
-    on_plugin = { 'blink-cmp', },
+    on_plugin = { 'blink.cmp', },
   }, {
-    'blink-compat',
+    'blink.compat',
     for_cat = 'completion.blink',
-    on_plugin = { 'blink-cmp', },
+    on_plugin = { 'blink.cmp', },
   },
   -- Main plugin
   {
