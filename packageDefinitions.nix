@@ -14,7 +14,10 @@
     # IMPORTANT: your alias may not conflict with your other packages.
     settings = {
       wrapRc = true;
-      aliases = ["nvimCat"];
+      aliases = [
+        "nvimCat"
+        "fullCat"
+      ];
       configDirName = "nvim-nixCats";
       neovim-unwrapped = inputs.neovim-nightly-overlay.packages.${pkgs.system}.neovim;
     };
@@ -35,7 +38,7 @@
       ui = true;
       notifications = true;
       search = true;
-      autocomplete.cmp = true;
+      completion.blink = true;
       git = true;
       languages = {
         c = true;

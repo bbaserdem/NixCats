@@ -30,7 +30,6 @@
       fd                # Fast find implementation
       wl-clipboard      # Wayland clipboard communication
       xclip             # Xorg clipboard communication
-      libnotify         # Allows neovim to send notifications to desktop
     ];
     treesitter = [
       tree-sitter
@@ -184,7 +183,7 @@
     ];
 
     # Autocompletion engines
-    autocomplete = {
+    completion = {
       blink = [
         blink-cmp                     # Completion plugin
         # Engines
@@ -242,6 +241,9 @@
   # variable available to nvim runtime
   sharedLibraries = {
     main = with pkgs; [
+      libnotify
+    ];
+    git = with pkgs; [
       libgit2
     ];
   };
@@ -263,7 +265,11 @@
 
   # populates $LUA_PATH and $LUA_CPATH
   extraLuaPackages = {
-    main = [(_: [])];
+    completion.luasnip = [
+      (lua-pkgs: [
+        lua-pkgs.jsregexp
+      ])
+    ];
   };
 
   # Defining language = [ "language" "default"]; in this attrset would
