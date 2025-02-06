@@ -78,6 +78,7 @@
     # Theme related things
     theme = [
       nvim-web-devicons
+      lspkind-nvim
       (builtins.getAttr (categories.colorscheme or "onedark") {
         # Theme switcher without creating a new category
         "onedark" = onedark-nvim;
@@ -180,10 +181,12 @@
 
     # Autocompletion engines
     autocomplete = [
-      nvim-cmp
+      blink-cmp
+      # Snippets
       luasnip
       cmp_luasnip
       friendly-snippets
+      # Completion engines
       cmp-nvim-lsp
       cmp-nvim-lsp-signature-help
       cmp-nvim-lua
@@ -193,7 +196,6 @@
       cmp-cmdline
       cmp-cmdline-history
       cmp-buffer
-      lspkind-nvim
     ];
 
     # Git related toolkit

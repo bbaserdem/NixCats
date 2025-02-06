@@ -9,6 +9,8 @@
 !/after/**
 !/ftplugin
 !/ftplugin/**
+!/lsp
+!/lsp/**
 !/lua
 !/lua/**
 !/**.lua

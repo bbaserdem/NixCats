@@ -11,8 +11,8 @@ require('lze').register_handlers(require('nixCatsUtils.lzUtils').for_cat)
 -- Apply colorscheme now
 require('luaConf.colorScheme')
 
+-- LSP global configuration
+require('luaConf.nvimLspGlobal')
+
 -- Plugin configurations
 require('luaConf.pluginConfigs')
-
--- LSP configurations
-require('luaConf.lspConfigs')
