@@ -41,6 +41,7 @@
         markdown = true;
         nix = true;
         ts = true;
+        vimspell = true;
       };
     };
   };

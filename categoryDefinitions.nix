@@ -80,11 +80,13 @@
       nvim-web-devicons
       (builtins.getAttr (categories.theme or "onedark") {
         # Theme switcher without creating a new category
-        "onedark"           = onedark-nvim;
-        "gruvbox-material"  = catppuccin-nvim;
-        "catppuccin"        = catppuccin-nvim;
-        "catppuccin-mocha"  = catppuccin-nvim;
-        "catppuccin-latte"  = catppuccin-nvim;
+        "onedark" = onedark-nvim;
+        "gruvbox-material" = catppuccin-nvim;
+        "catppuccin" = catppuccin-nvim;
+        "catppuccin-mocha" = catppuccin-nvim;
+        "catppuccin-macchiato" = catppuccin-nvim;
+        "catppuccin-frappe" = catppuccin-nvim;
+        "catppuccin-latte" = catppuccin-nvim;
       })
     ];
 
