@@ -51,7 +51,11 @@
     # Extra arguments ta be made available to nixCats
     extra = {
       colorscheme = "gruvbox-material";
-      nixpkgs = nixpkgs;
+      nix = {
+        flake = "";
+        host = "";
+        user = "";
+      };
     };
   };
 
