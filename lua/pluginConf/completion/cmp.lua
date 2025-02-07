@@ -1,48 +1,60 @@
 -- <nixCats>/lua/pluginConf/completion/blink.lua
 -- Blink autocompletion configuration
 
+-- Function needed because packadd doesn't load after direcotories
+local local load_w_after_plugin = require('nixCatsUtils.lzUtils').make_load_with_after({'plugin'})
+
 return {
   -- Completion engines
   {
     'cmp_luasnip',
     for_cat = 'completion.cmp',
     on_plugin = { 'nvim-cmp', },
+    load = load_w_after_plugin,
   }, {
     'cmp-nvim-lsp',
     for_cat = 'completion.cmp',
     on_plugin = { 'nvim-cmp', },
+    load = load_w_after_plugin,
   }, {
     'cmp-nvim-lsp-signature-help',
     for_cat = 'completion.cmp',
     on_plugin = { 'nvim-cmp', },
+    load = load_w_after_plugin,
   }, {
     'cmp-buffer',
     for_cat = 'completion.cmp',
     on_plugin = { 'nvim-cmp', },
+    load = load_w_after_plugin,
   }, {
     'cmp-cmdline',
     for_cat = 'completion.cmp',
     on_plugin = { 'nvim-cmp', },
+    load = load_w_after_plugin,
   }, {
     'cmp-cmdline-history',
     for_cat = 'completion.cmp',
     on_plugin = { 'nvim-cmp', },
+    load = load_w_after_plugin,
   }, {
     'cmp-spell',
     for_cat = 'completion.cmp',
     on_plugin = { 'nvim-cmp', },
+    load = load_w_after_plugin,
   }, {
     'cmp-async-path',
     for_cat = 'completion.cmp',
     on_plugin = { 'nvim-cmp', },
+    load = load_w_after_plugin,
   }, {
     'cmp-vimtex',
-    for_cat = 'completion.cmp',
-    on_plugin = { 'nvim-cmp', },
+    on_plugin = { 'nvim-cmp', 'blink.cmp', },
+    load = load_w_after_plugin,
   }, {
     'cmp-rg',
     for_cat = 'completion.cmp',
     on_plugin = { 'nvim-cmp', },
+    load = load_w_after_plugin,
   },
   -- Main plugin
   {
