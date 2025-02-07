@@ -15,26 +15,39 @@ require('nixCatsUtils.catPaq').setup({
 --[[ elsewhere in our configuration, so that    ]]
 --[[ we dont have to write it twice.            ]]
 --[[ ------------------------------------------ ]]
+
+  -- Non-nix plugins
+  { 'williamboman/mason.nvim', opt = true, },
+  { 'williamboman/mason-lspconfig.nvim', opt = true, },
+
+  -- Startup plugins
+  -- Startup: Main functionality
   { "BirdeeHub/lze", },
-  { 'joshdick/onedark.vim', },
-  { 'nvim-tree/nvim-web-devicons', },
   { 'nvim-lua/plenary.nvim', },
+  { 'folke/snacks.nvim', },
+  -- Startup: Debug tools
+  { 'nvim-neotest/nvim-nio', },
+  -- Startup: Theming
+  { 'onsails/lspkind.nvim', },
+  { 'nvim-tree/nvim-web-devicons', },
+  { 'petertriho/nvim-scrollbar', },
+  { 'joshdick/onedark.vim', },
+  { 'catppuccin/nvim', },
   { 'tpope/vim-repeat', },
-  { 'rcarriga/nvim-notify', },
+  -- Startup: File browser
+  { 'stevearc/oil.nvim', },
+  -- Startup: Status line
+  { 'nvim-lualine/lualine.nvim', },
+  -- Startup: Notifications
+  { 'j-hui/fidget.nvim', },
+
 
   { 'nvim-treesitter/nvim-treesitter', build = ':TSUpdate', opt = true, },
   { 'nvim-treesitter/nvim-treesitter-context', opt = true, },
   { 'nvim-treesitter/nvim-treesitter-refactor', opt = true, },
   { 'nvim-treesitter/nvim-treesitter-textobjects', opt = true, },
 
-  { 'nvim-telescope/telescope-fzf-native.nvim', build = ':!which make && make', opt = true, },
-  { 'nvim-telescope/telescope-ui-select.nvim', opt = true, },
-  {'nvim-telescope/telescope.nvim', opt = true, },
-
   -- lsp
-  { 'williamboman/mason.nvim', opt = true, },
-  { 'williamboman/mason-lspconfig.nvim', opt = true, },
-  { 'j-hui/fidget.nvim', opt = true, },
   { 'neovim/nvim-lspconfig', opt = true, },
 
   --  NOTE:  we take care of lazy loading elsewhere in an autocommand
@@ -43,7 +56,6 @@ require('nixCatsUtils.catPaq').setup({
   { 'folke/lazydev.nvim', opt = true, },
 
   -- completion
-  { 'onsails/lspkind.nvim', opt = true, },
   { 'L3MON4D3/LuaSnip', opt = true, as = 'luasnip', },
   { 'saadparwaiz1/cmp_luasnip', opt = true, },
   { 'hrsh7th/cmp-nvim-lsp', opt = true, },
@@ -60,7 +72,6 @@ require('nixCatsUtils.catPaq').setup({
   { 'stevearc/conform.nvim', opt = true, },
 
   -- dap
-  { 'nvim-neotest/nvim-nio', opt = true, },
   { 'rcarriga/nvim-dap-ui', opt = true, },
   { 'theHamsta/nvim-dap-virtual-text', opt = true, },
   { 'jay-babu/mason-nvim-dap.nvim', opt = true, },
@@ -72,8 +83,6 @@ require('nixCatsUtils.catPaq').setup({
   { 'tpope/vim-rhubarb', opt = true, },
   { 'folke/which-key.nvim', opt = true, },
   { 'lewis6991/gitsigns.nvim', opt = true, },
-  { 'nvim-lualine/lualine.nvim', opt = true, },
-  { 'lukas-reineke/indent-blankline.nvim', opt = true, },
   { 'numToStr/Comment.nvim', opt = true, as = 'comment.nvim', },
   { 'kylechui/nvim-surround', opt = true, },
   { 'iamcco/markdown-preview.nvim',
@@ -83,18 +92,10 @@ require('nixCatsUtils.catPaq').setup({
 
   -- Organize these later
   { 'jghauser/mkdir.nvim', },
-  { 'famiu/bufdelete.nvim', },
-  { 'petertriho/nvim-scrollbar', },
-  { 'nvim-tree/nvim-tree.lua', },
-  { 'catppuccin/nvim', },
   { 'axieax/urlview.nvim', opt = true, },
   { 'folke/trouble.nvim', opt = true, },
   { 'stevearc/aerial.nvim', opt = true, },
   { 'stevearc/conform.nvim', opt = true, },
-  { 'dstein65/vim-startuptime', opt = true, },
-  { 'folke/zen-mode.nvim', opt = true, },
-  { 'folke/twilight.nvim', opt = true, },
-  { 'akinsho/toggleterm.nvim', opt = true, },
   { 'f3fora/cmp-spell', },
   { url = 'https://codeberg.org/FelipeLema/cmp-async-path.git', },
   { 'micangl/cmp-vimtex', opt = true, },
