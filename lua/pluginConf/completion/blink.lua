@@ -63,15 +63,22 @@ return {
         },
         -- Completion sources
         sources = {
-          default = {
-            'lsp',
-            'path',
-            'snippets',
-            'buffer',
-            'ripgrep',
-            'emoji',
-            'lazydev',
-          },
+          default = function(ctx)
+            -- Default list of completion sources
+            local sourceList = {
+              'lsp',
+              'path',
+              'snippets',
+              'buffer',
+              'ripgrep',
+              'emoji',
+            }
+            -- Conditionally add sources
+            if vim.bo.filetype == 'lua' then
+              table.insert(sourceList, 'lazydev')
+            end
+            return sourceList
+          end,
           providers = {
             path = {
               async = true,
