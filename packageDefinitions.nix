@@ -15,8 +15,8 @@
     settings = {
       wrapRc = true;
       aliases = [
-        "nvimCat"
-        "fullCat"
+        "nc-full"
+        "nvim-nc-full"
       ];
       configDirName = "nvim-nixCats";
       neovim-unwrapped = inputs.neovim-nightly-overlay.packages.${pkgs.system}.neovim;
