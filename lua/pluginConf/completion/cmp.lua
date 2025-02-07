@@ -1,8 +1,8 @@
--- <nixCats>/lua/pluginConf/completion/blink.lua
--- Blink autocompletion configuration
+-- <nixCats>/lua/pluginConf/completion/cmp.lua
+-- Nvim-cmp
 
 -- Function needed because packadd doesn't load after direcotories
-local local load_w_after_plugin = require('nixCatsUtils.lzUtils').make_load_with_after({'plugin'})
+local load_w_after_plugin = require('nixCatsUtils.lzUtils').make_load_with_after({'plugin'})
 
 return {
   -- Completion engines
@@ -56,6 +56,7 @@ return {
     on_plugin = { 'nvim-cmp', },
     load = load_w_after_plugin,
   },
+
   -- Main plugin
   {
     'nvim-cmp',
@@ -63,11 +64,16 @@ return {
     event = { "DeferredUIEnter" },
     on_require = { 'cmp', },
     after = function (plugin)
+
+      -- load local libraries
       local cmp = require('cmp')
       local luasnip = require('luasnip')
       local lspkind = require('lspkind')
+
+      -- Configure cmp
       cmp.setup {
-        -- Formatting cmp
+
+        -- Formatting cmp appearance
         formatting = {
           fields = { 'menu', 'abbr', 'kind', },
           format = lspkind.cmp_format {
@@ -89,23 +95,26 @@ return {
             },
           },
         },
+
         -- Snippet settings
         snippet = {
           expand = function(args)
             luasnip.lsp_expand(args.body)
           end,
         },
+
         -- Keybinds
+        -- Preset already does:
+        --    up/down   : is select prev/next
+        --    ctrl p/n  : is select prev/next (starts completion if not here)
+        --    ctrl e    : closes autocompletion menu
+        --    ctrl y    : autocompletes (without default selection)
         mapping = cmp.mapping.preset.insert {
-          -- Preset already does:
-          --    up/down   : is select prev/next
-          --    ctrl p/n  : is select prev/next (starts completion if not here)
-          --    ctrl e    : closes autocompletion menu
-          --    ctrl y    : autocompletes (without default selection)
+          -- Override behavior to be with default selection
           ['<C-y>'] = {
             i = cmp.confirm({ select = true; }),
           },
-          -- ctrl space    : Open completion, toggles docs if already open
+          -- ctrl-space: Open completion; toggles docs if already open
           ['<C-Space>'] = {
             i = function ()
               if cmp.visible() then
@@ -119,7 +128,7 @@ return {
               end
             end,
           },
-          -- enter : If entry is selected, confirm. Else, act casual
+          -- enter: If an entry is selected, confirm. Else, act casual
           ['<CR>'] = {
             i = function(fallback)
               if cmp.visible() then
@@ -136,7 +145,7 @@ return {
               end
             end,
           },
-          -- ctrl b/f : scroll the docs if open
+          -- ctrl b/f : scroll the docs (back/forth) if they are visible
           ['<C-b>'] = {
             i = function(fallback)
               if cmp.visible_docs() then
@@ -171,19 +180,8 @@ return {
             end
           end, { 'i', 's' }),
         },
-        -- Completion sources
-        sources = cmp.config.sources {
-          { name = 'vimtex', },
-          { name = 'nvim_lsp', },
-          { name = 'nvim_lsp_signature_help', },
-          { name = 'async_path', },
-          { name = 'luasnip', },
-          { name = 'rg', keyword_length = 3, },
-          { name = 'buffer', },
-          { name = 'cmdline', option = { ignore_cmds = { 'Man', '!', }, }, },
-          { name = 'spell', option = { keep_all_entries = false, }, },
-        },
-        -- Extra settings
+
+        -- Some extra settings
         enabled = function ()
           return vim.bo[0].buftype ~= 'prompt'
         end,
@@ -193,8 +191,21 @@ return {
         experimental = {
           ghost_text = true,
         },
+
+        -- Completion sources by default
+        sources = cmp.config.sources {
+          { name = 'nvim_lsp', },
+          { name = 'nvim_lsp_signature_help', },
+          { name = 'async_path', },
+          { name = 'luasnip', },
+          { name = 'rg', keyword_length = 3, },
+          { name = 'buffer', },
+          { name = 'cmdline', option = { ignore_cmds = { 'Man', '!', }, }, },
+          { name = 'spell', option = { keep_all_entries = false, }, },
+        },
       }
       -- Language specific sources
+      -- Lua should get lazydev completion
       cmp.setup.filetype('lua', {
         sources = cmp.config.sources {
           { name = 'lazydev', },
@@ -208,6 +219,21 @@ return {
           { name = 'spell', option = { keep_all_entries = false, }, },
         },
       })
+      -- Tex should get vimtex completion
+      cmp.setup.filetype({'tex', 'bib', 'latex'}, {
+        sources = cmp.config.sources {
+          { name = 'vimtex', },
+          { name = 'nvim_lsp', },
+          { name = 'nvim_lsp_signature_help', },
+          { name = 'async_path', },
+          { name = 'luasnip', },
+          { name = 'rg', keyword_length = 3, },
+          { name = 'buffer', },
+          { name = 'cmdline', option = { ignore_cmds = { 'Man', '!', }, }, },
+          { name = 'spell', option = { keep_all_entries = false, }, },
+        },
+      })
+
       -- Command line sources
       cmp.setup.cmdline({ '/', '?' }, {
         mapping = cmp.mapping.preset.cmdline(),
