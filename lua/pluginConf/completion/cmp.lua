@@ -186,6 +186,7 @@ return {
           return vim.bo[0].buftype ~= 'prompt'
         end,
         view = {
+          entries = 'native',
           selection_order = 'near_cursor',
         },
         experimental = {
@@ -243,7 +244,7 @@ return {
           { name = 'buffer', },
         },
         view = {
-          entries = { name = 'wildmenu', separator = '|' },
+          entries = { name = 'wildmenu', separator = ' 󰇙 ' },
         },
       })
       cmp.setup.cmdline(':', {
