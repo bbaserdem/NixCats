@@ -205,6 +205,7 @@
         cmp-cmdline                   # Commandline completion
         cmp-cmdline-history           # Commandline history completion
         cmp-buffer                    # Buffer completion
+        cmp-rg                        # Ripgrep
       ];
       luasnip = [
         luasnip

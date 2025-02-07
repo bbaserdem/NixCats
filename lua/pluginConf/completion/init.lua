@@ -5,6 +5,7 @@
 require('lze').load {
     -- Category things
     { import = 'pluginConf.completion.blink', },
+    { import = 'pluginConf.completion.cmp', },
     -- Shared completion sources
     {
         'cmp-vimtex',
