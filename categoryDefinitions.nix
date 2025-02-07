@@ -194,7 +194,7 @@
         cmp-vimtex                    # Vimtex source for cmp
       ];
       cmp = [
-        cmp-nvim-lua
+        nvim-cmp
         # Completion engines
         cmp_luasnip                   # Snippet suggestions
         cmp-nvim-lsp                  # LSP suggestions
