@@ -39,7 +39,7 @@ return {
           },
           list = {
             selection = {
-              preselect = true,
+              preselect = false,
               auto_insert = true,
             },
           },
@@ -56,7 +56,10 @@ return {
         },
         -- Keymap
         keymap = {
-
+          preset = 'default',
+          ['<C-j>'] = { 'select_next', },
+          ['<C-k>'] = { 'select_prev', },
+          ['<CR>'] = { 'accept', 'fallback', },
         },
         -- Completion sources
         sources = {
