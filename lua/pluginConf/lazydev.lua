@@ -3,7 +3,10 @@
 
 return {
   'lazydev.nvim',
-  for_cat = 'languages.lua',
+  for_cat = {
+    cat = 'languages.lua',
+    default = true,
+  },
   cmd = { 'LazyDev' },
   ft = 'lua',
   after = function(plugin)

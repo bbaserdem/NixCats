@@ -66,17 +66,19 @@
     main = [
       lze               # Lazy loader for plugins (NEEDED)
       plenary-nvim      # Library for most other plugins
+      snacks-nvim       # Large library with many small plugins
     ];
 
     # Debug tools
     debug = [
       nvim-nio          # Library for asyncronous IO for nvim
-      vim-startuptime   # Time items in nvim
     ];
 
     # Theme related things
     theme = [
       lspkind-nvim      # Add pictograms to built-in lsp
+      nvim-web-devicons
+      nvim-scrollbar        # Scrollbar to the side menu
       (builtins.getAttr (extra.colorscheme or "onedark") {
         # Theme switcher without creating a new category
         "onedark" = onedark-nvim;
@@ -91,28 +93,17 @@
 
     # Filebrowser
     filebrowser = [
-      nvim-tree-lua         # File browser
+      oil-nvim              # File browser
     ];
 
     # Status indication
     status = [
       lualine-nvim          # Info bar at the bottom of screen
-      nvim-scrollbar        # Scrollbar to the side menu
-      indent-blankline-nvim # Indentation level visualizer
     ];
 
     # Notification menu
     notifications = [
       fidget-nvim           # Shows LSP progress in a text box
-      nvim-notify           # Notification area
-      which-key-nvim        # Shows keybind groups
-    ];
-
-    # Search functionality
-    search = with pkgs.vimPlugins; [
-      telescope-nvim
-      telescope-fzf-native-nvim
-      telescope-ui-select-nvim
     ];
 
     # Language specific
@@ -135,11 +126,6 @@
       nvim-lspconfig      # Configures LSPs
       conform-nvim        # Code formatter
       nvim-lint           # Linter without LSP
-    ];
-
-    # Theme-ing related plugins
-    theme = [
-      nvim-web-devicons
     ];
 
     # We want to have treesitter
@@ -167,14 +153,8 @@
       nvim-surround     # Quickly surround text with delimiters
       vim-repeat        # Allows plugins to invoke . to repeat
       mkdir-nvim        # Automatically make directories when saving files
-      bufdelete-nvim    # Delete buffers without changing window layout
       comment-nvim      # Comment text
-    ];
-
-    ui = [
-      zen-mode-nvim     # Reduces distraction
-      twilight-nvim     # Dims inactive code blocks
-      toggleterm-nvim   # Launch terminal in nvim
+      which-key-nvim    # Shows keybind groups
     ];
 
     # Search items

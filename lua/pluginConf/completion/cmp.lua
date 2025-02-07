@@ -8,42 +8,42 @@ return {
   -- Completion engines
   {
     'cmp_luasnip',
-    for_cat = 'completion.cmp',
+    for_cat = { cat = 'completion.cmp', default = false, },
     on_plugin = { 'nvim-cmp', },
     load = load_w_after_plugin,
   }, {
     'cmp-nvim-lsp',
-    for_cat = 'completion.cmp',
+    for_cat = { cat = 'completion.cmp', default = false, },
     on_plugin = { 'nvim-cmp', },
     load = load_w_after_plugin,
   }, {
     'cmp-nvim-lsp-signature-help',
-    for_cat = 'completion.cmp',
+    for_cat = { cat = 'completion.cmp', default = false, },
     on_plugin = { 'nvim-cmp', },
     load = load_w_after_plugin,
   }, {
     'cmp-buffer',
-    for_cat = 'completion.cmp',
+    for_cat = { cat = 'completion.cmp', default = false, },
     on_plugin = { 'nvim-cmp', },
     load = load_w_after_plugin,
   }, {
     'cmp-cmdline',
-    for_cat = 'completion.cmp',
+    for_cat = { cat = 'completion.cmp', default = false, },
     on_plugin = { 'nvim-cmp', },
     load = load_w_after_plugin,
   }, {
     'cmp-cmdline-history',
-    for_cat = 'completion.cmp',
+    for_cat = { cat = 'completion.cmp', default = false, },
     on_plugin = { 'nvim-cmp', },
     load = load_w_after_plugin,
   }, {
     'cmp-spell',
-    for_cat = 'completion.cmp',
+    for_cat = { cat = 'completion.cmp', default = false, },
     on_plugin = { 'nvim-cmp', },
     load = load_w_after_plugin,
   }, {
     'cmp-async-path',
-    for_cat = 'completion.cmp',
+    for_cat = { cat = 'completion.cmp', default = false, },
     on_plugin = { 'nvim-cmp', },
     load = load_w_after_plugin,
   }, {
@@ -52,7 +52,7 @@ return {
     load = load_w_after_plugin,
   }, {
     'cmp-rg',
-    for_cat = 'completion.cmp',
+    for_cat = { cat = 'completion.cmp', default = false, },
     on_plugin = { 'nvim-cmp', },
     load = load_w_after_plugin,
   },
@@ -60,7 +60,7 @@ return {
   -- Main plugin
   {
     'nvim-cmp',
-    for_cat = 'completion.cmp',
+    for_cat = { cat = 'completion.cmp', default = false, },
     event = { "DeferredUIEnter" },
     on_require = { 'cmp', },
     after = function (plugin)
@@ -81,17 +81,17 @@ return {
             maxwidth = 50,
             ellipsis_char = '…',
             menu = {
-              luasnip                 = ' ',
-              nvim_lsp                = ' ',
-              nvim_lsp_signature_help = '󰅏 ',
-              buffer                  = '󰊄 ',
-              cmdline                 = ' ',
-              cmdline_history         = '󰋚 ',
-              spell                   = ' ',
-              async_path              = ' ',
-              vimtex                  = ' ',
-              rg                      = ' ',
-              lazydev                 = '󰢱 ',
+              luasnip                 = '  [snippet]',
+              nvim_lsp                = '  [lsp]',
+              nvim_lsp_signature_help = '󰅏  [lsp-sig]',
+              buffer                  = '󰊄  [buffer]',
+              cmdline                 = '  [cmdline]',
+              cmdline_history         = '󰋚  [cmdhist]',
+              spell                   = '  [spell]',
+              async_path              = '  [path]',
+              vimtex                  = '  [vimtex]',
+              rg                      = '  [ripgrep]',
+              lazydev                 = '󰢱  [lazydev]',
             },
           },
         },

@@ -5,25 +5,25 @@ return {
   -- Completion engines
   {
     'blink-ripgrep.nvim',
-    for_cat = 'completion.blink',
+    for_cat = { cat = 'completion.blink', default = true, },
     on_plugin = { 'blink.cmp', },
   }, {
     'blink-emoji.nvim',
-    for_cat = 'completion.blink',
+    for_cat = { cat = 'completion.blink', default = true, },
     on_plugin = { 'blink.cmp', },
   }, {
     'blink-cmp-spell',
-    for_cat = 'completion.blink',
+    for_cat = { cat = 'completion.blink', default = true, },
     on_plugin = { 'blink.cmp', },
   }, {
     'blink.compat',
-    for_cat = 'completion.blink',
+    for_cat = { cat = 'completion.blink', default = true, },
     on_plugin = { 'blink.cmp', },
   },
   -- Main plugin
   {
     'blink.cmp',
-    for_cat = 'completion.blink',
+    for_cat = { cat = 'completion.blink', default = true, },
     event = { "DeferredUIEnter" },
     on_require = { 'blink', },
     after = function (plugin)
