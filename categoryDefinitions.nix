@@ -151,6 +151,7 @@
     ];
 
     functionality = [
+      mini-nvim         # Large plugin library
       conform-nvim      # Code formatter
       nvim-lint         # Linter without LSP
       nvim-surround     # Quickly surround text with delimiters
