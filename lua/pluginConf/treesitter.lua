@@ -10,6 +10,9 @@ return {
     },
     on_plugin = { 'nvim-treesitter', },
     event = 'DeferredUIEnter',
+    load = function (name)
+      vim.cmd.packadd('nvim-treesitter-context')
+    end,
     after = function(plugin)
       require('treesitter-context').setup({
         enable = true,
