@@ -50,7 +50,8 @@ return {
       ttl = 5 * 60,
       indent = 3,
     },
-    { section = "startup" },
+    -- This needs lazy, replace this with my own plugin?
+    --{ section = "startup" },
   },
 
 }
