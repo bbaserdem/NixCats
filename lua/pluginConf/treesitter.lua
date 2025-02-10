@@ -156,7 +156,7 @@ return {
         refactor = {
           -- Highlight definition and usage for the current symbol
           highlight_definitions = {
-            enable = true,
+            enable = false,
             clear_on_cursor_move = true,
           },
           -- Highlight the block from the current scope
