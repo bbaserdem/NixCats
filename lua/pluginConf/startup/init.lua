@@ -1,0 +1,2 @@
+-- <nixCats>/lua/startupPluginConf/init.lua
+-- Plugin configuration for plugins loaded at startup

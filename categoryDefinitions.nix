@@ -87,23 +87,6 @@
       nvim-nio          # Library for asyncronous IO for nvim
     ];
 
-    # Theme related things
-    theme = [
-      lspkind-nvim      # Add pictograms to built-in lsp
-      nvim-web-devicons
-      nvim-scrollbar        # Scrollbar to the side menu
-      (builtins.getAttr (extra.colorscheme or "onedark") {
-        # Theme switcher without creating a new category
-        "onedark" = onedark-nvim;
-        "gruvbox-material" = catppuccin-nvim;
-        "catppuccin" = catppuccin-nvim;
-        "catppuccin-mocha" = catppuccin-nvim;
-        "catppuccin-macchiato" = catppuccin-nvim;
-        "catppuccin-frappe" = catppuccin-nvim;
-        "catppuccin-latte" = catppuccin-nvim;
-      })
-    ];
-
     functionality = [
       oil-nvim              # File browser
       snacks-nvim       # Large library with many small plugins
@@ -138,6 +121,23 @@
       nvim-dap                # Debug adapter protocol for nvim
       nvim-dap-ui             # DAP ui
       nvim-dap-virtual-text   # DAP virtual text support
+    ];
+
+    # Theme related things
+    theme = [
+      lspkind-nvim      # Add pictograms to built-in lsp
+      nvim-web-devicons
+      nvim-scrollbar        # Scrollbar to the side menu
+      (builtins.getAttr (extra.colorscheme or "onedark") {
+        # Theme switcher without creating a new category
+        "onedark" = onedark-nvim;
+        "catppuccin" = catppuccin-nvim;
+        "catppuccin-mocha" = catppuccin-nvim;
+        "catppuccin-macchiato" = catppuccin-nvim;
+        "catppuccin-frappe" = catppuccin-nvim;
+        "catppuccin-latte" = catppuccin-nvim;
+        "catppuccin-gruvbox" = catppuccin-nvim;
+      })
     ];
 
     status = [

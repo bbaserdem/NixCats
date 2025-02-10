@@ -1,11 +1,8 @@
 -- <nixCats>/lua/pluginConf/init.lua
--- Plugins config
+-- Plugin configuration
 
--- We do requires, and let plugins call lze.load on their own
-require('pluginConf.completion')
+-- Load config options for non-lazy plugins
+require('pluginConf.startup')
 
--- Plugin configs
-require('lze').load {
-    { import = 'pluginConf.lazydev', },
-    { import = 'pluginConf.treesitter', },
-}
+-- Load lazy loading plugins (using lze.nvim)
+require('pluginConf.lazy')

@@ -1,4 +1,4 @@
--- <nixCats>/lua/pluginConf/completion/luasnip.lua
+-- <nixCats>/lua/pluginConf/lazy/completion/luasnip.lua
 -- Luasnip config
 
 -- Loading tables, and letting handlers deal with categories

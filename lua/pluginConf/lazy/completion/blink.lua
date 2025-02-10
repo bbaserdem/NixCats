@@ -1,4 +1,4 @@
--- <nixCats>/lua/pluginConf/completion/blink.lua
+-- <nixCats>/lua/pluginConf/completion/lazy/blink.lua
 -- Blink autocompletion configuration
 
 return {

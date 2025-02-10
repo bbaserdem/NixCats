@@ -15,6 +15,10 @@
 !/lua/**
 !/**.lua
 
+# Get vimscript files
+!/colors
+!/colors/*.vim
+
 # Get all base directory nix files
 !/*.nix
 

@@ -1,14 +1,8 @@
--------------------------------------------------
--- name : Catppuccin
--- url  : https://github.com/catppuccin/nvim
--------------------------------------------------
--- Pastel color theme, modified to be gruvbox theme as well.
--- Modifications taken from fang2hou/catppuccin-gruvbox-material.lua
--- https://gist.github.com/fang2hou/8f87a43c02c26463b1689736cbc3b09e
---
+-- <nixCats>/lua/pluginConf/lazy/colorscheme/catppuccinGruvbox.lua
+-- Gruvbox override to catppuccin theme
 -- Just return the argument to catppuccin setup function here
 
-local M = {
+return {
   -- Default flavor to use
   flavour = "mocha",
 
@@ -341,5 +335,3 @@ local M = {
     end,
   },
 }
-
-return M

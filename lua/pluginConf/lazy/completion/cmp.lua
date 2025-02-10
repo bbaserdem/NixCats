@@ -1,4 +1,4 @@
--- <nixCats>/lua/pluginConf/completion/cmp.lua
+-- <nixCats>/lua/pluginConf/lazy/completion/cmp.lua
 -- Nvim-cmp
 
 -- Function needed because packadd doesn't load after direcotories

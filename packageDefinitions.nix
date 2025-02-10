@@ -54,7 +54,7 @@
 
     # Extra arguments ta be made available to nixCats
     extra = {
-      colorscheme = "gruvbox-material";
+      colorscheme = "catppuccin-gruvbox";
       # Override this in a home-manager config
       nix = {
         flake = "";
