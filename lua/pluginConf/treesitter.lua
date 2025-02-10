@@ -8,7 +8,7 @@ return {
       'tools.treesitter',
       default = true,
     },
-    dep_of = { 'nvim-treesitter', },
+    on_plugin = { 'nvim-treesitter', },
     after = function(plugin)
       require('treesitter-context').setup({
         enable = true,
