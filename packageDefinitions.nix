@@ -45,14 +45,11 @@
       main = true;
       # Package sets to include
       debug = true;
-      tools = {
-        treesitter = true;
-        git = true;
-      };
+      tools = true;
       completion.cmp = true;
       functionality = true;
       status = true;
-      languages.all = true;
+      languages = true;
     };
 
     # Extra arguments ta be made available to nixCats

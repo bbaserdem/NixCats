@@ -122,9 +122,6 @@
           cp ${inputs.vimspell-en} $out/spell/en.utf-8.spl
         ''
     )];
-
-    # Meta category to grab everything
-    languages.all = [];
   };
 
   # Lazy loading plugins
@@ -281,13 +278,5 @@
         [ "completion" "snippets" "luasnip" ]
       ];
     };
-    languages.all = [
-      [ "languages" "c"         ]
-      [ "languages" "latex"     ]
-      [ "languages" "lua"       ]
-      [ "languages" "markdown"  ]
-      [ "languages" "nix"       ]
-      [ "languages" "ts"        ]
-    ];
   };
 }
