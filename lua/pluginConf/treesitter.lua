@@ -156,11 +156,11 @@ return {
         refactor = {
           -- Highlight definition and usage for the current symbol
           highlight_definitions = {
-            enable = true,
+            enable = false,
             clear_on_cursor_move = true,
           },
           -- Highlight the block from the current scope
-          highlight_current_scope = { enable = true, },
+          highlight_current_scope = { enable = false, },
           -- Renames the symbol under the cursor in this file
           smart_rename = {
             enable = true,
