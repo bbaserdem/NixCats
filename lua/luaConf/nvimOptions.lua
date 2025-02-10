@@ -1,6 +1,7 @@
 -- <nixCats>/lua/luaConf/nvimOptions.lua
 
 -- Needs to be setup before everything
+vim.api.nvim_set_keymap('', '<Space>', '<Nop>', { noremap = true, silent = true})
 vim.g.mapleader = '<space>'
 vim.g.maplocalleader = '<space>'
 
