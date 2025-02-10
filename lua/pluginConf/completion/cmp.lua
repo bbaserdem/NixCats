@@ -186,7 +186,7 @@ return {
           return vim.bo[0].buftype ~= 'prompt'
         end,
         view = {
-          entries = 'native',
+          entries = 'custom',
           selection_order = 'near_cursor',
         },
         experimental = {

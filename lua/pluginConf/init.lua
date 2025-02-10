@@ -7,4 +7,5 @@ require('pluginConf.completion')
 -- Plugin configs
 require('lze').load {
     { import = 'pluginConf.lazydev', },
+    { import = 'pluginConf.treesitter', },
 }
