@@ -49,6 +49,10 @@
       tree-sitter
     ];
 
+    functionality = [
+      dwt1-shell-color-scripts
+    ];
+
     languages = {
       c = [
         clang-tools

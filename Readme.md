@@ -7,6 +7,13 @@ In time, this will be my replacement for nvim command on my computer.
 
 This flake is a configuration of the [**nixCats**](https://github.com/BirdeeHub/nixCats-nvim) framework.
 
+# Todo
+
+Just items to do later once config is stable
+
+- [ ] Do catppuccin integrations
+- [ ] Find alternative to catppuccin for gruvbox
+
 # Workflow
 
 Either use the provided packages (default is `nixCats-full` for now).
