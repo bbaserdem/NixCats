@@ -3,7 +3,7 @@
 
 return {
   {
-    'treesitter-context',
+    'nvim-treesitter-context',
     for_cat = {
       'tools.treesitter',
       default = true,
