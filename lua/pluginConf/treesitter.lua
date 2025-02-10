@@ -9,6 +9,7 @@ return {
       default = true,
     },
     on_plugin = { 'nvim-treesitter', },
+    event = 'DeferredUIEnter',
     after = function(plugin)
       require('treesitter-context').setup({
         enable = true,
