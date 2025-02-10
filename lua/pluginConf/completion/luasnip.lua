@@ -5,14 +5,14 @@
 return {
   {
     'friendly-snippets',
-    for_cat = 'completion.luasnip',
+    for_cat = 'completion.snippets.luasnip',
     dep_of = {
       'blink.cmp',
       'nvim-cmp',
     },
   }, {
     'luasnip',
-    for_cat = 'completion.luasnip',
+    for_cat = 'completion.snippets.luasnip',
     dep_of = {
       'blink.cmp',
       'nvim-cmp',

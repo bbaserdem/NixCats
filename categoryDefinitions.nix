@@ -14,8 +14,20 @@
 } @ packageDef: {
   # The way the tree is established is;
   # <category>
-  # ├─ debug
-  # ├─ main
+  # ├─ main           : Plugins that should be there by default
+  # ├─ debug          : Debug related tooling
+  # ├─*theme          : Plugins to theme look and feel
+  # ├─ tools
+  # │  ├─ treesitter  : Code parsing
+  # │  ├─*vimspell    : Dictionary languages
+  # │  └─ git         : Git integration
+  # ├─ completion
+  # │  ├─ cmp         : Code completion using nvim-cmp
+  # │  ├─ blink       : Code completion using blink.cmp
+  # │  └─ snippets
+  # │     └─ luasnip  : Snippet engine
+  # ├─ functionality  : Various functionality
+  # ├─ status         : Status displaying UI elements
   # ├─ ...
   # └─ languages
   #    └─ <specific language settings>
@@ -23,6 +35,7 @@
   # System level requirements
   # These packages should be available to the nixCat instance
   # Similar to programs.neovim.extraPackages in homeManager
+  # This is LSPs and system-wide tooling
   lspsAndRuntimeDeps = with pkgs; {
     main = [
       universal-ctags   # Tag generation for multiple languages
@@ -31,7 +44,8 @@
       wl-clipboard      # Wayland clipboard communication
       xclip             # Xorg clipboard communication
     ];
-    treesitter = [
+
+    tools.treesitter = [
       tree-sitter
     ];
 
@@ -66,7 +80,6 @@
     main = [
       lze               # Lazy loader for plugins (NEEDED)
       plenary-nvim      # Library for most other plugins
-      snacks-nvim       # Large library with many small plugins
     ];
 
     # Debug tools
@@ -91,31 +104,27 @@
       })
     ];
 
-    # Filebrowser
-    filebrowser = [
+    functionality = [
       oil-nvim              # File browser
+      snacks-nvim       # Large library with many small plugins
     ];
 
-    # Status indication
+    # Status UI
     status = [
       lualine-nvim          # Info bar at the bottom of screen
-    ];
-
-    # Notification menu
-    notifications = [
       fidget-nvim           # Shows LSP progress in a text box
     ];
 
-    # Language specific
-    languages = {
-      vimspell = [(
+    tools.vimspell = [(
         pkgs.runCommand "vimspell-lang" { } ''
           mkdir -p $out/spell
           cp ${inputs.vimspell-tr} $out/spell/tr.utf-8.spl
           cp ${inputs.vimspell-en} $out/spell/en.utf-8.spl
         ''
-      )];
-    };
+    )];
+
+    # Meta category to grab everything
+    languages.all = [];
   };
 
   # Lazy loading plugins
@@ -124,17 +133,8 @@
     # Main plugins to have
     main = [
       nvim-lspconfig      # Configures LSPs
-      conform-nvim        # Code formatter
-      nvim-lint           # Linter without LSP
     ];
 
-    # We want to have treesitter
-    treesitter = [
-      nvim-treesitter.withAllGrammars
-      nvim-treesitter-context
-      nvim-treesitter-refactor
-      nvim-treesitter-textobjects
-    ];
 
     # Debug tools
     debug = [
@@ -147,19 +147,17 @@
       trouble-nvim        # Sidebar that shows diagnostics and such
       aerial-nvim         # Code outline window
       undotree            # Visualize undo history
+      which-key-nvim      # Shows keybind groups
     ];
 
     functionality = [
+      conform-nvim      # Code formatter
+      nvim-lint         # Linter without LSP
       nvim-surround     # Quickly surround text with delimiters
       vim-repeat        # Allows plugins to invoke . to repeat
       mkdir-nvim        # Automatically make directories when saving files
-      comment-nvim      # Comment text
-      which-key-nvim    # Shows keybind groups
-    ];
-
-    # Search items
-    search = [
-      urlview-nvim
+      comment-nvim      # Comments text
+      urlview-nvim      # Detects URLs
     ];
 
     # Autocompletion engines
@@ -187,18 +185,31 @@
         cmp-buffer                    # Buffer completion
         cmp-rg                        # Ripgrep
       ];
-      luasnip = [
-        luasnip
-        friendly-snippets
+      snippets = {
+        luasnip = [
+          luasnip
+          friendly-snippets
+        ];
+      };
+    };
+
+    # Toolskits with joint plugins
+    tools = {
+      # We want to have treesitter for things
+      treesitter = [
+        nvim-treesitter.withAllGrammars
+        nvim-treesitter-context
+        nvim-treesitter-refactor
+        nvim-treesitter-textobjects
+      ];
+      # Git related toolkit
+      git = [
+        gitsigns-nvim
+        vim-fugitive
+        vim-rhubarb
       ];
     };
 
-    # Git related toolkit
-    git = [
-      gitsigns-nvim
-      vim-fugitive
-      vim-rhubarb
-    ];
 
     # Plugins to lazy load on given languages
     languages = {
@@ -256,13 +267,26 @@
   # Defining language = [ "language" "default"]; in this attrset would
   # cause any import of a subcategory of language to import language.default as well
   extraCats = {
+    # Various defaults
+    main = [
+      [ "tools" "vimspell" ]
+      [ "theme" ]
+    ];
     completion = {
       blink = [
-        [ "completion" "luasnip" ]
+        [ "completion" "snippets" "luasnip" ]
       ];
       cmp = [
-        [ "completion" "luasnip" ]
+        [ "completion" "snippets" "luasnip" ]
       ];
     };
+    languages.all = [
+      [ "languages" "c"         ]
+      [ "languages" "latex"     ]
+      [ "languages" "lua"       ]
+      [ "languages" "markdown"  ]
+      [ "languages" "nix"       ]
+      [ "languages" "ts"        ]
+    ];
   };
 }

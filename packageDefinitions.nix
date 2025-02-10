@@ -6,15 +6,33 @@
   utils,
   ...
 }: {
-  # Full neovim instance
+  # The way the category tree is established is;
+  # <category>
+  # ├─ main           : Plugins that should be there by default
+  # ├─ debug          : Debug related tooling
+  # ├─*theme          : Plugins to theme look and feel
+  # ├─ tools
+  # │  ├─ treesitter  : Code parsing
+  # │  ├─*vimspell    : Dictionary languages
+  # │  └─ git         : Git integration
+  # ├─ completion
+  # │  ├─ cmp         : Code completion using nvim-cmp
+  # │  ├─ blink       : Code completion using blink.cmp
+  # │  └─ snippets
+  # │     └─ luasnip  : Snippet engine
+  # ├─ functionality  : Various functionality
+  # ├─ status         : Status displaying UI elements
+  # └─ languages
+  #    └─ <specific language settings>
+
   nixCats-full = {pkgs, ...} @ misc: {
+    # Full neovim instance
 
     # they contain a settings set defined above
     # see :help nixCats.flake.outputs.settings
-    # IMPORTANT: your alias may not conflict with your other packages.
     settings = {
       wrapRc = true;
-      aliases = [
+      aliases = [ # !!!: Your alias can't conflict with your other packages.
         "nc-full"
         "nvim-nc-full"
       ];
@@ -24,33 +42,23 @@
 
     # and a set of categories that you want
     categories = {
-      # Package sets to include
-      theme = true;
       main = true;
-      treesitter = true;
+      # Package sets to include
       debug = true;
-      filebrowser = true;
-      status = true;
-      functionality = true;
-      ui = true;
-      notifications = true;
-      search = true;
-      completion.cmp = true;
-      git = true;
-      languages = {
-        c = true;
-        latex = true;
-        lua = true;
-        markdown = true;
-        nix = true;
-        ts = true;
-        vimspell = true;
+      tools = {
+        treesitter = true;
+        git = true;
       };
+      completion.cmp = true;
+      functionality = true;
+      status = true;
+      languages.all = true;
     };
 
     # Extra arguments ta be made available to nixCats
     extra = {
       colorscheme = "gruvbox-material";
+      # Override this in a home-manager config
       nix = {
         flake = "";
         host = "";
