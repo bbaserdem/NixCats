@@ -45,9 +45,14 @@
       xclip             # Xorg clipboard communication
     ];
 
-    tools.treesitter = [
-      tree-sitter
-    ];
+    tools = {
+      treesitter = [
+        tree-sitter
+      ];
+      git = [
+        lazygit
+      ];
+    };
 
     functionality = [
       dwt1-shell-color-scripts
