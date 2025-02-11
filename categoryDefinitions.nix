@@ -123,7 +123,6 @@
       nvim-lspconfig      # Configures LSPs
     ];
 
-
     # Debug tools
     debug = [
       nvim-dap                # Debug adapter protocol for nvim
@@ -156,7 +155,6 @@
     ];
 
     functionality = [
-      mini-nvim         # Large plugin library
       conform-nvim      # Code formatter
       nvim-lint         # Linter without LSP
       nvim-surround     # Quickly surround text with delimiters
@@ -164,6 +162,23 @@
       mkdir-nvim        # Automatically make directories when saving files
       comment-nvim      # Comments text
       urlview-nvim      # Detects URLs
+    ];
+
+    mini = [
+      mini-ai
+      mini-align
+      mini-comment
+      mini-move
+      mini-operators
+      mini-pairs
+      mini-splitjoin
+      mini-surround
+      mini-basics
+      mini-bracketed
+      mini-jump
+      mini-cursorword
+      mini-hipatterns
+      mini-map
     ];
 
     # Autocompletion engines
@@ -277,6 +292,9 @@
     main = [
       [ "tools" "vimspell" ]
       [ "theme" ]
+    ];
+    functionality = [
+      [ "mini" ]
     ];
     completion = {
       blink = [
