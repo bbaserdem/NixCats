@@ -48,7 +48,7 @@ return {
     })
     -- Move with square brackets
     require('mini.bracketed').setup()
-    -- Which key
+    --[[ Which key
     local miniclue = require('mini.clue')
     miniclue.setup({
       triggers = {
@@ -86,6 +86,7 @@ return {
         miniclue.gen_clues.z(),
       },
     })
+    --]]
     -- Jump to character
     require('mini.jump').setup()
     -- Highlight word under cursor
@@ -104,7 +105,7 @@ return {
       },
     })
     -- Icons for file types
-    require('mini.icons').setup()
+    -- require('mini.icons').setup()
     -- Scrollbar and text overview
     require('mini.map').setup({
       integrations = nil,

@@ -3,3 +3,5 @@
 
 -- Snacks configuration
 require('pluginConf.startup.snacks')
+-- Oil.nvim config
+require('pluginConf.startup.oil')

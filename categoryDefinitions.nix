@@ -88,7 +88,6 @@
     # Main plugins to have
     main = [
       lze               # Lazy loader for plugins (NEEDED)
-      plenary-nvim      # Library for most other plugins
     ];
 
     # Debug tools
@@ -97,7 +96,7 @@
     ];
 
     functionality = [
-      oil-nvim              # File browser
+      oil-nvim          # File browser
       snacks-nvim       # Large library with many small plugins
     ];
 
