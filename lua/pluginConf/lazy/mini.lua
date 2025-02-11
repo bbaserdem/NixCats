@@ -29,10 +29,15 @@ return {
     require('mini.surround').setup()
     -- Basic settings
     require('mini.basics').setup({
-      options = false,
+      options = {
+        basic = true,
+        extra_ui = true,
+        -- turns syntax on
+        win_borders = 'bold',
+      },
       mappings = {
-        basic = false,
-        option_toggle_prefix = '',
+        basic = true,
+        option_toggle_prefix = '\\',
         windows = true,
         move_with_alt = true,
       },
