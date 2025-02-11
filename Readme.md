@@ -14,6 +14,7 @@ Just items to do later once config is stable
 - [ ] Do catppuccin integrations
 - [ ] Find alternative to catppuccin for gruvbox
 - [ ] Find startup time alternative for snacks.dashboard
+- [ ] Snacks explorer not working? 
 
 # Workflow
 

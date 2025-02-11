@@ -10,6 +10,7 @@ require('pluginConf.lazy.completion')
 
 -- Plugin configs
 require('lze').load {
-    { import = 'pluginConf.lazy.lazydev', },
     { import = 'pluginConf.lazy.treesitter', },
+    { import = 'pluginConf.lazy.mini', },
+    { import = 'pluginConf.lazy.lazydev', },
 }

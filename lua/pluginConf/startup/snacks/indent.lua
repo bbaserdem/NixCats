@@ -23,9 +23,9 @@ return {
     char = {
       corner_top = '┏',
       corner_bottom = '┗',
-      horizontal = '┉',
-      vertical = '┋',
-      arrow = '>',
+      horizontal = '━',
+      vertical = '┃',
+      arrow = '⯈',
     }
   },
 }
