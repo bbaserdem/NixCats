@@ -36,7 +36,10 @@ return {
         windows = true,
         move_with_alt = true,
       },
-      autocommands = true,
+      autocommands = {
+        basic = true,
+        relnum_in_visual_mode = false,
+      },
     })
     -- Move with square brackets
     require('mini.bracketed').setup()
