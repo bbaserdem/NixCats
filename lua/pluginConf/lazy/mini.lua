@@ -24,7 +24,7 @@ return {
     -- Automatically insert paranthesis pairs
     require('mini.pairs').setup()
     -- Split and join arguments to functions
-    require('mini.split').setup()
+    require('mini.splitjoin').setup()
     -- Surround actions
     require('mini.surround').setup()
     -- Basic settings
