@@ -155,6 +155,7 @@
     ];
 
     functionality = [
+      mini-nvim         # Library
       conform-nvim      # Code formatter
       nvim-lint         # Linter without LSP
       nvim-surround     # Quickly surround text with delimiters
@@ -294,7 +295,7 @@
       [ "theme" ]
     ];
     functionality = [
-      [ "mini" ]
+      # [ "mini" ]
     ];
     completion = {
       blink = [
