@@ -22,7 +22,7 @@ require('lze').load {
     },
     on_require = { 'nvim-web-devicons', },
     after = function (plugin)
-      require('nvim-web-devicon').setup({
+      require('nvim-web-devicons').setup({
         color_icons = true,
       })
     end,
