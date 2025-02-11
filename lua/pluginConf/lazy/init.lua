@@ -13,14 +13,4 @@ require('lze').load {
   { import = 'pluginConf.lazy.treesitter', },
   { import = 'pluginConf.lazy.mini', },
   { import = 'pluginConf.lazy.lazydev', },
-  -- Smaller plugins
-  { 'nvim-web-devicons',
-    for_cat = { cat = 'theme', default = true, },
-    on_require = { 'nvim-web-devicons', },
-    after = function (plugin)
-      require('nvim-web-devicon').setup({
-        color_icons = true,
-      })
-    end,
-  },
 }

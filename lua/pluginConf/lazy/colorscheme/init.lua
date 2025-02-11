@@ -20,8 +20,12 @@ require('lze').load {
       cat = 'theme',
       default = 'true',
     },
-    dep_of = {
-    },
+    on_require = { 'nvim-web-devicons', },
+    after = function (plugin)
+      require('nvim-web-devicon').setup({
+        color_icons = true,
+      })
+    end,
   },
   { -- Catppuccin theme
     'catppuccin-nvim',
