@@ -48,7 +48,7 @@ vim.opt.linebreak = true        -- If wrap, then don't split words
 vim.opt.conceallevel = 1        -- Plugins need this
 vim.opt.lazyredraw = false
 vim.opt.updatetime = 300
-vim.opt.timeoutlen = 500
+vim.opt.timeoutlen = 0
 vim.opt.guifont = 'Iosevka'
 
 -- Columns and rows

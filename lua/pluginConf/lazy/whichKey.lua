@@ -1,4 +1,4 @@
--- <nixCats>/lua/pluginConf/lazydev.lua
+-- <nixCats>/lua/pluginConf/lazy/whichKey.lua
 -- Lazydev config
 
 return {
@@ -11,7 +11,7 @@ return {
   after = function(plugin)
     require('which-key').setup({
       preset = 'helix',
-      delay = 100,
+      delay = 0,
       notify = true,
       plugins = {
         marks = true,

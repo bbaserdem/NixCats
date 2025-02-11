@@ -1,4 +1,4 @@
--- <nixCats>/lua/pluginConf/lazydev.lua
+-- <nixCats>/lua/pluginConf/lazy/lazydev.lua
 -- Lazydev config
 
 return {

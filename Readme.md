@@ -15,6 +15,9 @@ Just items to do later once config is stable
 - [ ] Find alternative to catppuccin for gruvbox
 - [ ] Find startup time alternative for snacks.dashboard
 - [ ] Snacks explorer not working; explorer not in nixpkgs yet.
+- [ ] Fix overlapping keybinds of mini.nvim
+- [ ] Aerial - lualine integration
+- [ ] Maybe switch back to telescope for picker
 
 # Workflow
 

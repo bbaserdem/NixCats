@@ -1,4 +1,4 @@
--- <nixCats>/lua/pluginConf/treesitter.lua
+-- <nixCats>/lua/pluginConf/lazy/treesitter.lua
 -- Treesitter config
 
 return {
@@ -22,6 +22,9 @@ return {
     for_cat = {
       cat = 'tools.treesitter',
       default = true,
+    },
+    dep_of = {
+      'aerial.nvim',
     },
     event = 'DeferredUIEnter',
     load = function (name)

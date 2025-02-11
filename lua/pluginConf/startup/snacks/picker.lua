@@ -40,7 +40,7 @@ return {
       git_untracked = true,
       diagnostics = true,
       diagnostics_open = false,
-      watch = true,
+      watch = false,
       -- Other opts
       supports_live = true,
       matcher = { sort_empty = false, fuzzy = true, },
