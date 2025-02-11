@@ -13,4 +13,5 @@ require('lze').load {
   { import = 'pluginConf.lazy.treesitter', },
   { import = 'pluginConf.lazy.mini', },
   { import = 'pluginConf.lazy.lazydev', },
+  { import = 'pluginConf.lazy.whichKey', },
 }
