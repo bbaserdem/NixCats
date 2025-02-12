@@ -12,6 +12,9 @@ if not require('nixCatsUtils').isNixCats then
   cs = 'catppuccin-gruvbox'
 else
   cs = nixCats.extra('colorscheme')
+  if (cs == '') or (cs == nil) or (not cs) then
+    cs = 'default'
+  end
 end
 vim.cmd.colorscheme(cs)
 

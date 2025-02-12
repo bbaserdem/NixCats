@@ -11,6 +11,7 @@ This flake is a configuration of the [**nixCats**](https://github.com/BirdeeHub/
 
 Just items to do later once config is stable
 
+- [ ] Switch back to telescope and do integration (trouble, obsidian, urlview)
 - [ ] Get conform stylers into requirements
 - [ ] Set up linters; bash, dash, dotenv_linter, systemdlint, zsh
 - [ ] Set up auto styling on buffer exit, try to work it in pyproject.toml
@@ -20,8 +21,7 @@ Just items to do later once config is stable
 - [ ] Snacks explorer not working; explorer not in nixpkgs yet.
 - [ ] Fix overlapping keybinds of mini.nvim
 - [ ] Aerial, trouble - lualine integration
-- [ ] Switch back to telescope for picker, most plugins have integration (trouble, )
-- [ ] Keybinds for aerial, snacks stuff, gitsigns, trouble, conform
+- [ ] Keybinds for aerial, snacks stuff, gitsigns, trouble, conform, obsidian
 - [ ] Fix diagnostic icons
 
 # Workflow

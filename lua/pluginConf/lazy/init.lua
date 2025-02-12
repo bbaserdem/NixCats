@@ -10,16 +10,16 @@ require('pluginConf.lazy.completion')
 
 -- Plugin configs
 require('lze').load {
-  { import = 'pluginConf.lazy.util', },
-  { import = 'pluginConf.lazy.dap', },
-  { import = 'pluginConf.lazy.treesitter', },
   { import = 'pluginConf.lazy.aerial', },
-  { import = 'pluginConf.lazy.mini', },
-  { import = 'pluginConf.lazy.lazydev', },
-  { import = 'pluginConf.lazy.whichKey', },
-  { import = 'pluginConf.lazy.git', },
-  { import = 'pluginConf.lazy.markdown', },
   { import = 'pluginConf.lazy.conform', },
-  { import = 'pluginConf.lazy.trouble', },
+  { import = 'pluginConf.lazy.dap', },
+  { import = 'pluginConf.lazy.git', },
+  { import = 'pluginConf.lazy.lazydev', },
   { import = 'pluginConf.lazy.lint', },
+  { import = 'pluginConf.lazy.markdown', },
+  { import = 'pluginConf.lazy.mini', },
+  { import = 'pluginConf.lazy.treesitter', },
+  { import = 'pluginConf.lazy.trouble', },
+  { import = 'pluginConf.lazy.util', },
+  { import = 'pluginConf.lazy.whichKey', },
 }

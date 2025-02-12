@@ -61,6 +61,13 @@
         host = "";
         user = "";
       };
+      obsidian = {
+        workspaces = [
+          { name = "Test";
+            path = "~/Media/Notes";
+          }
+        ];
+      };
     };
   };
 

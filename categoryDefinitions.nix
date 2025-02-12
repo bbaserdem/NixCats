@@ -153,7 +153,7 @@
       conform-nvim      # Code formatter
       nvim-lint         # Linter without LSP
       mkdir-nvim        # Automatically make directories when saving files
-      urlview-nvim      # Detects URLs (We are here now)
+      urlview-nvim      # Detects URLs (after telescope switch)
     ];
 
     mini = [
@@ -235,7 +235,6 @@
       ];
       markdown = [
         mkdnflow-nvim           # Navigate wiki links
-        markdown-preview-nvim   # Render markdown in browser
         glow-nvim               # Render markdown in nvim terminal
         obsidian-nvim           # Interact with obsidian vault
       ];

@@ -21,6 +21,9 @@ require('lze').load {
       default = 'true',
     },
     on_require = { 'nvim-web-devicons', },
+    dep_of = {
+      'lualine.nvim',
+    },
     after = function (plugin)
       require('nvim-web-devicons').setup({
         color_icons = true,
