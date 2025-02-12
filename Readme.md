@@ -18,6 +18,7 @@ Just items to do later once config is stable
 - [ ] Fix overlapping keybinds of mini.nvim
 - [ ] Aerial - lualine integration
 - [ ] Maybe switch back to telescope for picker
+- [ ] Keybinds for aerial, snacks stuff, gitsigns,
 
 # Workflow
 

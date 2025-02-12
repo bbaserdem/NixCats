@@ -10,10 +10,12 @@ require('pluginConf.lazy.completion')
 
 -- Plugin configs
 require('lze').load {
+  { import = 'pluginConf.lazy.utils', },
   { import = 'pluginConf.lazy.treesitter', },
   { import = 'pluginConf.lazy.aerial', },
   { import = 'pluginConf.lazy.mini', },
   { import = 'pluginConf.lazy.lazydev', },
   { import = 'pluginConf.lazy.whichKey', },
   { import = 'pluginConf.lazy.git', },
+  { import = 'pluginConf.lazy.markdown', },
 }

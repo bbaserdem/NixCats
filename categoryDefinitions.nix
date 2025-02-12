@@ -121,6 +121,7 @@
     # Main plugins to have
     main = [
       nvim-lspconfig      # Configures LSPs
+      plenary-nvim        # Library for other plugins
     ];
 
     # Debug tools
@@ -228,7 +229,6 @@
       git = [
         gitsigns-nvim
         vim-fugitive
-        vim-rhubarb
       ];
     };
 
