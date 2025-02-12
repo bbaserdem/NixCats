@@ -22,7 +22,7 @@ Just items to do later once config is stable
 - [ ] Snacks explorer not working; explorer not in nixpkgs yet.
 - [ ] Fix overlapping keybinds of mini.nvim
 - [ ] Aerial, trouble - lualine integration
-- [ ] Keybinds for aerial, snacks stuff, gitsigns, trouble, conform, obsidian
+- [ ] Keybinds for aerial, snacks stuff, gitsigns, trouble, conform, obsidian, vimtex, nabla, mini-map
 - [ ] Fix diagnostic icons
 
 # Workflow

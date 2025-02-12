@@ -65,6 +65,7 @@
       latex = [
         pplatex         # Latex log parsing tool
         neovim-remote   # Client server for vimtex to run latexmk
+        xdotool         # Needed for zathura
       ];
       lua = [
         lua-language-server
@@ -110,6 +111,10 @@
         cp ${inputs.vimspell-en} $out/spell/en.utf-8.spl
       ''
     )];
+
+    languages.latex = [
+      vimtex                  # LaTeX suite, can't be lazy loaded
+    ];
   };
 
   # Lazy loading plugins
@@ -228,14 +233,11 @@
 
     # Plugins to lazy load on given languages
     languages = {
-      latex = [
-        vimtex                  # LaTeX suite
-        nabla-nvim              # Render latex equations
-      ];
       lua = [
         lazydev-nvim            # Configure editing nvim configuration files
       ];
       markdown = [
+        nabla-nvim              # Render latex equations
         mkdnflow-nvim           # Navigate wiki links
         glow-nvim               # Render markdown in nvim terminal
         obsidian-nvim           # Interact with obsidian vault

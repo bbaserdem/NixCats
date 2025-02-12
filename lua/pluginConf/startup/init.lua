@@ -5,3 +5,6 @@
 require('pluginConf.startup.snacks')
 -- Oil.nvim config
 require('pluginConf.startup.oil')
+-- Vimtex config
+require('pluginConf.startup.vimtex')
+

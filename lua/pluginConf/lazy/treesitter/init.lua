@@ -25,6 +25,7 @@ return {
     },
     dep_of = {
       'aerial.nvim',
+      'nabla.nvim',
     },
     event = 'DeferredUIEnter',
     load = function (name)
@@ -38,6 +39,8 @@ return {
         -- Highlight module
         highlight = {
           enable = true,
+          disable = { 'latex', },
+          additional_vim_regex_highlighting = { 'latex', 'markdown', },
         },
         -- Indent module
         indent = {

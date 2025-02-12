@@ -7,7 +7,7 @@ return {
   flavour = "mocha",
 
   -- Whether to do transparent background or not
-  transparent_background = true,
+  transparent_background = false,
 
   -- Integrations
   integrations = {

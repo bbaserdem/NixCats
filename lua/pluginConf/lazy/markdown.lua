@@ -12,6 +12,15 @@ return {
     on_require = { 'glow', },
     cmd = { 'Glow', },
   },
+  { -- Equation parser
+    'nabla.nvim',
+    for_cat = {
+      cat = 'languages.markdown',
+      default = true,
+    },
+    ft = { 'markdown', },
+    on_require = { 'nabla', },
+  },
   { -- Navigating markdown links
     'mkdnflow.nvim',
     for_cat = {
