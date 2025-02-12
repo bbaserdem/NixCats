@@ -92,6 +92,7 @@ return {
               vimtex                  = '  [vimtex]',
               rg                      = '  [ripgrep]',
               lazydev                 = '󰢱  [lazydev]',
+              mkdnflow                = '  [mdflow]',
             },
           },
         },

@@ -90,11 +90,6 @@
       lze               # Lazy loader for plugins (NEEDED)
     ];
 
-    # Debug tools
-    debug = [
-      nvim-nio          # Library for asyncronous IO for nvim
-    ];
-
     functionality = [
       oil-nvim          # File browser
       snacks-nvim       # Large library with many small plugins
@@ -107,11 +102,11 @@
     ];
 
     tools.vimspell = [(
-        pkgs.runCommand "vimspell-lang" { } ''
-          mkdir -p $out/spell
-          cp ${inputs.vimspell-tr} $out/spell/tr.utf-8.spl
-          cp ${inputs.vimspell-en} $out/spell/en.utf-8.spl
-        ''
+      pkgs.runCommand "vimspell-lang" { } ''
+        mkdir -p $out/spell
+        cp ${inputs.vimspell-tr} $out/spell/tr.utf-8.spl
+        cp ${inputs.vimspell-en} $out/spell/en.utf-8.spl
+      ''
     )];
   };
 
@@ -129,6 +124,7 @@
       nvim-dap                # Debug adapter protocol for nvim
       nvim-dap-ui             # DAP ui
       nvim-dap-virtual-text   # DAP virtual text support
+      nvim-nio                # Library for asyncronous IO for nvim
     ];
 
     # Theme related things
