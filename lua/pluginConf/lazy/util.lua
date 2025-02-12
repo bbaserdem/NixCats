@@ -2,11 +2,15 @@
 -- Utility functions to be lazy loaded
 
 return {
-  { -- Preview
+  { -- Library
     'plenary.nvim',
     dep_of = {
       'mkdnflow.nvim',
     },
     on_require = { 'plenary', },
+  },
+  { -- Make directories when saving
+    'mkdir.nvim',
+    event = { 'BufWritePre', },
   },
 }

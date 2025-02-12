@@ -115,23 +115,21 @@
 
     # Main plugins to have
     main = [
-      nvim-lspconfig      # Configures LSPs
       plenary-nvim        # Library for other plugins
     ];
 
     # Debug tools
     debug = [
+      nvim-nio                # Library for asyncronous IO for nvim
       nvim-dap                # Debug adapter protocol for nvim
       nvim-dap-ui             # DAP ui
       nvim-dap-virtual-text   # DAP virtual text support
-      nvim-nio                # Library for asyncronous IO for nvim
     ];
 
     # Theme related things
     theme = [
-      lspkind-nvim      # Add pictograms to built-in lsp
+      lspkind-nvim          # Add pictograms to built-in lsp
       nvim-web-devicons
-      nvim-scrollbar        # Scrollbar to the side menu
       (builtins.getAttr (extra.colorscheme or "onedark") {
         # Theme switcher without creating a new category
         "onedark" = onedark-nvim;
@@ -147,7 +145,6 @@
     status = [
       trouble-nvim        # Sidebar that shows diagnostics and such
       aerial-nvim         # Code outline window
-      undotree            # Visualize undo history
       which-key-nvim      # Shows keybind groups
     ];
 
@@ -155,11 +152,8 @@
       mini-nvim         # Library
       conform-nvim      # Code formatter
       nvim-lint         # Linter without LSP
-      nvim-surround     # Quickly surround text with delimiters
-      vim-repeat        # Allows plugins to invoke . to repeat
       mkdir-nvim        # Automatically make directories when saving files
-      comment-nvim      # Comments text
-      urlview-nvim      # Detects URLs
+      urlview-nvim      # Detects URLs (We are here now)
     ];
 
     mini = [
@@ -203,6 +197,7 @@
         cmp-cmdline-history           # Commandline history completion
         cmp-buffer                    # Buffer completion
         cmp-rg                        # Ripgrep
+        cmp-dap                       # DAP buffer completion
       ];
       snippets = {
         luasnip = [
@@ -232,11 +227,11 @@
     # Plugins to lazy load on given languages
     languages = {
       latex = [
-        vimtex          # LaTeX suite
-        nabla-nvim      # Render latex equations
+        vimtex                  # LaTeX suite
+        nabla-nvim              # Render latex equations
       ];
       lua = [
-        lazydev-nvim    # Configure editing nvim configuration files
+        lazydev-nvim            # Configure editing nvim configuration files
       ];
       markdown = [
         mkdnflow-nvim           # Navigate wiki links

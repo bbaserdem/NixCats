@@ -11,14 +11,18 @@ This flake is a configuration of the [**nixCats**](https://github.com/BirdeeHub/
 
 Just items to do later once config is stable
 
+- [ ] Get conform stylers into requirements
+- [ ] Set up linters; bash, dash, dotenv_linter, systemdlint, zsh
+- [ ] Set up auto styling on buffer exit, try to work it in pyproject.toml
 - [ ] Do catppuccin integrations
 - [ ] Find alternative to catppuccin for gruvbox
 - [ ] Find startup time alternative for snacks.dashboard
 - [ ] Snacks explorer not working; explorer not in nixpkgs yet.
 - [ ] Fix overlapping keybinds of mini.nvim
-- [ ] Aerial - lualine integration
-- [ ] Maybe switch back to telescope for picker
-- [ ] Keybinds for aerial, snacks stuff, gitsigns,
+- [ ] Aerial, trouble - lualine integration
+- [ ] Switch back to telescope for picker, most plugins have integration (trouble, )
+- [ ] Keybinds for aerial, snacks stuff, gitsigns, trouble, conform
+- [ ] Fix diagnostic icons
 
 # Workflow
 

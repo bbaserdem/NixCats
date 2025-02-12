@@ -12,6 +12,7 @@ return {
   after = function(plugin)
     require('lazydev').setup({
       library = {
+        'nvim-dap-ui',
         {
           words = { 'nixCats' },
           path = (require('nixCats').nixCatsPath or "") .. '/lua'

@@ -55,6 +55,11 @@ return {
     for_cat = { cat = 'completion.cmp', default = false, },
     on_plugin = { 'nvim-cmp', },
     load = load_w_after_plugin,
+  }, {
+    'cmp-dap',
+    for_cat = { cat = 'completion.cmp', default = false, },
+    on_plugin = { 'nvim-cmp', },
+    load = load_w_after_plugin,
   },
 
   -- Main plugin
@@ -92,7 +97,8 @@ return {
               vimtex                  = '  [vimtex]',
               rg                      = '  [ripgrep]',
               lazydev                 = '󰢱  [lazydev]',
-              mkdnflow                = '  [mdflow]',
+              mkdnflow                = '  [md]',
+              dap                     = '  [dap]',
             },
           },
         },
@@ -184,7 +190,8 @@ return {
 
         -- Some extra settings
         enabled = function ()
-          return vim.bo[0].buftype ~= 'prompt'
+        -- Enable also in in DAP buffer
+          return vim.bo[0].buftype ~= 'prompt' or require('cmp_dap').is_dap_buffer()
         end,
         view = {
           entries = 'custom',
@@ -247,6 +254,12 @@ return {
           { name = 'buffer', },
           { name = 'cmdline', option = { ignore_cmds = { 'Man', '!', }, }, },
           { name = 'spell', option = { keep_all_entries = false, }, },
+        },
+      })
+      -- DAP buffer
+      cmp.setup.filetype({'dap-repl', 'dapui_watches', 'dapui_hover', }, {
+        sources = cmp.config.sources {
+          { name = 'dap', },
         },
       })
 

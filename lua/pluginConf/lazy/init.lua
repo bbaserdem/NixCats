@@ -11,6 +11,7 @@ require('pluginConf.lazy.completion')
 -- Plugin configs
 require('lze').load {
   { import = 'pluginConf.lazy.util', },
+  { import = 'pluginConf.lazy.dap', },
   { import = 'pluginConf.lazy.treesitter', },
   { import = 'pluginConf.lazy.aerial', },
   { import = 'pluginConf.lazy.mini', },
@@ -18,4 +19,7 @@ require('lze').load {
   { import = 'pluginConf.lazy.whichKey', },
   { import = 'pluginConf.lazy.git', },
   { import = 'pluginConf.lazy.markdown', },
+  { import = 'pluginConf.lazy.conform', },
+  { import = 'pluginConf.lazy.trouble', },
+  { import = 'pluginConf.lazy.lint', },
 }
