@@ -19,7 +19,7 @@ return {
       default = true,
     },
     ft = { 'markdown', 'md', 'rmd', },
-    on_plugin { 'nvim-cmp', },
+    on_plugin = { 'nvim-cmp', },
     on_require = { 'mkdnflow', },
     after = function (plugin)
       require('mkdnflow').setup({

@@ -234,6 +234,20 @@ return {
           { name = 'spell', option = { keep_all_entries = false, }, },
         },
       })
+      -- Tex should get vimtex completion
+      cmp.setup.filetype({'markdown', 'md', 'rmd', }, {
+        sources = cmp.config.sources {
+          { name = 'mkdnflow', },
+          { name = 'nvim_lsp', },
+          { name = 'nvim_lsp_signature_help', },
+          { name = 'async_path', },
+          { name = 'luasnip', },
+          { name = 'rg', keyword_length = 3, },
+          { name = 'buffer', },
+          { name = 'cmdline', option = { ignore_cmds = { 'Man', '!', }, }, },
+          { name = 'spell', option = { keep_all_entries = false, }, },
+        },
+      })
 
       -- Command line sources
       cmp.setup.cmdline({ '/', '?' }, {
