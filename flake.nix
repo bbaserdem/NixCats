@@ -13,6 +13,12 @@
     # Nixcats
     nixCats.url = "github:BirdeeHub/nixCats-nvim";
 
+    # Incline bufferline plugin
+    plugins-incline-nvim = {
+      url = "github:b0o/incline.nvim";
+      flake = false;
+    };
+
     # Spelling libraries
     vimspell-tr = {
       url = "https://ftp.nluug.nl/pub/vim/runtime/spell/tr.utf-8.spl";

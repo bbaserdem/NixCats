@@ -97,7 +97,9 @@
 
     # Status UI
     status = [
-      lualine-nvim          # Info bar at the bottom of screen
+      tabby-nvim            # Tabline
+      { name = "incline.nvim"; plugin = pkgs.neovimPlugins.incline-nvim; }
+      lualine-nvim          # Statusline
       fidget-nvim           # Shows LSP progress in a text box
     ];
 

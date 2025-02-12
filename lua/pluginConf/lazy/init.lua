@@ -5,6 +5,7 @@
 require('lze').register_handlers(require('nixCatsUtils.lzUtils').for_cat)
 
 -- We do requires for involved setups, do calls to lze there
+require('pluginConf.lazy.bars')
 require('pluginConf.lazy.colorscheme')
 require('pluginConf.lazy.completion')
 
@@ -13,6 +14,7 @@ require('lze').load {
   { import = 'pluginConf.lazy.aerial', },
   { import = 'pluginConf.lazy.conform', },
   { import = 'pluginConf.lazy.dap', },
+  { import = 'pluginConf.lazy.fidget', },
   { import = 'pluginConf.lazy.git', },
   { import = 'pluginConf.lazy.lazydev', },
   { import = 'pluginConf.lazy.lint', },
