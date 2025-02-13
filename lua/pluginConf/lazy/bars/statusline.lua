@@ -16,8 +16,8 @@ return{
       mode = 'lsp_document_symbols',
       title = false,
       hl_group = 'lualine_x_normal',
-
     })
+
     require('lualine').setup({
       extensions = {
         'aerial',
@@ -36,6 +36,10 @@ return{
         globalstatus = true,
       },
       -- The configuration
+      tabline = {},
+      inactive_winbar = {},
+      winbar = {},
+      inactive_sections = {},
       sections = {
         lualine_a = {'mode'},
         lualine_b = {
@@ -71,14 +75,17 @@ return{
         lualine_y = {
           'selectioncount',
           'searchcount',
+          --[[
           {
             symbols.get,
             cond = symbols.has,
           },
+          --]]
         },
         lualine_z = {
           'progress',
-          'location', }
+          'location',
+        }
       },
     })
   end,
