@@ -24,6 +24,7 @@ require('lze').load {
     dep_of = {
       'lualine.nvim',
       'tabby.nvim',
+      'incline.nvim',
       'which-key.nvim',
     },
     after = function (plugin)

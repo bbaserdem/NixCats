@@ -71,6 +71,14 @@ return {
     all = function(colors)
       return {
         -- Fix tabline transparecy stuff
+        TabIconNvim = {
+          bg = colors.base,
+          fg = colors.green,
+        },
+        TabIconNix = {
+          bg = colors.base,
+          fg = colors.blue,
+        },
         TabLine = {     -- tab pages line, active tab page label
           bg = colors.surface0,
           fg = colors.subtext0,
