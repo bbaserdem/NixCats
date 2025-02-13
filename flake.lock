@@ -228,28 +228,11 @@
         "type": "github"
       }
     },
-    "plugins-incline-nvim": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1715926410,
-        "narHash": "sha256-5DoIvIdAZV7ZgmQO2XmbM3G+nNn4tAumsShoN3rDGrs=",
-        "owner": "b0o",
-        "repo": "incline.nvim",
-        "rev": "16fc9c073e3ea4175b66ad94375df6d73fc114c0",
-        "type": "github"
-      },
-      "original": {
-        "owner": "b0o",
-        "repo": "incline.nvim",
-        "type": "github"
-      }
-    },
     "root": {
       "inputs": {
         "neovim-nightly-overlay": "neovim-nightly-overlay",
         "nixCats": "nixCats",
         "nixpkgs": "nixpkgs_2",
-        "plugins-incline-nvim": "plugins-incline-nvim",
         "vimspell-en": "vimspell-en",
         "vimspell-tr": "vimspell-tr"
       }

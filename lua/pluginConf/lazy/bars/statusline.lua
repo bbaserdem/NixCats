@@ -21,6 +21,19 @@ return{
       format = "{kind_icon}{symbol.name:Normal}",
       hl_group = 'lualine_y_normal',
     })
+    local myFileLine = {
+      'filename',
+      file_status = true,
+      newfile_status = true,
+      path = 1,
+      shorting_target = 40,
+      symbols = {
+        modified = ' ',
+        readonly = ' ',
+        unnamed = ' ',
+        newfile = ' ',
+      },
+    }
 
     -- Statusbar config
     require('lualine').setup({
@@ -42,31 +55,34 @@ return{
       },
       -- The configuration
       tabline = {},
-      inactive_winbar = {},
-      winbar = {},
+      winbar = {
+        winbar_a = {},
+        winbar_b = { 'aerial', },
+        winbar_c = {},
+        winbar_x = {},
+        winbar_y = { { 'filetype', icon_only = true, }, },
+        winbar_z = { myFileLine, },
+      },
+      inactive_winbar = {
+        winbar_a = {},
+        winbar_b = {},
+        winbar_c = {},
+        winbar_x = {},
+        winbar_y = { { 'filetype', icon_only = true, }, },
+        winbar_z = { myFileLine, },
+      },
       inactive_sections = {},
       sections = {
         lualine_a = {'mode'},
         lualine_b = {
+          'branch',
+          'diff',
           'filetype',
-          {
-            'filename',
-            file_status = true,
-            newfile_status = true,
-            path = 1,
-            shorting_target = 40,
-            symbols = {
-              modified = ' ',
-              readonly = ' ',
-              unnamed = ' ',
-              newfile = ' ',
-            },
-          },
         },
         lualine_c = {
           {
             'buffers',
-            max_length = vim.o.columns * 1 / 2,
+            max_length = vim.o.columns * 2 / 3,
             filetype_names = {
               TelescopePrompt = '󰍉 ',
               dashboard = '󰨝 ',
@@ -74,20 +90,17 @@ return{
           },
         },
         lualine_x = {
-          'aerial',
-          'branch',
-          'diff',
         },
         lualine_y = {
-          'selectioncount',
-          'searchcount',
           {
             troubleLine.get,
             cond = troubleLine.has,
           },
+          'progress',
         },
         lualine_z = {
-          'progress',
+          'selectioncount',
+          'searchcount',
           'location',
         }
       },
