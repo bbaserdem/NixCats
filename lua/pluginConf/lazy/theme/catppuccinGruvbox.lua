@@ -1,4 +1,4 @@
--- <nixCats>/lua/pluginConf/lazy/colorscheme/catppuccinGruvbox.lua
+-- <nixCats>/lua/pluginConf/lazy/theme/catppuccinGruvbox.lua
 -- Gruvbox override to catppuccin theme
 -- Just return the argument to catppuccin setup function here
 
@@ -7,7 +7,7 @@ return {
   flavour = "mocha",
 
   -- Whether to do transparent background or not
-  transparent_background = false,
+  transparent_background = true,
 
   -- Integrations
   integrations = {
@@ -79,7 +79,6 @@ return {
           bg = colors.base,
           fg = colors.blue,
         },
-        --[[
         TabLine = {     -- tab pages line, active tab page label
           bg = colors.surface0,
           fg = colors.subtext0,
@@ -90,7 +89,6 @@ return {
           style = { "bold" },
         },              -- background colors
 		    TabLineFill = { bg = colors.crust, },
-        --]]
 
         -- Other integrations
         CmpItemMenu = { fg = colors.surface2 },

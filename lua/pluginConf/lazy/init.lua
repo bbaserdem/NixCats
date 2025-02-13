@@ -6,7 +6,7 @@ require('lze').register_handlers(require('nixCatsUtils.lzUtils').for_cat)
 
 -- We do requires for involved setups, do calls to lze there
 require('pluginConf.lazy.bars')
-require('pluginConf.lazy.colorscheme')
+require('pluginConf.lazy.theme')
 require('pluginConf.lazy.completion')
 
 -- Plugin configs

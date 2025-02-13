@@ -1,4 +1,4 @@
--- <nixCats>/lua/pluginConf/lazy/colorscheme/init.lua
+-- <nixCats>/lua/pluginConf/lazy/theme/init.lua
 -- Theme-ing related settings
 
 -- Get colorscheme from nixcats, or default to one
@@ -25,6 +25,7 @@ require('lze').load {
       'lualine.nvim',
       'tabby.nvim',
       'incline.nvim',
+      'lualine.nvim',
       'which-key.nvim',
     },
     after = function (plugin)
@@ -60,7 +61,7 @@ require('lze').load {
         (cs == 'catppuccin-gruvbox') or
         (cs == 'catppuccin-gruvbox-light')
       ) then
-        opt = require('pluginConf.lazy.colorscheme.catppuccinGruvbox')
+        opt = require('pluginConf.lazy.theme.catppuccinGruvbox')
       end
 
       -- Disable kitty detection, I rather have the transparent background
