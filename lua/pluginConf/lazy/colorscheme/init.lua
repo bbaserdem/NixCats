@@ -63,6 +63,8 @@ require('lze').load {
         opt = require('pluginConf.lazy.colorscheme.catppuccinGruvbox')
       end
 
+      -- Disable kitty detection, I rather have the transparent background
+      opt.kitty = false
       -- Set integrations options
       opt.integrations = {
 
