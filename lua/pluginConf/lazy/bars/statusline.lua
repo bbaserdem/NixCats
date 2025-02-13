@@ -24,14 +24,6 @@ return{
 
     -- Statusbar config
     require('lualine').setup({
-      extensions = {
-        'aerial',
-        'fugitive',
-        'neo-tree',
-        'nvim-dap-ui',
-        'oil',
-        'trouble',
-      },
       options = {
         icons_enabled = true,
         theme = 'auto',
