@@ -72,8 +72,7 @@ return{
         lualine_y = {
           'searchcount',
           { 'aerial',
-            sep = " ) ",
-            depth = -3,
+            depth = -1,
           },
         },
         lualine_z = { 'location', 'progress', 'selectioncount', }
