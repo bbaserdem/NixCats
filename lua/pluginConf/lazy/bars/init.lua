@@ -7,10 +7,8 @@
 -- Get colorscheme from nixcats, or default to one
 
 -- Register themeing related plugins to lazyload
---[[
 require('lze').load {
   { import = 'pluginConf.lazy.bars.tabline', },
-  { import = 'pluginConf.lazy.bars.bufferline', },
-  { import = 'pluginConf.lazy.bars.statusbar', },
+--  { import = 'pluginConf.lazy.bars.bufferline', },
+--  { import = 'pluginConf.lazy.bars.statusbar', },
 }
---]]

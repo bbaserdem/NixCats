@@ -58,7 +58,7 @@ vim.opt.signcolumn = 'yes'      -- Always show sign column
 vim.opt.numberwidth = 4         -- Number column width
 vim.opt.cmdheight = 2           -- Number column width
 vim.opt.pumheight = 10          -- Number column width
-vim.opt.showtabline = 2         -- Show relative numbers
+vim.opt.showtabline = 2         -- Show the top tabline even with a single tab
 
 -- Navigation
 vim.opt.mouse = 'a'

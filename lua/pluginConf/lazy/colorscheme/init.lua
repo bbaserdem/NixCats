@@ -23,6 +23,8 @@ require('lze').load {
     on_require = { 'nvim-web-devicons', },
     dep_of = {
       'lualine.nvim',
+      'tabby.nvim',
+      'which-key.nvim',
     },
     after = function (plugin)
       require('nvim-web-devicons').setup({
