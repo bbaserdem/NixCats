@@ -35,14 +35,15 @@ return{
       -- The configuration
       tabline = {},
       winbar = {
-        winbar_a = {},
+        winbar_a = { 'filetype', },
         -- winbar_b = { 'aerial', },
         winbar_b = {},
         winbar_c = {},
         winbar_x = {},
         --winbar_y = { { 'filetype', icon_only = true, }, },
-        winbar_y = {},
+        -- winbar_y = {},
         winbar_z = {
+          --[[
           {
             'filename',
             file_status = true,
