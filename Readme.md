@@ -11,6 +11,8 @@ This flake is a configuration of the [**nixCats**](https://github.com/BirdeeHub/
 
 Just items to do later once config is stable
 
+- [ ] Modify the category handler to have multiple categories
+- [ ] Get rid of incline.nvim, and add winbar with aerial and filename to lualine
 - [ ] Switch back to telescope and do integration (trouble, obsidian, urlview, fidget)
 - [ ] Enable catppuccin only on certain colorschemes in lazy
 - [ ] Split treesitter config into it's directory

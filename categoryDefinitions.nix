@@ -56,6 +56,7 @@
 
     functionality = [
       dwt1-shell-color-scripts
+      imagemagick       # For image displaying with tree
     ];
 
     languages = {
@@ -120,6 +121,7 @@
     # Main plugins to have
     main = [
       plenary-nvim        # Library for other plugins
+      nui-nvim
     ];
 
     # Debug tools
@@ -147,9 +149,10 @@
     ];
 
     status = [
+      # Leaving this here on how to include non-packaged plugin
+      # { name = "incline.nvim"; plugin = pkgs.neovimPlugins.incline-nvim; }
       lualine-nvim        # Statusline
       tabby-nvim          # Tabline
-      { name = "incline.nvim"; plugin = pkgs.neovimPlugins.incline-nvim; }
       trouble-nvim        # Sidebar that shows diagnostics and such
       aerial-nvim         # Code outline window
       which-key-nvim      # Shows keybind groups
@@ -161,6 +164,9 @@
       nvim-lint         # Linter without LSP
       mkdir-nvim        # Automatically make directories when saving files
       urlview-nvim      # Detects URLs (after telescope switch)
+      neo-tree-nvim       # File browser
+      image-nvim          # Image display for neo-tree
+      nvim-window-picker  # File browser dependency
     ];
 
     mini = [
@@ -273,6 +279,12 @@
 
   # populates $LUA_PATH and $LUA_CPATH
   extraLuaPackages = {
+    functionality = [
+      (lua-pkgs: [
+        lua-pkgs.magick
+        lua-pkgs.image-nvim
+      ])
+    ];
     completion.luasnip = [
       (lua-pkgs: [
         lua-pkgs.jsregexp

@@ -13,11 +13,11 @@
     # Nixcats
     nixCats.url = "github:BirdeeHub/nixCats-nvim";
 
-    # Incline bufferline plugin
-    plugins-incline-nvim = {
-      url = "github:b0o/incline.nvim";
-      flake = false;
-    };
+    # Leaving this here to document how to do non-packaged plugin
+    #plugins-incline-nvim = {
+    #  url = "github:b0o/incline.nvim";
+    #  flake = false;
+    #};
 
     # Spelling libraries
     vimspell-tr = {

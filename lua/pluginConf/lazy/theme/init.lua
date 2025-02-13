@@ -27,6 +27,7 @@ require('lze').load {
       'incline.nvim',
       'lualine.nvim',
       'which-key.nvim',
+      'neo-tree.nvim',
     },
     after = function (plugin)
       require('nvim-web-devicons').setup({
