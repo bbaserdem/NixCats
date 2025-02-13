@@ -38,8 +38,7 @@ return{
         lualine_a = {},
         lualine_b = { 'aerial', },
         lualine_x = {},
-        lualine_y = { { 'filetype', icon_only = true, }, },
-        lualine_z = {
+        lualine_y = {
           {
             'filename',
             file_status = true,
@@ -54,13 +53,19 @@ return{
             },
           },
         },
+        lualine_z = {
+          {
+            'filetype',
+            icon_only = true,
+            colored = false,
+          },
+        },
       },
       inactive_winbar = {
         lualine_a = {},
-        lualine_b = { 'aerial', },
+        lualine_b = {},
         lualine_x = {},
-        lualine_y = { { 'filetype', icon_only = true, }, },
-        lualine_z = {
+        lualine_y = {
           {
             'filename',
             file_status = true,
@@ -73,6 +78,12 @@ return{
               unnamed = ' ',
               newfile = ' ',
             },
+          },},
+        lualine_z = {
+          {
+            'filetype',
+            icon_only = true,
+            colored = true,
           },
         },
       },
@@ -96,8 +107,7 @@ return{
         lualine_x = {
         },
         lualine_y = {
-          {
-            troubleLine.get,
+          { troubleLine.get,
             cond = troubleLine.has,
           },
           'progress',
