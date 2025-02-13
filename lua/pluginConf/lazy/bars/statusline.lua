@@ -69,6 +69,7 @@ return{
           },
         },
         lualine_x = {
+          'aerial',
           'branch',
           'diff',
         },
