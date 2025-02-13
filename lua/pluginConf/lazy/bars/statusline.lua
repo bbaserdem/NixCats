@@ -29,7 +29,7 @@ return{
       },
       options = {
         icons_enabled = true,
-        theme = 'molokai',
+        theme = 'auto',
         component_separators =  { left = '', right = ''},
         section_separators =    { left = '', right = ''},
         always_divide_middle = true,
@@ -70,12 +70,11 @@ return{
           'filetype',
         },
         lualine_y = {
+          'progress',
+          'selectioncount',
           'searchcount',
-          { 'aerial',
-            depth = -1,
-          },
         },
-        lualine_z = { 'location', 'progress', 'selectioncount', }
+        lualine_z = { 'location', }
       },
     })
   end,
