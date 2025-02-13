@@ -12,6 +12,7 @@ This flake is a configuration of the [**nixCats**](https://github.com/BirdeeHub/
 Just items to do later once config is stable
 
 - [ ] Switch back to telescope and do integration (trouble, obsidian, urlview, fidget)
+- [ ] Enable catppuccin only on certain colorschemes in lazy
 - [ ] Split treesitter config into it's directory
 - [ ] Get conform stylers into requirements
 - [ ] Set up linters; bash, dash, dotenv_linter, systemdlint, zsh

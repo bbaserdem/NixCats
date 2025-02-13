@@ -38,6 +38,9 @@ require('lze').load {
       cat = 'theme',
       default = true,
     },
+    dep_of = {
+      'tabby.nvim',
+    },
     colorscheme = {
       'catppuccin',
       'catppuccin-latte',
