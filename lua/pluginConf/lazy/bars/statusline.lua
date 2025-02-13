@@ -66,6 +66,7 @@ return{
         winbar_y = { { 'filetype', icon_only = true, }, },
         winbar_z = { myFileLine, },
       },
+      --]]
       inactive_winbar = {
         winbar_a = {},
         winbar_b = {},
@@ -74,7 +75,6 @@ return{
         winbar_y = { { 'filetype', icon_only = true, }, },
         winbar_z = { myFileLine, },
       },
-      --]]
       inactive_sections = {},
       sections = {
         lualine_a = {'mode'},
