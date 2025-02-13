@@ -35,15 +35,11 @@ return{
       -- The configuration
       tabline = {},
       winbar = {
-        winbar_a = {},
-        -- winbar_b = { 'aerial', },
-        winbar_b = {},
-        winbar_c = {},
-        winbar_x = {},
-        --winbar_y = { { 'filetype', icon_only = true, }, },
-        winbar_y = {},
-        winbar_z = {
-          --[[
+        lualine_a = {},
+        lualine_b = { 'aerial', },
+        lualine_x = {},
+        lualine_y = { { 'filetype', icon_only = true, }, },
+        lualine_z = {
           {
             'filename',
             file_status = true,
@@ -57,10 +53,29 @@ return{
               newfile = ' ',
             },
           },
-          --]]
         },
       },
-      inactive_winbar = {},
+      inactive_winbar = {
+        lualine_a = {},
+        lualine_b = { 'aerial', },
+        lualine_x = {},
+        lualine_y = { { 'filetype', icon_only = true, }, },
+        lualine_z = {
+          {
+            'filename',
+            file_status = true,
+            newfile_status = true,
+            path = 1,
+            shorting_target = 40,
+            symbols = {
+              modified = ' ',
+              readonly = ' ',
+              unnamed = ' ',
+              newfile = ' ',
+            },
+          },
+        },
+      },
       sections = {
         lualine_a = {'mode'},
         lualine_b = {
