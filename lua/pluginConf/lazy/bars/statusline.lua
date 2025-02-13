@@ -11,13 +11,18 @@ return{
   event = { 'DeferredUIEnter', },
   on_require = { 'lualine', },
   after = function(plugin)
-    -- Trouble config
-    local symbols = require('trouble').statusline({
+
+    -- Trouble statusbar component
+    local troubleLine = require('trouble').statusline({
       mode = 'lsp_document_symbols',
+      groups = {},
       title = false,
-      hl_group = 'lualine_x_normal',
+      filter = { range = true, },
+      format = "{kind_icon}{symbol.name:Normal}",
+      hl_group = 'lualine_y_normal',
     })
 
+    -- Statusbar config
     require('lualine').setup({
       extensions = {
         'aerial',
@@ -76,12 +81,10 @@ return{
         lualine_y = {
           'selectioncount',
           'searchcount',
-          --[[
           {
-            symbols.get,
-            cond = symbols.has,
+            troubleLine.get,
+            cond = troubleLine.has,
           },
-          --]]
         },
         lualine_z = {
           'progress',
