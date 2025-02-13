@@ -22,21 +22,6 @@ return{
       hl_group = 'lualine_y_normal',
     })
 
-    -- My file line
-    local myFileLine = {
-      'filename',
-      file_status = true,
-      newfile_status = true,
-      path = 1,
-      shorting_target = 40,
-      symbols = {
-        modified = ' ',
-        readonly = ' ',
-        unnamed = ' ',
-        newfile = ' ',
-      },
-    }
-
     -- Statusbar config
     require('lualine').setup({
       extensions = {
@@ -72,8 +57,25 @@ return{
         winbar_b = {},
         winbar_c = {},
         winbar_x = {},
-        winbar_y = { { 'filetype', icon_only = true, }, },
-        winbar_z = { myFileLine, },
+        --winbar_y = { { 'filetype', icon_only = true, }, },
+        winbar_y = {},
+        winbar_z = {
+          --[[
+          {
+            'filename',
+            file_status = true,
+            newfile_status = true,
+            path = 1,
+            shorting_target = 40,
+            symbols = {
+              modified = ' ',
+              readonly = ' ',
+              unnamed = ' ',
+              newfile = ' ',
+            },
+          },
+          --]]
+        },
       },
       inactive_sections = {},
       sections = {
