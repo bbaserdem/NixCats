@@ -21,6 +21,9 @@ return {
     'AerialNavOpen',
     'AerialNavClose',
   },
+  dep_of = {
+    'lualine.nvim',
+  },
   require = { 'aerial', },
   ft = 'lua',
   after = function(plugin)

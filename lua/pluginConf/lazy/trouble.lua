@@ -7,6 +7,9 @@ return {
     cat = 'status',
     default = true,
   },
+  dep_of = {
+    'lualine.nvim',
+  },
   -- We want deferreduienter to modify the gutter icons
   event = { 'DeferredUIEnter' },
   after = function(plugin)
