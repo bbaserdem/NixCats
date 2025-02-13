@@ -39,15 +39,7 @@ return{
       sections = {
         lualine_a = {'mode'},
         lualine_b = {
-          'branch',
-          'diff',
-          {
-            'diagnostics',
-            sources = { 'nvim_diagnostic', 'nvim_lsp', },
-          },
           'filetype',
-        },
-        lualine_c = {
           {
             'filename',
             file_status = true,
@@ -62,19 +54,31 @@ return{
             },
           },
         },
+        lualine_c = {
+          {
+            'buffers',
+            max_length = vim.o.columns * 1 / 2,
+            filetype_names = {
+              TelescopePrompt = '󰍉 ',
+              dashboard = '󰨝 ',
+            },
+          },
+        },
         lualine_x = {
+          'branch',
+          'diff',
+        },
+        lualine_y = {
+          'selectioncount',
+          'searchcount',
           {
             symbols.get,
             cond = symbols.has,
           },
-          'filetype',
         },
-        lualine_y = {
+        lualine_z = {
           'progress',
-          'selectioncount',
-          'searchcount',
-        },
-        lualine_z = { 'location', }
+          'location', }
       },
     })
   end,
