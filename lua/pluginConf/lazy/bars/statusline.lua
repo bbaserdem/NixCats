@@ -21,6 +21,8 @@ return{
       format = "{kind_icon}{symbol.name:Normal}",
       hl_group = 'lualine_y_normal',
     })
+
+    -- My file line
     local myFileLine = {
       'filename',
       file_status = true,
@@ -55,6 +57,7 @@ return{
       },
       -- The configuration
       tabline = {},
+      --[[
       winbar = {
         winbar_a = {},
         winbar_b = { 'aerial', },
@@ -71,6 +74,7 @@ return{
         winbar_y = { { 'filetype', icon_only = true, }, },
         winbar_z = { myFileLine, },
       },
+      --]]
       inactive_sections = {},
       sections = {
         lualine_a = {'mode'},
