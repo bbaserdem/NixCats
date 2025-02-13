@@ -48,9 +48,9 @@ return{
         winbar_b = {},
         winbar_c = {},
         winbar_x = {},
-        winbar_y = { { 'filetype', icon_only = true, }, },
+        --winbar_y = { { 'filetype', icon_only = true, }, },
+        winbar_y = {},
         winbar_z = {
-          --[[
           {
             'filename',
             file_status = true,
