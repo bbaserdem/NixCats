@@ -7,7 +7,7 @@ return {
   flavour = "mocha",
 
   -- Whether to do transparent background or not
-  transparent_background = false,
+  transparent_background = true,
 
   -- Integrations
   integrations = {
@@ -71,6 +71,16 @@ return {
     all = function(colors)
       return {
         -- Fix tabline transparecy stuff
+        TabLine = {     -- tab pages line, active tab page label
+          bg = colors.surface0,
+          fg = colors.subtext0,
+        },
+		    TabLineSel = {  -- tab pages line, not active tab page label
+          bg = colors.surface2,
+          fg = colors.text,
+          style = { "bold" },
+        },              -- background colors
+		    TabLineFill = { bg = colors.crust, },
 
         -- Other integrations
         CmpItemMenu = { fg = colors.surface2 },
