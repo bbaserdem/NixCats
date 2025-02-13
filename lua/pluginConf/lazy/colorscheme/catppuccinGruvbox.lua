@@ -7,7 +7,7 @@ return {
   flavour = "mocha",
 
   -- Whether to do transparent background or not
-  transparent_background = true,
+  transparent_background = false,
 
   -- Integrations
   integrations = {
@@ -70,6 +70,9 @@ return {
   highlight_overrides = {
     all = function(colors)
       return {
+        -- Fix tabline transparecy stuff
+
+        -- Other integrations
         CmpItemMenu = { fg = colors.surface2 },
         CursorLineNr = { fg = colors.text },
         FloatBorder = { bg = colors.base, fg = colors.surface0 },
