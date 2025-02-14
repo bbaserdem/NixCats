@@ -29,7 +29,8 @@ return {
             sticky = true,
             title_icon = '󱎫 ',
             text_icon = '󰄉 ',
-            style = 'fancy',      -- These are for snacks.notifier
+            -- These are for snacks.notifier
+            -- style = 'fancy',
             history = false,
           },
         },

@@ -34,11 +34,49 @@ return { -- Catppuccin theme
       opt = require('pluginConf.theme.catppuccinGruvbox')
     end
 
+    -- DAP integration
+    vim.fn.sign_define('DapBreakpoint', {
+      text = '●',
+      texthl = 'DapBreakpoint',
+      linehl = '',
+      numhl = '',
+    })
+    vim.fn.sign_define('DapBreakpointCondition', {
+      text = '●',
+      texthl = 'DapBreakpointCondition',
+      linehl = '',
+      numhl = '',
+    })
+    vim.fn.sign_define('DapLogPoint', {
+      text = '◆',
+      texthl = 'DapLogPoint',
+      linehl = '',
+      numhl = '',
+    })
+
     -- Disable kitty detection, I rather have the transparent background
     opt.kitty = false
     -- Set integrations options
     opt.integrations = {
-
+      aerial = true,
+      blink_cmp = true,
+      fidget = true,
+      gitsigns = true,
+      markdown = true,
+      mason = true,
+      mini = true,
+      neotree = true,
+      cmp = true,
+      dap = true,
+      dap_ui = true,
+      treesitter_context = true,
+      snacks = true,
+      telescope = {
+        enabled = true,
+        -- style = 'nvchad',
+      },
+      lsp_trouble = true,
+      which_key = true,
     }
 
     -- Run configuration
