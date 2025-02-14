@@ -11,6 +11,7 @@ This flake is a configuration of the [**nixCats**](https://github.com/BirdeeHub/
 
 Just items to do later once config is stable
 
+- [ ] Migrate all to deal with lze, for plugin guarding
 - [ ] Work with snacks.layout to get templates
 - [ ] Modify the category handler to have multiple categories
 - [ ] Get rid of incline.nvim, and add winbar with aerial and filename to lualine

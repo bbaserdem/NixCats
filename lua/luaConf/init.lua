@@ -6,7 +6,7 @@ require('luaConf.nvimOptions')
 -- Plugin configurations
 require('pluginConf')
 
--- Apply colorscheme
+-- Apply colorscheme here, lazy loading hook is at colorscheme
 local cs
 if not require('nixCatsUtils').isNixCats then
   cs = 'catppuccin-gruvbox'
