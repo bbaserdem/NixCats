@@ -12,9 +12,9 @@ require('lze').register_handlers(require('nixCatsUtils.lzUtils').for_cat)
 -- We do requires for involved setups, do calls to lze there
 require('pluginConf.bars')
 require('pluginConf.completion')
-require('pluginConf.snacks')
+--require('pluginConf.snacks')
 require('pluginConf.theme')
-require('pluginConf.treesitter')
+--require('pluginConf.treesitter')
 
 -- Plugin configs
 require('lze').load {
@@ -30,6 +30,8 @@ require('lze').load {
   { import = 'pluginConf.neotree', },
   { import = 'pluginConf.oil', },
   { import = 'pluginConf.pomodoro', },
+  { import = 'pluginConf.snacks', },
+  { import = 'pluginConf.treesitter', },
   { import = 'pluginConf.trouble', },
   { import = 'pluginConf.util', },
   { import = 'pluginConf.vimtex', },
