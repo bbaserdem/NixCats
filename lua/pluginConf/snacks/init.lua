@@ -18,7 +18,7 @@ return {
       layout = { enabled = true, },
       lazygit = { enabled = true, },
       notifier = require('pluginConf.snacks.notifier'),
-      notify = { enabled = false, },
+      notify = { enabled = true, },
       rename = { enabled = true, },
       scroll = { enabled = true, },
       statuscolumn = { enabled = true, },
