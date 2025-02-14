@@ -136,6 +136,8 @@
     theme = [
       lspkind-nvim          # Add pictograms to built-in lsp
       nvim-web-devicons
+      lualine-nvim          # Statusline
+      tabby-nvim            # Tabline
       (builtins.getAttr (extra.colorscheme or "onedark") {
         # Theme switcher without creating a new category
         "onedark" = onedark-nvim;
@@ -151,8 +153,6 @@
     status = [
       # Leaving this here on how to include non-packaged plugin
       # { name = "incline.nvim"; plugin = pkgs.neovimPlugins.incline-nvim; }
-      lualine-nvim        # Statusline
-      tabby-nvim          # Tabline
       trouble-nvim        # Sidebar that shows diagnostics and such
       aerial-nvim         # Code outline window
       which-key-nvim      # Shows keybind groups

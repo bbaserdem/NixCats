@@ -1,7 +1,7 @@
 -- <nixCats>/lua/pluginConf/init.lua
 -- Lazy loaded plugins config
 
--- Explicitly load bigfile from snacks if requested
+-- Explicitly load bigfile from snacks if requested, it's the only non-lazy load
 if require('nixCatsUtils').getCatOrDefault('main', true) == true then
   require('snacks').bigfile.setup()
 end
@@ -9,14 +9,7 @@ end
 -- Register lze handler with the spec field 'for_cat' before any lazy loading
 require('lze').register_handlers(require('nixCatsUtils.lzUtils').for_cat)
 
--- We do requires for involved setups, do calls to lze there
-require('pluginConf.bars')
---require('pluginConf.completion')
---require('pluginConf.snacks')
-require('pluginConf.theme')
---require('pluginConf.treesitter')
-
--- Plugin configs
+-- Plugin configs, with one call to lze
 require('lze').load {
   { import = 'pluginConf.aerial', },
   { import = 'pluginConf.completion', },
@@ -32,6 +25,7 @@ require('lze').load {
   { import = 'pluginConf.oil', },
   { import = 'pluginConf.pomodoro', },
   { import = 'pluginConf.snacks', },
+  { import = 'pluginConf.theme', },
   { import = 'pluginConf.treesitter', },
   { import = 'pluginConf.trouble', },
   { import = 'pluginConf.util', },

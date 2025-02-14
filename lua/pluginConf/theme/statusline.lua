@@ -1,26 +1,34 @@
--- <nixCats>/lua/pluginConf/bars/statusline.lua
+-- <nixCats>/lua/pluginConf/theme/statusline.lua
 -- Status line + winbar config
 
 -- lualine nvim setup
 return{
   'lualine.nvim',
   for_cat = {
-    cat = 'status',
+    cat = 'theme',
     default = true,
   },
   event = { 'DeferredUIEnter', },
   on_require = { 'lualine', },
   after = function(plugin)
 
-    -- Trouble winbar component
-    local troubleLine = require('trouble').statusline({
-      mode = 'lsp_document_symbols',
-      groups = {},
-      title = false,
-      filter = { range = true, },
-      format = "{kind_icon}{symbol.name:Normal}",
-      hl_group = 'lualine_y_normal',
-    })
+    -- Trouble winbar component, with loading guard
+    local troubleLine = {}
+    local _ok, _trouble = pcall(require, 'trouble')
+    if _ok then
+      troubleLine = _trouble.statusline({
+        mode = 'lsp_document_symbols',
+        groups = {},
+        title = false,
+        filter = { range = true, },
+        format = "{kind_icon}{symbol.name:Normal}",
+        hl_group = 'lualine_y_normal',
+      })
+    else
+      troubleLine.get = ''
+      troubleLine.has = false
+    end
+
     -- Pomodoro timer for statusbar
     local pomoLine = function ()
       local ok, pomo = pcall(require, 'pomo')

@@ -1,4 +1,4 @@
--- <nixCats>/lua/pluginConf/bars/tabline.lua
+-- <nixCats>/lua/pluginConf/theme/tabline.lua
 -- Tabline config
 
 -- Theme for the tabby config
@@ -17,7 +17,7 @@ local theme = {
 return {
   'tabby.nvim',
   for_cat = {
-    cat = 'status',
+    cat = 'theme',
     default = true,
   },
   event = { 'DeferredUIEnter', },
