@@ -2,7 +2,7 @@
 -- Plugins config
 
 -- Loading tables, and letting handlers deal with categories
-require('lze').load {
+return {
   -- Category things
   -- cmp is loaded first, in case there are plugins enabled from blink compat
   { import = 'pluginConf.completion.luasnip',  },

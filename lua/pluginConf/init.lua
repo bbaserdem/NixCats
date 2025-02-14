@@ -11,7 +11,7 @@ require('lze').register_handlers(require('nixCatsUtils.lzUtils').for_cat)
 
 -- We do requires for involved setups, do calls to lze there
 require('pluginConf.bars')
-require('pluginConf.completion')
+--require('pluginConf.completion')
 --require('pluginConf.snacks')
 require('pluginConf.theme')
 --require('pluginConf.treesitter')
@@ -19,6 +19,7 @@ require('pluginConf.theme')
 -- Plugin configs
 require('lze').load {
   { import = 'pluginConf.aerial', },
+  { import = 'pluginConf.completion', },
   { import = 'pluginConf.conform', },
   { import = 'pluginConf.dap', },
   { import = 'pluginConf.fidget', },
