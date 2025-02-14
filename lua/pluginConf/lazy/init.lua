@@ -21,6 +21,7 @@ require('lze').load {
   { import = 'pluginConf.lazy.markdown', },
   { import = 'pluginConf.lazy.mini', },
   { import = 'pluginConf.lazy.neotree', },
+  { import = 'pluginConf.lazy.pomodoro', },
   { import = 'pluginConf.lazy.treesitter', },
   { import = 'pluginConf.lazy.trouble', },
   { import = 'pluginConf.lazy.util', },

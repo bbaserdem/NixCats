@@ -9,6 +9,5 @@
 -- Register themeing related plugins to lazyload
 require('lze').load {
   { import = 'pluginConf.lazy.bars.tabline', },
-  -- { import = 'pluginConf.lazy.bars.bufferline', },
   { import = 'pluginConf.lazy.bars.statusline', },
 }

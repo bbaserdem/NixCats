@@ -159,14 +159,15 @@
     ];
 
     functionality = [
-      mini-nvim         # Library
-      conform-nvim      # Code formatter
-      nvim-lint         # Linter without LSP
-      mkdir-nvim        # Automatically make directories when saving files
-      urlview-nvim      # Detects URLs (after telescope switch)
+      mini-nvim           # Library
+      conform-nvim        # Code formatter
+      nvim-lint           # Linter without LSP
+      mkdir-nvim          # Automatically make directories when saving files
+      urlview-nvim        # Detects URLs (after telescope switch)
       neo-tree-nvim       # File browser
       image-nvim          # Image display for neo-tree
       nvim-window-picker  # File browser dependency
+      pomo-nvim           # Pomodoro timer
     ];
 
     mini = [

@@ -1,5 +1,5 @@
 -- <nixCats>/lua/pluginConf/lazy/bars/statusline.lua
--- Status line config
+-- Status line + winbar config
 
 -- lualine nvim setup
 return{
@@ -12,7 +12,7 @@ return{
   on_require = { 'lualine', },
   after = function(plugin)
 
-    -- Trouble statusbar component
+    -- Trouble winbar component
     local troubleLine = require('trouble').statusline({
       mode = 'lsp_document_symbols',
       groups = {},
@@ -21,6 +21,18 @@ return{
       format = "{kind_icon}{symbol.name:Normal}",
       hl_group = 'lualine_y_normal',
     })
+    -- Pomodoro timer for statusbar
+    local pomoLine = function ()
+      local ok, pomo = pcall(require, 'pomo')
+      if not ok then
+        return ''
+      end
+      local timer = pomo.get_first_to_finish()
+      if timer == nil then
+        return ''
+      end
+      return '󰄉 ' .. tostring(timer)
+    end
 
     -- Statusbar config
     require('lualine').setup({
@@ -108,14 +120,15 @@ return{
           },
         },
         lualine_x = {
+          'selectioncount',
+          'searchcount',
         },
         lualine_y = {
           'progress',
         },
         lualine_z = {
-          'selectioncount',
-          'searchcount',
           'location',
+          pomoLine,
         }
       },
     })
