@@ -98,11 +98,6 @@
       snacks-nvim       # Large library with many small plugins
     ];
 
-    # Status UI
-    status = [
-      fidget-nvim           # Shows LSP progress in a text box
-    ];
-
     tools.vimspell = [(
       pkgs.runCommand "vimspell-lang" { } ''
         mkdir -p $out/spell
@@ -157,6 +152,7 @@
       trouble-nvim        # Sidebar that shows diagnostics and such
       aerial-nvim         # Code outline window
       which-key-nvim      # Shows keybind groups
+      fidget-nvim         # Shows LSP progress in a text box
     ];
 
     functionality = [

@@ -3,32 +3,37 @@
 
 -- Configuring picker
 return {
-  prompt = " ",
-  focus = "input",
+  prompt = ' ',
+  focus = 'input',
   layout = {
     cycle = true,
     --- Use the default layout or vertical if the window is too narrow
     preset = function()
-      return vim.o.columns >= 120 and "default" or "vertical"
+      return vim.o.columns >= 120 and 'default' or 'vertical'
     end,
   },
   matcher = {
-    fuzzy = true, -- use fuzzy matching
-    smartcase = true, -- use smartcase
-    ignorecase = true, -- use ignorecase
-    sort_empty = false, -- sort results when the search string is empty
-    filename_bonus = true, -- give bonus for matching file names (last part of the path)
-    file_pos = true, -- support patterns like `file:line:col` and `file:line`
+    fuzzy = true,           -- use fuzzy matching
+    smartcase = true,       -- use smartcase
+    ignorecase = true,      -- use ignorecase
+    sort_empty = false,     -- sort results when the search string is empty
+    filename_bonus = true,  -- give bonus for matching file names (last part of the path)
+    file_pos = true,        -- support patterns like `file:line:col` and `file:line`
     -- the bonusses below, possibly require string concatenation and path normalization,
     -- so this can have a performance impact for large lists and increase memory usage
     cwd_bonus = false, -- give bonus for matching files in the cwd
-    frecency = true, -- frecency bonus
+    frecency = false, -- frecency bonus
     history_bonus = false, -- give more weight to chronological order
   },
   sort = {
     -- default sort is by score, text length and index
-    fields = { "score:desc", "#text", "idx" },
+    fields = {
+      'score:desc',
+      '#text',
+      'idx',
+    },
   },
+  -- Replace vim.ui.select with snacks
   ui_select = true,
   -- Picker sources
   sources = {

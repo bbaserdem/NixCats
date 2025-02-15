@@ -13,7 +13,7 @@ Just items to do later once config is stable
 
 - [ ] Work with snacks.layout to get templates
 - [ ] Modify the category handler to have multiple categories
-- [ ] Switch back to telescope and do integration (trouble, obsidian, urlview, fidget)
+- [ ] Configure picker
 - [ ] Get conform stylers into requirements
 - [ ] Fix diagnostic icons
 - [ ] Set up linters; bash, dash, dotenv_linter, systemdlint, zsh
