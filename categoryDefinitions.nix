@@ -41,6 +41,7 @@
       universal-ctags   # Tag generation for multiple languages
       ripgrep           # Fast grep implementation
       fd                # Fast find implementation
+      findutils         # Find implementation
       wl-clipboard      # Wayland clipboard communication
       xclip             # Xorg clipboard communication
     ];
@@ -50,6 +51,7 @@
         tree-sitter
       ];
       git = [
+        git
         lazygit
       ];
     };

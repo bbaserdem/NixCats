@@ -22,6 +22,19 @@ return {
         fold_closed = ' ',
         ws =          '  ',
       },
+      picker = {
+        actions = require('trouble.sources.snacks').actions,
+        win = {
+          input = {
+            keys = {
+              ['<c-t>'] = {
+                'trouble_open',
+                mode = { 'n', 'i', },
+              },
+            },
+          },
+        },
+      },
     })
   end,
 }
