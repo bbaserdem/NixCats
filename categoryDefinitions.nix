@@ -89,6 +89,11 @@
       python = [
         ruff
       ];
+      shell = [
+        bash
+        dash
+        dotenv-linter
+      ];
       ts = [
         nodePackages.typescript-language-server
       ];

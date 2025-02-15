@@ -9,4 +9,8 @@ return {
   },
   event = { 'BufWritePost', },
   on_require = { 'lint', },
+  after = function(profile)
+    require('lint').linters_by_ft = {
+    }
+  end,
 }
