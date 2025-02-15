@@ -4,11 +4,11 @@
 -- Configuring various snack components
 return {
   'snacks.nvim',
-  event = { 'DeferredUIEnter', },
+  lazy = false,
   after = function(plugin)
     require('snacks').setup({
       -- Enabled plugins
-      --bigfile = { enabled = true, },
+      bigfile = { enabled = true, },
       bufdelete = { enabled = true, },
       dashboard = require('pluginConf.snacks.dashboard'),
       dim = { enabled = true, },
@@ -20,6 +20,8 @@ return {
       notifier = require('pluginConf.snacks.notifier'),
       notify = { enabled = true, },
       picker = require('pluginConf.snacks.picker'),
+      profiler = { enabled = true, },
+      quickfile = { enabled = true, },
       rename = { enabled = true, },
       scroll = { enabled = true, },
       statuscolumn = { enabled = true, },
@@ -33,8 +35,6 @@ return {
       --explorer = { enabled = false, },
       --git = { enabled = false, },
       --image = { enabled = false, },
-      --profiler = { enabled = false, },
-      --quickfile = { enabled = false, },
       --scope = { enabled = false, },
       --scratch = { enabled = false, },
     })

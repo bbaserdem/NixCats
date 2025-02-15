@@ -11,7 +11,6 @@ This flake is a configuration of the [**nixCats**](https://github.com/BirdeeHub/
 
 Just items to do later once config is stable
 
-- [ ] Fix diagnostic icons
 - [ ] Modify the category handler to have multiple categories
 - [ ] Set up linters; bash, dash, dotenv_linter, systemdlint, zsh
 - [ ] Find alternative to catppuccin for gruvbox
@@ -19,6 +18,7 @@ Just items to do later once config is stable
 - [ ] Snacks explorer not working; explorer not in nixpkgs yet.
 - [ ] Fix overlapping keybinds of mini.nvim
 - [ ] Keybinds for aerial, snacks stuff, gitsigns, trouble, conform, obsidian, vimtex, nabla, mini-map
+- [x] Fix diagnostic icons
 - [x] Set up auto styling with conform on buffer exit, try to work it in pyproject.toml
 - [x] Get conform stylers into requirements
 - [x] Configure picker

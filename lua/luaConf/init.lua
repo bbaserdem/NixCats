@@ -1,12 +1,16 @@
 -- Nvim configuration entry
 
--- Settings
+-- Do our global settings
 require('luaConf.nvimOptions')
+
+-- This lets paq-nvim manage plugins if not managed through nix
+-- Do this before any plugin loading
+require('luaConf.noNix')
 
 -- Plugin configurations
 require('pluginConf')
 
--- Apply colorscheme here, lazy loading hook is at colorscheme
+-- Apply colorscheme after plugins are registered with lze
 local cs
 if not require('nixCatsUtils').isNixCats then
   cs = 'catppuccin-gruvbox'
@@ -18,7 +22,7 @@ else
 end
 vim.cmd.colorscheme(cs)
 
--- Keybinds and autocmds
+-- Do keybinds and autocommands
 require('luaConf.nvimAutocmd')
 require('luaConf.nvimKeybinds')
 

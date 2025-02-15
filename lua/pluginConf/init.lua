@@ -1,11 +1,6 @@
 -- <nixCats>/lua/pluginConf/init.lua
 -- Lazy loaded plugins config
 
--- Explicitly load bigfile from snacks if requested, it's the only non-lazy load
-if require('nixCatsUtils').getCatOrDefault('main', true) == true then
-  require('snacks').bigfile.setup()
-end
-
 -- Register lze handler with the spec field 'for_cat' before any lazy loading
 require('lze').register_handlers(require('nixCatsUtils.lzUtils').for_cat)
 
