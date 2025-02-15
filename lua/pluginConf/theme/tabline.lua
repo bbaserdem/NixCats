@@ -3,8 +3,6 @@
 
 -- Theme for the tabby config
 local theme = {
-  nix = 'TabIconNix',
-  nvim = 'TabIconNvim',
   fill = 'TabLineFill',       -- tabline background
   head = 'TabLine',           -- head element highlight
   current_tab = 'TabLineSel', -- current tab label highlight
@@ -28,12 +26,14 @@ return {
         -- Icon menu
         {
           {
-            (require('nixCatsUtils').isNixCats and '󱄅  ' or ''),
-            hl = theme.nix,
-          },
-          {
-            ' ',
-            hl = theme.nvim
+            {     -- Nix icon for when we are in nixcats
+              (require('nixCatsUtils').isNixCats and '󱄅  ' or ''),
+              hl = { fg = '#5277C3', },
+            }, {  -- Neovim icon, with neovim color
+              ' ',
+              hl = { fg = '#5D983C', },
+            },
+            hl = theme.head,
           },
           line.sep('', theme.head, theme.fill),
         },

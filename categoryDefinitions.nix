@@ -70,16 +70,24 @@
         neovim-remote   # Client server for vimtex to run latexmk
         xdotool         # Needed for zathura
         pstree
+        bibtex-tidy     # Latex cleaner
+        tex-fmt
       ];
       lua = [
         lua-language-server
+        stylua
       ];
       markdown = [
+        mdformat
         glow            # Markdown typesetter for terminal
       ];
       nix = [
         nix-doc
         nixd
+        alejandra
+      ];
+      python = [
+        ruff
       ];
       ts = [
         nodePackages.typescript-language-server
@@ -275,6 +283,14 @@
     main = python-pkgs: [
       python-pkgs.pynvim
     ];
+    languages = {
+      markdown = python-pkgs: [
+        python-pkgs.mdformat
+      ];
+      python = python-pkgs: [
+        python-pkgs.ruff
+      ];
+    };
   };
 
   # populates $LUA_PATH and $LUA_CPATH

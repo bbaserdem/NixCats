@@ -11,18 +11,17 @@ This flake is a configuration of the [**nixCats**](https://github.com/BirdeeHub/
 
 Just items to do later once config is stable
 
-- [ ] Work with snacks.layout to get templates
-- [ ] Modify the category handler to have multiple categories
-- [ ] Configure picker
-- [ ] Get conform stylers into requirements
 - [ ] Fix diagnostic icons
+- [ ] Modify the category handler to have multiple categories
 - [ ] Set up linters; bash, dash, dotenv_linter, systemdlint, zsh
-- [ ] Set up auto styling on buffer exit, try to work it in pyproject.toml
 - [ ] Find alternative to catppuccin for gruvbox
 - [ ] Find startup time alternative for snacks.dashboard
 - [ ] Snacks explorer not working; explorer not in nixpkgs yet.
 - [ ] Fix overlapping keybinds of mini.nvim
 - [ ] Keybinds for aerial, snacks stuff, gitsigns, trouble, conform, obsidian, vimtex, nabla, mini-map
+- [x] Set up auto styling with conform on buffer exit, try to work it in pyproject.toml
+- [x] Get conform stylers into requirements
+- [x] Configure picker
 - [x] Migrate all to deal with lze, for plugin guarding
 - [x] Get rid of incline.nvim, and add winbar with aerial and filename to lualine
 - [x] Enable catppuccin only on certain colorschemes in lazy
