@@ -6,5 +6,5 @@ require('nixlessConf.plugList')
 
 -- Register plugins with lze
 require("lze").load {
-  import = { "pluginConf/mason", },
+  import = "pluginConf/mason",
 }
