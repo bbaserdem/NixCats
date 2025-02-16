@@ -28,7 +28,7 @@ return {
   ft = 'lua',
   after = function(plugin)
     require('aerial').setup({
-      backends = { 'treesitter', 'lsp', 'markdown', 'man', 'asciidoc', },
+      backends = { 'lsp', 'treesitter', 'markdown', 'man', 'asciidoc', },
       layout = {
         default_direction = 'prefer_left',
       },

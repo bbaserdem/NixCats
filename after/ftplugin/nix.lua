@@ -3,5 +3,4 @@
 -------------------------------------------------
 
 -- Enable nixd
---vim.lsp.enable('nixd')
-vim.lsp.enable('nil')
+vim.lsp.enable('nixd')
