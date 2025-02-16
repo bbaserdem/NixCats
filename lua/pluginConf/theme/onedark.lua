@@ -13,7 +13,7 @@ return {
   after = function(plugin)
     -- If nixCats, check to set the background hue
     local _style = 'darker'
-    local _trans = true
+    local _trans = false
 
     if require('nixCatsUtils').isNixCats then
       if (nixCats.extra('colorscheme.name') == 'onedark') then

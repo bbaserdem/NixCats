@@ -26,27 +26,31 @@ return { -- Catppuccin theme
     -- Apply any specific overrides
     local opt = {}
     local _style = 'mocha'
+    local _trans = false
 
     if require('nixCatsUtils').isNixCats then
-      -- Only do styling if cats scheme is catppuccin
       if nixCats.extra('colorscheme.name') == 'catppuccin' then
-        _style = nixCats.extra('colorscheme.style')
-        local _trans = nixCats.extra('colorscheme.translucent')
+
+        if nixCats.extra('colorscheme.translucent') ~= nil then
+          _trans = nixCats.extra('colorscheme.translucent')
+        end
 
         -- Do gruvbox override if asked
-        if (_style == 'gruvbox') or (_style == 'gruvbox-light') then
+        _style = nixCats.extra('colorscheme.style')
+        if string.sub(_style, 7) == 'gruvbox' then
           opt = require('pluginConf.theme.catppuccinGruvbox')
-        -- If not, set style as the default option 
-        else
-          opt.flavour = _style
+          if _style == 'gruvbox' then
+            _style = 'mocha'
+          else
+            _style = 'latte'
+          end
         end
 
-        -- Translucency
-        if _trans ~= nil then
-          opt.transparent_background = _trans
-        end
       end
     end
+
+    opt.flavour = _style
+    opt.transparent_background = _trans
 
     -- DAP integration
     vim.fn.sign_define('DapBreakpoint', {
@@ -86,10 +90,6 @@ return { -- Catppuccin theme
       dap_ui = true,
       treesitter_context = true,
       snacks = true,
-      telescope = {
-        enabled = true,
-        -- style = 'nvchad',
-      },
       lsp_trouble = true,
       which_key = true,
     }

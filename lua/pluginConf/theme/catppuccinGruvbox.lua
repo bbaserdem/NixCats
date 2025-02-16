@@ -8,38 +8,7 @@ if nixCats.extra('colorscheme.style') == 'gruvbox-light' then
 end
 
 return {
-  -- Default flavor to use
-  flavour = _style,
 
-  -- Whether to do transparent background or not
-  transparent_background = true,
-
-  -- Integrations
-  integrations = {
-    aerial = true,
-    cmp = true,
-    dap = true,
-    dap_ui = true,
-    fidget = true,
-    fzf = true,
-    gitsigns = true,
-    indent_blankline = {
-      enabled = true,
-      scope_color = "",
-      colored_indent_levels = true,
-    },
-    lsp_trouble = true,
-    markdown = true,
-    mason = true,
-    notify = true,
-    nvimtree = true,
-    treesitter = true,
-    treesitter_context = true,
-    telescope = {enabled = true; },
-    which_key = true,
-  },
-
-  -- From the showcase directory
   background = {
     light = "latte",
     dark = "mocha",

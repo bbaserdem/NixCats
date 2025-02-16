@@ -11,7 +11,7 @@ return {
     'gruvbox-material',
   },
   after = function(plugin)
-    local _trans = true
+    local _trans = false
 
     if require('nixCatsUtils').isNixCats then
       if nixCats.extra('colorscheme.name') == 'gruvbox-material' then

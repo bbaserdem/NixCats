@@ -12,7 +12,6 @@ return {
   },
   after = function(plugin)
     local _trans = true
-    -- If nixCats, check to set the background hue
 
     if require('nixCatsUtils').isNixCats then
       if nixCats.extra('colorscheme.name') == 'cyberdream' then
@@ -26,6 +25,7 @@ return {
         end
       end
     end
+
     -- Load us
     require('cyberdream').setup({
       variant = "auto",

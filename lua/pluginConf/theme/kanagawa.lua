@@ -14,7 +14,7 @@ return {
     'kanagawa',
   },
   after = function(plugin)
-    local _trans = true 
+    local _trans = false
     local _style = 'wave'
     -- If nixCats, check to set the background hue
 

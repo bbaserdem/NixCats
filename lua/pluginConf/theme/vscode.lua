@@ -11,7 +11,7 @@ return {
     'vscode',
   },
   after = function(plugin)
-    local _trans = true
+    local _trans = false
 
     if require('nixCatsUtils').isNixCats then
       if nixCats.extra('colorscheme.name') == 'vscode' then

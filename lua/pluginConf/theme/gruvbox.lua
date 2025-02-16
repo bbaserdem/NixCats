@@ -11,7 +11,8 @@ return {
     'gruvbox',
   },
   after = function(plugin)
-    local _trans = true
+    local _trans = false
+
     -- If nixCats, check to set defaults
     if require('nixCatsUtils').isNixCats then
       if nixCats.extra('colorscheme.name') == 'gruvbox' then

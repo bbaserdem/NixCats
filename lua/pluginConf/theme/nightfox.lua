@@ -17,7 +17,7 @@ return {
     'terafox',
   },
   after = function(plugin)
-    local _trans = true
+    local _trans = false
     -- If nixCats, check to set the background hue
 
     if require('nixCatsUtils').isNixCats then
