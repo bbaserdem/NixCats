@@ -7,6 +7,10 @@ return {
     cat = 'theme',
     default = true,
   },
+  dep_of = {
+    -- Make sure we are loaded before lualine; themeing issues
+    'lualine.nvim',
+  },
   colorscheme = {
     'gruvbox',
   },
