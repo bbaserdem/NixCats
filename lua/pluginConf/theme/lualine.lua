@@ -1,4 +1,4 @@
--- <nixCats>/lua/pluginConf/theme/statusline.lua
+-- <nixCats>/lua/pluginConf/theme/lualine.lua
 -- Status line + winbar config
 
 -- lualine nvim setup
@@ -9,6 +9,7 @@ return{
     default = true,
   },
   event = { 'DeferredUIEnter', },
+  dep_of = { 'tabby.nvim', },
   on_require = { 'lualine', },
   after = function(plugin)
 

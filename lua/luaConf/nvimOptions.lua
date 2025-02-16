@@ -91,3 +91,4 @@ vim.opt.backup = false          -- Keep a backup of files
 vim.opt.writebackup = true      -- First write to backup before writing file
 vim.opt.spell = true            -- Turn on spellchecking
 vim.opt.spelllang = {'en', 'tr'}
+vim.opt.sessionoptions = 'blank,buffers,folds,globals,help,localoptions,options,sesdir,tabpages,terminal,winsize'
