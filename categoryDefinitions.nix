@@ -1,9 +1,6 @@
 # The category definitions
 # Import inputs from the main flake, and return the function
-{
-  inputs,
-  ...
-}: {
+{inputs, ...}: {
   pkgs,
   settings,
   categories,
@@ -38,12 +35,12 @@
   # This is LSPs and system-wide tooling
   lspsAndRuntimeDeps = with pkgs; {
     main = [
-      universal-ctags   # Tag generation for multiple languages
-      ripgrep           # Fast grep implementation
-      fd                # Fast find implementation
-      findutils         # Find implementation
-      wl-clipboard      # Wayland clipboard communication
-      xclip             # Xorg clipboard communication
+      universal-ctags # Tag generation for multiple languages
+      ripgrep # Fast grep implementation
+      fd # Fast find implementation
+      findutils # Find implementation
+      wl-clipboard # Wayland clipboard communication
+      xclip # Xorg clipboard communication
     ];
 
     tools = {
@@ -58,7 +55,7 @@
 
     functionality = [
       dwt1-shell-color-scripts
-      imagemagick       # For image displaying with tree
+      imagemagick # For image displaying with tree
     ];
 
     languages = {
@@ -66,12 +63,14 @@
         clang-tools
       ];
       latex = [
-        pplatex         # Latex log parsing tool
-        neovim-remote   # Client server for vimtex to run latexmk
-        xdotool         # Needed for zathura
+        pplatex # Latex log parsing tool
+        neovim-remote # Client server for vimtex to run latexmk
+        xdotool # Needed for zathura
         pstree
-        bibtex-tidy     # Latex cleaner
+        bibtex-tidy # Latex cleaner
         tex-fmt
+        ltex-ls-plus
+        languagetool
       ];
       lua = [
         lua-language-server
@@ -79,7 +78,9 @@
       ];
       markdown = [
         mdformat
-        glow            # Markdown typesetter for terminal
+        glow # Markdown typesetter for terminal
+        ltex-ls-plus
+        languagetool
       ];
       nix = [
         nix-doc
@@ -102,53 +103,57 @@
 
   # Plugins that don't need lazy loading
   startupPlugins = with pkgs.vimPlugins; {
-
     # Main plugins to have
     main = [
-      lze               # Lazy loader for plugins (NEEDED)
+      lze # Lazy loader for plugins (NEEDED)
     ];
 
     functionality = [
-      oil-nvim          # File browser
-      snacks-nvim       # Large library with many small plugins
+      oil-nvim # File browser
+      snacks-nvim # Large library with many small plugins
     ];
 
-    tools.vimspell = [(
-      pkgs.runCommand "vimspell-lang" { } ''
-        mkdir -p $out/spell
-        cp ${inputs.vimspell-tr} $out/spell/tr.utf-8.spl
-        cp ${inputs.vimspell-en} $out/spell/en.utf-8.spl
-      ''
-    )];
+    theme = [
+      nvim-web-devicons
+    ];
+
+    tools.vimspell = [
+      (
+        pkgs.runCommand "vimspell-lang" {} ''
+          mkdir -p $out/spell
+          cp ${inputs.vimspell-tr} $out/spell/tr.utf-8.spl
+          cp ${inputs.vimspell-en} $out/spell/en.utf-8.spl
+        ''
+      )
+    ];
 
     languages.latex = [
-      vimtex                  # LaTeX suite, can't be lazy loaded
+      vimtex # LaTeX suite, can't be lazy loaded
     ];
   };
 
   # Lazy loading plugins
   optionalPlugins = with pkgs.vimPlugins; {
-
     # Main plugins to have
     main = [
-      plenary-nvim        # Library for other plugins
+      plenary-nvim # Library for other plugins
       nui-nvim
+      nvim-lspconfig
     ];
 
     # Debug tools
     debug = [
-      nvim-nio                # Library for asyncronous IO for nvim
-      nvim-dap                # Debug adapter protocol for nvim
-      nvim-dap-ui             # DAP ui
-      nvim-dap-virtual-text   # DAP virtual text support
+      nvim-nio # Library for asyncronous IO for nvim
+      nvim-dap # Debug adapter protocol for nvim
+      nvim-dap-ui # DAP ui
+      nvim-dap-virtual-text # DAP virtual text support
     ];
 
     # Theme related things
     theme = [
-      lspkind-nvim          # Add pictograms to built-in lsp
-      nvim-web-devicons
-      lualine-nvim          # Statusline
-      tabby-nvim            # Tabline
+      lspkind-nvim # Add pictograms to built-in lsp
+      lualine-nvim # Statusline
+      tabby-nvim # Tabline
       # Themes that may be used
       catppuccin-nvim
       cyberdream-nvim
@@ -159,7 +164,10 @@
       melange-nvim
       nightfox-nvim
       onedark-nvim
-      { name = "rose-pine.nvim"; plugin = rose-pine; }
+      {
+        name = "rose-pine.nvim";
+        plugin = rose-pine;
+      }
       tokyonight-nvim
       vscode-nvim
     ];
@@ -167,22 +175,22 @@
     status = [
       # Leaving this here on how to include non-packaged plugin
       # { name = "incline.nvim"; plugin = pkgs.neovimPlugins.incline-nvim; }
-      trouble-nvim        # Sidebar that shows diagnostics and such
-      aerial-nvim         # Code outline window
-      which-key-nvim      # Shows keybind groups
-      fidget-nvim         # Shows LSP progress in a text box
+      aerial-nvim # Code outline window
+      fidget-nvim # Shows LSP progress in a text box
+      trouble-nvim # Sidebar that shows diagnostics and such
+      which-key-nvim # Shows keybind groups
     ];
 
     functionality = [
-      mini-nvim           # Library
-      conform-nvim        # Code formatter
-      nvim-lint           # Linter without LSP
-      mkdir-nvim          # Automatically make directories when saving files
-      urlview-nvim        # Detects URLs (after telescope switch)
-      neo-tree-nvim       # File browser
-      image-nvim          # Image display for neo-tree
-      nvim-window-picker  # File browser dependency
-      pomo-nvim           # Pomodoro timer
+      conform-nvim # Code formatter
+      mini-nvim # Library
+      mkdir-nvim # Automatically make directories when saving files
+      neo-tree-nvim # File browser
+      image-nvim # Image display for neo-tree
+      nvim-window-picker # File browser dependency
+      nvim-lint # Linter without LSP
+      pomo-nvim # Pomodoro timer
+      urlview-nvim # Detects URLs (after telescope switch)
     ];
 
     mini = [
@@ -205,28 +213,28 @@
     # Autocompletion engines
     completion = {
       blink = [
-        blink-cmp                     # Completion plugin
+        blink-cmp # Completion plugin
         # Engines
-        blink-ripgrep-nvim            # Ripgrep completion from entire project
-        blink-emoji-nvim              # Emoji inserter
-        blink-cmp-spell               # Suggestions from spellsuggest
-        blink-compat                  # Enables compatibility with cmp
-        cmp-vimtex                    # Vimtex source for cmp
+        blink-compat # Enables compatibility with cmp
+        blink-cmp-spell # Suggestions from spellsuggest
+        blink-emoji-nvim # Emoji inserter
+        blink-ripgrep-nvim # Ripgrep completion from entire project
+        cmp-vimtex # Vimtex source for cmp
       ];
       cmp = [
         nvim-cmp
         # Completion engines
-        cmp_luasnip                   # Snippet suggestions
-        cmp-nvim-lsp                  # LSP suggestions
-        cmp-nvim-lsp-signature-help   # LSP signature help
-        cmp-spell                     # Autocomplete from spelllang
-        cmp-async-path                # Autocomplete from filesystem (no-block)
-        cmp-vimtex                    # Vimtex source for cmp
-        cmp-cmdline                   # Commandline completion
-        cmp-cmdline-history           # Commandline history completion
-        cmp-buffer                    # Buffer completion
-        cmp-rg                        # Ripgrep
-        cmp-dap                       # DAP buffer completion
+        cmp_luasnip # Snippet suggestions
+        cmp-nvim-lsp # LSP suggestions
+        cmp-nvim-lsp-signature-help # LSP signature help
+        cmp-spell # Autocomplete from spelllang
+        cmp-async-path # Autocomplete from filesystem (no-block)
+        cmp-vimtex # Vimtex source for cmp
+        cmp-cmdline # Commandline completion
+        cmp-cmdline-history # Commandline history completion
+        cmp-buffer # Buffer completion
+        cmp-rg # Ripgrep
+        cmp-dap # DAP buffer completion
       ];
       snippets = {
         luasnip = [
@@ -252,17 +260,16 @@
       ];
     };
 
-
     # Plugins to lazy load on given languages
     languages = {
       lua = [
-        lazydev-nvim            # Configure editing nvim configuration files
+        lazydev-nvim # Configure editing nvim configuration files
       ];
       markdown = [
-        nabla-nvim              # Render latex equations
-        mkdnflow-nvim           # Navigate wiki links
-        glow-nvim               # Render markdown in nvim terminal
-        obsidian-nvim           # Interact with obsidian vault
+        nabla-nvim # Render latex equations
+        mkdnflow-nvim # Navigate wiki links
+        glow-nvim # Render markdown in nvim terminal
+        obsidian-nvim # Interact with obsidian vault
       ];
     };
   };
@@ -321,18 +328,18 @@
   extraCats = {
     # Various defaults
     main = [
-      [ "tools" "vimspell" ]
-      [ "theme" ]
+      ["tools" "vimspell"]
+      ["theme"]
     ];
     functionality = [
       # [ "mini" ]
     ];
     completion = {
       blink = [
-        [ "completion" "snippets" "luasnip" ]
+        ["completion" "snippets" "luasnip"]
       ];
       cmp = [
-        [ "completion" "snippets" "luasnip" ]
+        ["completion" "snippets" "luasnip"]
       ];
     };
   };

@@ -1,6 +1,6 @@
--- <nixCats>/lua/luaConf/nvimKeybinds.lua
+-- <nixCats>/lua/keymapConf/init.lua
 
--- Some keybinds
+-- Some keybinds that are not plugins
 
 -- Buffer navigation
 vim.keymap.set("n", "<leader><leader>[", "<cmd>bprev<CR>",
