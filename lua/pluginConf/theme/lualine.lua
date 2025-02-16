@@ -59,6 +59,12 @@ return {
 				section_separators = { left = "", right = "" },
 				always_divide_middle = true,
 				globalstatus = true,
+        disabled_filetypes = {
+          statusline = {},
+          winbar = {
+            'aerial-nav',
+          },
+        },
 			},
 			-- The configuration
 			tabline = {},
