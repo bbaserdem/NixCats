@@ -19,8 +19,8 @@ after = function(plugin)
       else
         vim.o.background = 'dark'
       end
-      if nixCats.extra('colorscheme.translucency') ~= nil then
-        _trans = nixCats.extra('colorscheme.translucency')
+      if nixCats.extra('colorscheme.translucent') ~= nil then
+        _trans = nixCats.extra('colorscheme.translucent')
       end
     end
     -- Load us

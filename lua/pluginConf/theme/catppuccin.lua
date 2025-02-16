@@ -31,7 +31,7 @@ return { -- Catppuccin theme
       -- Only do styling if cats scheme is catppuccin
       if nixCats.extra('colorscheme.name') == 'catppuccin' then
         _style = nixCats.extra('colorscheme.style')
-        local _trans = nixCats.extra('colorscheme.translucency')
+        local _trans = nixCats.extra('colorscheme.translucent')
 
         -- Do gruvbox override if asked
         if (_style == 'gruvbox') or (_style == 'gruvbox-light') then

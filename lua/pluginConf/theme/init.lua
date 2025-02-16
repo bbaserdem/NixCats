@@ -17,6 +17,7 @@ return {
       default = true,
     },
     dep_of = {
+      'nvim-cmp',
       'catppuccin-nvim',
     },
   }, {
