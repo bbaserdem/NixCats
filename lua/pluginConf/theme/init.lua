@@ -6,6 +6,8 @@
 -- Register themeing related plugins to lazyload
 return {
   { import = 'pluginConf/theme/catppuccin', },
+  { import = 'pluginConf/theme/gruvbox', },
+  { import = 'pluginConf/theme/onedark', },
   { import = 'pluginConf/theme/statusline', },
   { import = 'pluginConf/theme/tabline', },
   { -- LSP kind icons

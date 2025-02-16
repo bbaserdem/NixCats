@@ -2,9 +2,14 @@
 -- Gruvbox override to catppuccin theme
 -- Just return the argument to catppuccin setup function here
 
+local _style = 'mocha'
+if nixCats.extra('colorscheme.style') == 'gruvbox-light' then
+  _style = 'latte'
+end
+
 return {
   -- Default flavor to use
-  flavour = "mocha",
+  flavour = _style,
 
   -- Whether to do transparent background or not
   transparent_background = true,
@@ -71,14 +76,6 @@ return {
     all = function(colors)
       return {
         -- Fix tabline transparecy stuff
-        TabIconNvim = {
-          bg = colors.base,
-          fg = colors.green,
-        },
-        TabIconNix = {
-          bg = colors.base,
-          fg = colors.blue,
-        },
         TabLine = {     -- tab pages line, active tab page label
           bg = colors.surface0,
           fg = colors.subtext0,

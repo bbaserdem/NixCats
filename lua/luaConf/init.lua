@@ -11,16 +11,7 @@ require('luaConf.noNix')
 require('pluginConf')
 
 -- Apply colorscheme after plugins are registered with lze
-local cs
-if not require('nixCatsUtils').isNixCats then
-  cs = 'catppuccin-gruvbox'
-else
-  cs = nixCats.extra('colorscheme')
-  if (cs == '') or (cs == nil) or (not cs) then
-    cs = 'default'
-  end
-end
-vim.cmd.colorscheme(cs)
+require('luaConf.nvimColorscheme')
 
 -- Do keybinds and autocommands
 require('luaConf.nvimAutocmd')

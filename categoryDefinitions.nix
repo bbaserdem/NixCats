@@ -149,16 +149,10 @@
       nvim-web-devicons
       lualine-nvim          # Statusline
       tabby-nvim            # Tabline
-      (builtins.getAttr (extra.colorscheme or "onedark") {
-        # Theme switcher without creating a new category
-        "onedark" = onedark-nvim;
-        "catppuccin" = catppuccin-nvim;
-        "catppuccin-mocha" = catppuccin-nvim;
-        "catppuccin-macchiato" = catppuccin-nvim;
-        "catppuccin-frappe" = catppuccin-nvim;
-        "catppuccin-latte" = catppuccin-nvim;
-        "catppuccin-gruvbox" = catppuccin-nvim;
-      })
+      # Themes that may be used
+      onedark-nvim
+      gruvbox-nvim
+      catppuccin-nvim
     ];
 
     status = [

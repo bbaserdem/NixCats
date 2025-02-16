@@ -25,13 +25,27 @@ return { -- Catppuccin theme
   after = function(plugin)
     -- Apply any specific overrides
     local opt = {}
-    local cs = nixCats.extra('colorscheme')
-    if (
-      (not require('nixCatsUtils').isNixCats) or
-      (cs == 'catppuccin-gruvbox') or
-      (cs == 'catppuccin-gruvbox-light')
-    ) then
-      opt = require('pluginConf.theme.catppuccinGruvbox')
+    local _style = 'mocha'
+
+    if require('nixCatsUtils').isNixCats then
+      -- Only do styling if cats scheme is catppuccin
+      if nixCats.extra('colorscheme.name') == 'catppuccin' then
+        _style = nixCats.extra('colorscheme.style')
+        local _trans = nixCats.extra('colorscheme.translucency')
+
+        -- Do gruvbox override if asked
+        if (_style == 'gruvbox') or (_style == 'gruvbox-light') then
+          opt = require('pluginConf.theme.catppuccinGruvbox')
+        -- If not, set style as the default option 
+        else
+          opt.flavour = _style
+        end
+
+        -- Translucency
+        if _trans ~= nil then
+          opt.transparent_background = _trans
+        end
+      end
     end
 
     -- DAP integration
@@ -56,6 +70,7 @@ return { -- Catppuccin theme
 
     -- Disable kitty detection, I rather have the transparent background
     opt.kitty = false
+
     -- Set integrations options
     opt.integrations = {
       aerial = true,
