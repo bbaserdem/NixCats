@@ -84,6 +84,7 @@
       nix = [
         nix-doc
         nixd
+        nil
         alejandra
       ];
       python = [
