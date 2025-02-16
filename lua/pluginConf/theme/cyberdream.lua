@@ -1,20 +1,21 @@
--- <nixCats>/lua/pluginConf/theme/gruvbox.lua
--- Gruvbox for nvim 
+-- <nixCats>/lua/pluginConf/theme/cyberdream.lua
+-- Cyberdream for nvim 
 
 return {
-  'gruvbox.nvim',
+  'cyberdream.nvim',
   for_cat = {
     cat = 'theme',
     default = true,
   },
   colorscheme = {
-    'gruvbox',
+    'cyberdream',
   },
   after = function(plugin)
     local _trans = true
-    -- If nixCats, check to set defaults
+    -- If nixCats, check to set the background hue
+
     if require('nixCatsUtils').isNixCats then
-      if nixCats.extra('colorscheme.name') == 'gruvbox' then
+      if nixCats.extra('colorscheme.name') == 'cyberdream' then
         if nixCats.extra('colorscheme.style') == 'light' then
           vim.o.background = 'light'
         else
@@ -26,8 +27,9 @@ return {
       end
     end
     -- Load us
-    require('gruvbox').setup({
-      transparent_mode = _trans,
+    require('cyberdream').setup({
+      variant = "auto",
+      transparent = _trans,
     })
   end,
 }

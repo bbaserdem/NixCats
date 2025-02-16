@@ -1,5 +1,5 @@
 -- <nixCats>/lua/pluginConf/theme/onedark.lua
--- Gruvbox for nvim 
+-- onedark for nvim 
 
 return {
   'onedark.nvim',
@@ -18,9 +18,9 @@ return {
     if require('nixCatsUtils').isNixCats then
       if (nixCats.extra('colorscheme.name') == 'onedark') then
         _style = nixCats.extra('colorscheme.style')
-      end
-      if (nixCats.extra('colorscheme.translucent') ~= nil) then
-        _trans = nixCats.extra('colorscheme.translucent')
+        if (nixCats.extra('colorscheme.translucent') ~= nil) then
+          _trans = nixCats.extra('colorscheme.translucent')
+        end
       end
     end
 

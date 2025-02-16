@@ -11,6 +11,10 @@ return {
   on_require = { 'lint', },
   after = function(profile)
     require('lint').linters_by_ft = {
+      bash = { 'bash', },
+      dash = { 'dash', },
+      dotenv = { 'dotenv_linter', },
+      zsh = { 'zsh', },
     }
   end,
 }

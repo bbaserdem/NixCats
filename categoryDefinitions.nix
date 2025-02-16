@@ -150,9 +150,18 @@
       lualine-nvim          # Statusline
       tabby-nvim            # Tabline
       # Themes that may be used
-      onedark-nvim
-      gruvbox-nvim
       catppuccin-nvim
+      cyberdream-nvim
+      gruvbox-nvim
+      gruvbox-material-nvim
+      kanagawa-nvim
+      material-nvim
+      melange-nvim
+      nightfox-nvim
+      onedark-nvim
+      { name = "rose-pine.nvim"; plugin = rose-pine; }
+      tokyonight-nvim
+      vscode-nvim
     ];
 
     status = [

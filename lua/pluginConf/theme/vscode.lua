@@ -1,20 +1,20 @@
--- <nixCats>/lua/pluginConf/theme/gruvbox.lua
--- Gruvbox for nvim 
+-- <nixCats>/lua/pluginConf/theme/vscode.lua
+-- VSCode theme for nvim 
 
 return {
-  'gruvbox.nvim',
+  'vscode.nvim',
   for_cat = {
     cat = 'theme',
     default = true,
   },
   colorscheme = {
-    'gruvbox',
+    'vscode',
   },
   after = function(plugin)
     local _trans = true
-    -- If nixCats, check to set defaults
+
     if require('nixCatsUtils').isNixCats then
-      if nixCats.extra('colorscheme.name') == 'gruvbox' then
+      if nixCats.extra('colorscheme.name') == 'vscode' then
         if nixCats.extra('colorscheme.style') == 'light' then
           vim.o.background = 'light'
         else
@@ -25,9 +25,10 @@ return {
         end
       end
     end
+
     -- Load us
-    require('gruvbox').setup({
-      transparent_mode = _trans,
+    require('vscode').setup({
+      transparent = _trans,
     })
   end,
 }
