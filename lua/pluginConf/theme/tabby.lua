@@ -28,11 +28,11 @@ return {
 					{
 						{ -- Nix icon for when we are in nixcats
 							(require("nixCatsUtils").isNixCats and "󱄅  " or ""),
-							hl = { fg = "#5277C3" },
+							hl = { fg = "#5277C3", bg = theme.head.bg },
 						},
 						{ -- Neovim icon, with neovim color
 							" ",
-							hl = { fg = "#5D983C" },
+							hl = { fg = "#5D983C", bg = theme.head.bg },
 						},
 						hl = theme.head,
 					},
@@ -71,17 +71,17 @@ return {
 				-- List of open windows
 				line.wins_in_tab(line.api.get_current_tab()).foreach(function(win)
 					return {
-						line.sep("", theme.win, theme.fill),
+						line.sep("", theme.win, theme.fill),
 						win.is_current() and " " or " ",
 						win.buf_name(),
-						line.sep("", theme.win, theme.fill),
+						line.sep("", theme.win, theme.fill),
 						hl = theme.win,
 						margin = " ",
 					}
 				end),
 				{
-					line.sep("", theme.tail, theme.fill),
-					{ "  ", hl = theme.tail },
+					line.sep("", theme.tail, theme.fill),
+					{ " ", hl = theme.tail },
 				},
 				hl = theme.fill,
 			}
