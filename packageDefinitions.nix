@@ -57,7 +57,7 @@
       colorscheme = {
         name = "gruvbox";
         style = "dark";
-        translucent = false;
+        translucent = true;
       };
       # Override this in a home-manager config
       nix = {
