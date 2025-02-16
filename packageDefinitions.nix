@@ -25,18 +25,21 @@
   # └─ languages
   #    └─ <specific language settings>
 
-  nixCats-full = {pkgs, ...} @ misc: {
+  neovim-nixCats-full = {pkgs, ...} @ misc: {
     # Full neovim instance
 
     # they contain a settings set defined above
     # see :help nixCats.flake.outputs.settings
     settings = {
       wrapRc = true;
-      aliases = [ # !!!: Your alias can't conflict with your other packages.
-        "nc-full"
-        "nvim-nc-full"
+      aliases = [
+        "nvim-nixCats-full"
+        "neovimCats-full"
+        "nvimCats-full"
+        "nx-full"
       ];
-      configDirName = "nvim-nixCats";
+      # Still load configuration from base neovim, to allow for system integration
+      configDirName = "neovim-nixCats-full";
       neovim-unwrapped = inputs.neovim-nightly-overlay.packages.${pkgs.system}.neovim;
     };
 
@@ -75,12 +78,17 @@
     };
   };
 
-  # An empty installation of neovim
-  nixCats-none = {pkgs, ...} @ misc: {
+  # An empty installation of neovim, to use with the system
+  neovim-nixCats-none = {pkgs, ...} @ misc: {
     settings = {
       wrapRc = true;
-      configDirName = "nixCats-nvim";
-      aliases = ["baseCat"];
+      configDirName = "neovim-nixCats-none";
+      aliases = [
+        "nvim-nixCats-none"
+        "neovimCats-none"
+        "nvimCats-none"
+        "nx-none"
+      ];
     };
     categories = {
     };

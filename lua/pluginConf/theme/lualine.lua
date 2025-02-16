@@ -23,7 +23,7 @@ return{
         title = false,
         filter = { range = true, },
         format = "{kind_icon}{symbol.name:Normal}",
-        hl_group = 'lualine_y_normal',
+        hl_group = 'lualine_b_normal',
       })
     else
       troubleLine.get = ''

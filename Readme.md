@@ -11,9 +11,8 @@ This flake is a configuration of the [**nixCats**](https://github.com/BirdeeHub/
 
 Just items to do later once config is stable
 
-- [ ] Figure out stable color theme for lualine, tabby.
-- [ ] Fix overlapping keybinds of mini.nvim
-- [ ] Keybinds for aerial, snacks stuff, gitsigns, trouble, conform, obsidian, vimtex, nabla, mini-map
+- [ ] Fix lualine symbol module colors
+- [ ] Keybinds for aerial, snacks stuff, gitsigns, trouble, conform, obsidian, vimtex, nabla, mini-map, mini
 - [~] Snacks explorer not working; explorer not in nixpkgs yet.
 
 # Workflow
