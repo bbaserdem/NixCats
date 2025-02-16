@@ -48,7 +48,10 @@ return {
     load = load_w_after_plugin,
   }, {
     'cmp-vimtex',
-    for_cat = { cat = 'completion', default = true, },
+    for_cat = {
+      cat = { 'completion.cmp', 'completion.blink', },
+      default = true,
+    },
     on_plugin = { 'nvim-cmp', 'blink.cmp', },
     load = load_w_after_plugin,
   }, {

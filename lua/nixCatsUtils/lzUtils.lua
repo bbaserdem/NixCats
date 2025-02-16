@@ -116,28 +116,40 @@ end
 -- require('lze').register_handlers(require('nixCatsUtils.lzUtils').for_cat)
 -- before any calls to require('lze').load using the handler have been made.
 -- accepts:
--- for_cat = { "your" "cat" }; for_cat = { cat = { "your" "cat" }, default = bool }
+-- for_cat = { "your" "cat" };
 -- for_cat = "your.cat"; for_cat = { cat = "your.cat", default = bool }
 -- where default is an alternate value for when nixCats was NOT used to install the config
 M.for_cat = {
-    spec_field = "for_cat",
-    set_lazy = false,
-    modify = function(plugin)
-        if type(plugin.for_cat) == "table" then
-            if plugin.for_cat.cat ~= nil then
-                if vim.g[ [[nixCats-special-rtp-entry-nixCats]] ] ~= nil then
-                    plugin.enabled = (nixCats(plugin.for_cat.cat) and true) or false
-                else
-                    plugin.enabled = nixCats(plugin.for_cat.default)
-                end
-            else
-                plugin.enabled = (nixCats(plugin.for_cat) and true) or false
+  spec_field = "for_cat",
+  set_lazy = false,
+  modify = function(plugin)
+    if type(plugin.for_cat) == "table" then
+      if plugin.for_cat.cat ~= nil then
+        if vim.g[ [[nixCats-special-rtp-entry-nixCats]] ] ~= nil then
+          -- Check if we are a table, and run for every element in the table
+          -- until one hits.
+          if type(plugin.for_cat.cat) == "table" then
+            for _, cat_name in ipairs(plugin.for_cat.cat) do
+              plugin.enabled = (nixCats(cat_name) and true) or false
+              if plugin.enabled then
+                break
+              end
             end
+          -- Compare once if we are not a table
+          else
+            plugin.enabled = (nixCats(plugin.for_cat.cat) and true) or false
+          end
         else
-            plugin.enabled = (nixCats(plugin.for_cat) and true) or false
+          plugin.enabled = nixCats(plugin.for_cat.default)
         end
-        return plugin
-    end,
+      else
+        plugin.enabled = (nixCats(plugin.for_cat) and true) or false
+      end
+    else
+      plugin.enabled = (nixCats(plugin.for_cat) and true) or false
+    end
+    return plugin
+  end,
 }
 
 return M
