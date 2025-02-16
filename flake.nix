@@ -65,7 +65,7 @@
     };
 
     # The default package to use from packageDefinitions
-    defaultPackageName = "nixCats-full";
+    defaultPackageName = "neovim-nixCats-full";
 
   in forEachSystem (system: let
 
