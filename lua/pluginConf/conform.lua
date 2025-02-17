@@ -49,7 +49,7 @@ return {
 				}
 			end,
 			-- Trying to fix things
-			log_level = vim.log.levels.DEBUG,
+			-- log_level = vim.log.levels.DEBUG,
 		})
 	end,
 }
