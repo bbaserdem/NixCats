@@ -3,4 +3,6 @@
 -------------------------------------------------
 
 -- Enable lua lsp
-vim.lsp.enable('lua_ls')
+if require("nixCatsUtils").getExtraOrDefault("weAreOld", false) ~= true then
+  vim.lsp.enable("lua_ls")
+end

@@ -3,4 +3,6 @@
 -------------------------------------------------
 
 -- Enable nixd
-vim.lsp.enable('nixd')
+if require("nixCatsUtils").getExtraOrDefault("weAreOld", false) ~= true then
+  vim.lsp.enable("nixd")
+end

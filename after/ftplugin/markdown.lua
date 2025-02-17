@@ -2,4 +2,6 @@
 -- Latex files behavior
 -------------------------------------------------
 
-vim.lsp.enable("ltex_ls_plus")
+if require("nixCatsUtils").getExtraOrDefault("weAreOld", false) ~= true then
+  vim.lsp.enable("ltex_ls_plus")
+end
