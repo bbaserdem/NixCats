@@ -74,7 +74,6 @@
         stylua
       ];
       markdown = [
-        mdformat
         glow # Markdown typesetter for terminal
         ltex-ls-plus
         languagetool

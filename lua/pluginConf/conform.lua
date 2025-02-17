@@ -19,7 +19,6 @@ return {
 				nix = { "alejandra" },
 				bib = { "bibtex-tidy" },
 				c = { "clang-format" },
-				markdown = { "mdformat" },
 				tex = { "tex-fmt" },
 			},
 			-- Default options
@@ -49,6 +48,8 @@ return {
 					lsp_format = "fallback",
 				}
 			end,
+			-- Trying to fix things
+			log_level = vim.log.levels.DEBUG,
 		})
 	end,
 }

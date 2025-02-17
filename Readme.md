@@ -11,19 +11,20 @@ This flake is a configuration of the [**nixCats**](https://github.com/BirdeeHub/
 
 Just items to do later once config is stable
 
-- [ ] Fix lualine symbol module colors
-- [ ] Keybinds for aerial, snacks stuff, gitsigns, trouble, conform, obsidian, vimtex, nabla, mini-map, mini
-- [~] Snacks explorer not working; explorer not in nixpkgs yet.
+- \[ \] Conform is fucking things up
+- \[ \] Disable cmp completion on whitespace
+- \[ \] Keybinds for aerial, snacks stuff, gitsigns, trouble, conform, obsidian, vimtex, nabla, mini-map, mini
+- \[~\] Snacks explorer not working; explorer not in nixpkgs yet.
 
 # Workflow
 
-Either use the provided packages (default is `nixCats-full` for now).
+Either use the provided packages (default is `neovim-nixCats-full` for now).
 Plugins will be provided by nix.
 
 Or use this flake as neovim config directory (`~/.config/nvim`).
-[pckr.nvim](https://github.com/lewis6991/pckr.nvim) will be used to fetch plugins.
+[paq-nvim](https://github.com/savq/paq-nvim) will be used to fetch plugins.
 And [mason.nvim](https://github.com/williamboman/mason.nvim) will be used to fetch LSPs.
 
 ## Testing
 
-Run `nix develop` to enter a shell with `nixCats-full` available.
+Run `nix develop` to enter a shell with `neovim-nixCats-full` available.
