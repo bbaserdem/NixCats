@@ -39,7 +39,6 @@ require("nixCatsUtils.catPaq").setup({
 	-- Main
 	{ "nvim-lua/plenary.nvim", opt = true },
 	{ "MunifTanjim/nui.nvim", opt = true },
-	{ "neovim/nvim-lspconfig", opt = true },
 	-- Debug
 	{ "nvim-neotest/nvim-nio", opt = true },
 	{ "mfussenegger/nvim-dap", opt = true },
@@ -72,6 +71,7 @@ require("nixCatsUtils.catPaq").setup({
 	{ "jghauser/mkdir.nvim", opt = true },
 	{ "nvim-neo-tree/neo-tree.nvim", opt = true },
 	{ "3rd/image.nvim", opt = true },
+	{ "neovim/nvim-lspconfig", opt = true },
 	{ "s1n7ax/nvim-window-picker", opt = true },
 	{ "mfussenegger/nvim-lint", opt = true },
 	{ "epwalsh/pomo.nvim", opt = true },

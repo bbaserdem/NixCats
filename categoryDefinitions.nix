@@ -34,15 +34,6 @@
   # Similar to programs.neovim.extraPackages in homeManager
   # This is LSPs and system-wide tooling
   lspsAndRuntimeDeps = with pkgs; {
-    main = [
-      universal-ctags # Tag generation for multiple languages
-      ripgrep # Fast grep implementation
-      fd # Fast find implementation
-      findutils # Find implementation
-      wl-clipboard # Wayland clipboard communication
-      xclip # Xorg clipboard communication
-    ];
-
     tools = {
       treesitter = [
         tree-sitter
@@ -54,8 +45,14 @@
     };
 
     functionality = [
-      dwt1-shell-color-scripts
+      dwt1-shell-color-scripts # For terminal color scripts
       imagemagick # For image displaying with tree
+      wl-clipboard # Wayland clipboard communication
+      xclip # Xorg clipboard communication
+      universal-ctags # Tag generation for multiple languages
+      ripgrep # Fast grep implementation
+      fd # Fast find implementation
+      findutils # Find implementation
     ];
 
     languages = {
@@ -138,7 +135,24 @@
     main = [
       plenary-nvim # Library for other plugins
       nui-nvim
-      nvim-lspconfig
+      (builtins.getAttr (extra.colorscheme.name or "rose-pine"))
+      {
+        "catppuccin" = catppuccin-nvim;
+        "cyberdream" = cyberdream-nvim;
+        "gruvbox" = gruvbox-nvim;
+        "-material" = gruvbox-material-nvim;
+        "kanagawa" = kanagawa-nvim;
+        "material" = material-nvim;
+        "melange" = melange-nvim;
+        "nightfox" = nightfox-nvim;
+        "onedark" = onedark-nvim;
+        "rose-pine" = {
+          name = "rose-pine.nvim";
+          plugin = rose-pine;
+        };
+        "tokyonight" = tokyonight-nvim;
+        "vscode" = vscode-nvim;
+      }
     ];
 
     # Debug tools
@@ -187,6 +201,7 @@
       mkdir-nvim # Automatically make directories when saving files
       neo-tree-nvim # File browser
       image-nvim # Image display for neo-tree
+      nvim-lspconfig
       nvim-window-picker # File browser dependency
       nvim-lint # Linter without LSP
       pomo-nvim # Pomodoro timer
