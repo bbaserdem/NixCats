@@ -1,4 +1,4 @@
--- <nixCats>/lua/luaConf/nvimAutocmd.lua
+-- <nixCats>/lua/luaConf/myAutocmd.lua
 
 -- Some autocommands
 

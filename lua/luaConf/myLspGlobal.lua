@@ -1,4 +1,4 @@
--- <nixCats>/lua/luaConf/nvimLspGlobal.lua
+-- <nixCats>/lua/luaConf/myLspGlobal.lua
 -- Global LSP configuration
 
 -- Diagnostic signs

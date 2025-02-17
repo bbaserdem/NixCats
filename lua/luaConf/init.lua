@@ -1,7 +1,7 @@
 -- Nvim configuration entry
 
 -- Do our global settings
-require("luaConf.nvimOptions")
+require("luaConf.myOptions")
 
 -- This lets set up things for non-nix usage
 require("nixlessConf")
@@ -10,11 +10,11 @@ require("nixlessConf")
 require("pluginConf")
 
 -- Apply colorscheme after plugins are registered with lze
-require("luaConf.nvimColorscheme")
+require("luaConf.myColorscheme")
 
 -- Do keybinds and autocommands
-require("luaConf.nvimAutocmd")
+require("luaConf.myAutocmd")
 require("keymapConf")
 
 -- LSP global configuration
-require("luaConf.nvimLspGlobal")
+require("luaConf.myLspGlobal")

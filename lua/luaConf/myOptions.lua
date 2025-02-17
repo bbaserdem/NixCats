@@ -1,4 +1,4 @@
--- <nixCats>/lua/luaConf/nvimOptions.lua
+-- <nixCats>/lua/luaConf/myOptions.lua
 
 -- Needs to be setup before everything
 vim.api.nvim_set_keymap("", "<Space>", "<Nop>", { noremap = true, silent = true })

@@ -1,4 +1,4 @@
--- <nixCats>/lua/luaConf/nvimColorscheme.lua
+-- <nixCats>/lua/luaConf/myColorscheme.lua
 -- Set up the color scheme
 
 local cs = ""
