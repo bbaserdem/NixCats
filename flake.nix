@@ -35,7 +35,6 @@
     nixCats,
     ...
   } @ inputs: let
-
     # Make utils more accessible
     inherit (nixCats) utils;
 
@@ -66,69 +65,73 @@
 
     # The default package to use from packageDefinitions
     defaultPackageName = "neovim-nixCats-full";
+  in
+    forEachSystem (system: let
+      # The builder function
+      nixCatsBuilder =
+        utils.baseBuilder luaPath {
+          inherit
+            system
+            dependencyOverlays
+            extra_pkg_config
+            nixpkgs
+            ;
+        }
+        categoryDefinitions
+        packageDefinitions;
 
-  in forEachSystem (system: let
+      # Setting the default package
+      defaultPackage = nixCatsBuilder defaultPackageName;
 
-    # The builder function
-    nixCatsBuilder = utils.baseBuilder luaPath {
-      inherit
-        system
-        dependencyOverlays
-        extra_pkg_config
-        nixpkgs
-        ;
-    } categoryDefinitions packageDefinitions;
+      # For using utils, such as pkgs.mkShell in the outputs
+      pkgs = import nixpkgs {inherit system;};
+    in {
+      # this will make a package out of each of the packageDefinitions defined above
+      # and set the default package to the one passed in here.
+      packages = utils.mkAllWithDefault defaultPackage;
 
-    # Setting the default package
-    defaultPackage = nixCatsBuilder defaultPackageName;
+      # The dev-shell
+      # and add whatever else you want in it.
+      devShells = import ./shell.nix {
+        packages = utils.mkAllWithDefault defaultPackage;
+        inherit pkgs defaultPackageName defaultPackage;
+      };
+    })
+    // (let
+      # We also export a nixos module to allow reconfiguration from configuration.nix
+      # and the same for home manager
+      inheritVars = {
+        inherit
+          defaultPackageName
+          dependencyOverlays
+          luaPath
+          categoryDefinitions
+          packageDefinitions
+          extra_pkg_config
+          nixpkgs
+          ;
+      };
+      nixosModule = utils.mkNixosModules inheritVars;
+      homeManagerModule = utils.mkHomeModules inheritVars;
+    in {
+      # these outputs will be NOT wrapped with ${system}
 
-    # For using utils, such as pkgs.mkShell in the outputs
-    pkgs = import nixpkgs { inherit system; };
+      # This will make an overlay out of each of the packageDefinitions defined above
+      # and set the default overlay to the one named here.
+      overlays =
+        utils.makeOverlays luaPath {
+          # we pass in the things to make a pkgs variable to build nvim with later
+          inherit nixpkgs dependencyOverlays extra_pkg_config;
+          # and also our categoryDefinitions
+        }
+        categoryDefinitions
+        packageDefinitions
+        defaultPackageName;
 
-  in {
+      nixosModules.default = nixosModule;
+      homeManagerModules.default = homeManagerModule;
 
-    # this will make a package out of each of the packageDefinitions defined above
-    # and set the default package to the one passed in here.
-    packages = utils.mkAllWithDefault defaultPackage;
-
-    # The dev-shell
-    # and add whatever else you want in it.
-    devShells = import ./shell.nix {
-      inherit pkgs defaultPackageName defaultPackage;
-    };
-
-  }) // (let
-
-    # We also export a nixos module to allow reconfiguration from configuration.nix
-    # and the same for home manager
-    inheritVars = { inherit
-      defaultPackageName
-      dependencyOverlays
-      luaPath
-      categoryDefinitions
-      packageDefinitions
-      extra_pkg_config
-      nixpkgs
-      ;
-    };
-    nixosModule = utils.mkNixosModules inheritVars;
-    homeManagerModule = utils.mkHomeModules inheritVars;
-  in {
-    # these outputs will be NOT wrapped with ${system}
-
-    # This will make an overlay out of each of the packageDefinitions defined above
-    # and set the default overlay to the one named here.
-    overlays = utils.makeOverlays luaPath {
-      # we pass in the things to make a pkgs variable to build nvim with later
-      inherit nixpkgs dependencyOverlays extra_pkg_config;
-      # and also our categoryDefinitions
-    } categoryDefinitions packageDefinitions defaultPackageName;
-
-    nixosModules.default = nixosModule;
-    homeManagerModules.default = homeManagerModule;
-
-    inherit utils;
-    inherit (utils) templates;
-
-  });
+      inherit utils;
+      inherit (utils) templates;
+    });
 }

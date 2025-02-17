@@ -3,6 +3,7 @@
   pkgs,
   defaultPackageName,
   defaultPackage,
+  packages,
   ...
 } @ args: {
   # Default shell to test the nvim config
@@ -10,6 +11,15 @@
     name = defaultPackageName;
     packages = [
       defaultPackage
+    ];
+    inputsFrom = [];
+    shellHook = ''
+    '';
+  };
+  none = pkgs.mkShell {
+    name = "neovim-nixCats-none";
+    packages = [
+      packages.neovim-nixCats-none
     ];
     inputsFrom = [];
     shellHook = ''
