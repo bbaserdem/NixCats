@@ -92,6 +92,7 @@
       ];
     };
     categories = {
+      main = true;
     };
     extra = {
       colorscheme = {

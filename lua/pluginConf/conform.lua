@@ -30,9 +30,9 @@ return {
 			formatters = {
 				stylua = {
 					prepend_args = {
-						"--indent_type",
+						"--indent-type",
 						"Spaces",
-						"--indent_width",
+						"--indent-width",
 						"2",
 					},
 				},
