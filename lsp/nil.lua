@@ -7,11 +7,14 @@ vim.lsp.config("nil", {
     "flake.nix",
     "flake.lock",
   },
+  filetypes = {
+    "nix",
+  },
   -- Global config options
   settings = {
     ["nil"] = {
       formatting = {
-        command = { "nix", "fmt", },
+        command = { "nix", "fmt" },
       },
       diagnostics = {
         ignored = {},

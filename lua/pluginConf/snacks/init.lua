@@ -15,6 +15,7 @@ return {
       bigfile = { enabled = true },
       bufdelete = { enabled = true },
       dashboard = require("pluginConf.snacks.dashboard"),
+      debug = require("pluginConf.snacks.debug"),
       dim = { enabled = true },
       gitbrowse = { enabled = true },
       indent = require("pluginConf.snacks.indent"),
