@@ -3,40 +3,44 @@
 
 -- Configuring various snack components
 return {
-  'snacks.nvim',
-  lazy = false,
-  after = function(plugin)
-    require('snacks').setup({
-      -- Enabled plugins
-      bigfile = { enabled = true, },
-      bufdelete = { enabled = true, },
-      dashboard = require('pluginConf.snacks.dashboard'),
-      dim = { enabled = true, },
-      gitbrowse = { enabled = true, },
-      indent = require('pluginConf.snacks.indent'),
-      input = { enabled = true, },
-      layout = { enabled = true, },
-      lazygit = { enabled = true, },
-      notifier = require('pluginConf.snacks.notifier'),
-      notify = { enabled = true, },
-      picker = require('pluginConf.snacks.picker'),
-      profiler = { enabled = true, },
-      quickfile = { enabled = true, },
-      rename = { enabled = true, },
-      scroll = { enabled = true, },
-      statuscolumn = { enabled = true, },
-      terminal = { enabled = true, },
-      toggle = { enabled = true, },
-      util = { enabled = true, },
-      win = { enabled = true, },
-      zen = { enabled = true, },
-      -- Disabled plugins, if they are set disabled, they still get require calls
-      --words = { enabled = false, },
-      --explorer = { enabled = false, },
-      --git = { enabled = false, },
-      --image = { enabled = false, },
-      --scope = { enabled = false, },
-      --scratch = { enabled = false, },
-    })
-  end,
+	"snacks.nvim",
+	for_cat = {
+		cat = "functionality",
+		default = true,
+	},
+	lazy = false,
+	after = function(plugin)
+		require("snacks").setup({
+			-- Enabled plugins
+			bigfile = { enabled = true },
+			bufdelete = { enabled = true },
+			dashboard = require("pluginConf.snacks.dashboard"),
+			dim = { enabled = true },
+			gitbrowse = { enabled = true },
+			indent = require("pluginConf.snacks.indent"),
+			input = { enabled = true },
+			layout = { enabled = true },
+			lazygit = { enabled = true },
+			notifier = require("pluginConf.snacks.notifier"),
+			notify = { enabled = true },
+			picker = require("pluginConf.snacks.picker"),
+			profiler = { enabled = true },
+			quickfile = { enabled = true },
+			rename = { enabled = true },
+			scroll = { enabled = true },
+			statuscolumn = { enabled = true },
+			terminal = { enabled = true },
+			toggle = { enabled = true },
+			util = { enabled = true },
+			win = { enabled = true },
+			zen = { enabled = true },
+			-- Disabled plugins, if they are set disabled, they still get require calls
+			--words = { enabled = false, },
+			--explorer = { enabled = false, },
+			--git = { enabled = false, },
+			--image = { enabled = false, },
+			--scope = { enabled = false, },
+			--scratch = { enabled = false, },
+		})
+	end,
 }

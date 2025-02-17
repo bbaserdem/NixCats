@@ -70,7 +70,8 @@
       };
       obsidian = {
         workspaces = [
-          { name = "Test";
+          {
+            name = "Test";
             path = "~/Media/Notes";
           }
         ];
@@ -91,6 +92,13 @@
       ];
     };
     categories = {
+    };
+    extra = {
+      colorscheme = {
+        name = "melange";
+        style = "dark";
+        translucent = false;
+      };
     };
   };
 }
