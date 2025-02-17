@@ -135,8 +135,7 @@
     main = [
       plenary-nvim # Library for other plugins
       nui-nvim
-      (builtins.getAttr (extra.colorscheme.name or "rose-pine"))
-      {
+      (builtins.getAttr (extra.colorscheme.name or "rose-pine") {
         "catppuccin" = catppuccin-nvim;
         "cyberdream" = cyberdream-nvim;
         "gruvbox" = gruvbox-nvim;
@@ -152,7 +151,7 @@
         };
         "tokyonight" = tokyonight-nvim;
         "vscode" = vscode-nvim;
-      }
+      })
     ];
 
     # Debug tools
