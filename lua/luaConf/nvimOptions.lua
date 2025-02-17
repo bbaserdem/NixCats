@@ -8,26 +8,26 @@ vim.g.maplocalleader = "<space>"
 
 -- Copy pasting in wayland
 if os.getenv("WAYLAND_DISPLAY") and vim.fn.exepath("wl-copy") ~= "" then
-	vim.g.clipboard = {
-		name = "wl-clipboard",
-		copy = {
-			["+"] = "wl-copy",
-			["*"] = "wl-copy",
-		},
-		paste = {
-			["+"] = "wl-paste",
-			["*"] = "wl-paste",
-		},
-		cache_enabled = 1,
-	}
+  vim.g.clipboard = {
+    name = "wl-clipboard",
+    copy = {
+      ["+"] = "wl-copy",
+      ["*"] = "wl-copy",
+    },
+    paste = {
+      ["+"] = "wl-paste",
+      ["*"] = "wl-paste",
+    },
+    cache_enabled = 1,
+  }
 end
 
 -- Display some whitespace characters
 vim.opt.list = true
 vim.opt.listchars = {
-	tab = "» ",
-	trail = "·",
-	nbsp = "␣",
+  tab = "» ",
+  trail = "·",
+  nbsp = "␣",
 }
 
 -- Search options
@@ -90,9 +90,9 @@ vim.opt.undofile = true -- Keep undo history
 vim.opt.backup = false -- Keep a backup of files
 vim.opt.writebackup = true -- First write to backup before writing file
 if require("nixCatsUtils").getCatOrDefault("languages.vimspell", true) then
-	vim.opt.spell = true -- Turn on spellchecking
-	vim.opt.spelllang = { "en", "tr" }
+  vim.opt.spell = true -- Turn on spellchecking
+  vim.opt.spelllang = { "en", "tr" }
 else
-	vim.opt.spell = false -- Turn on spellchecking
+  vim.opt.spell = false -- Turn on spellchecking
 end
 vim.opt.sessionoptions = "blank,buffers,folds,globals,help,localoptions,options,sesdir,tabpages,terminal,winsize"

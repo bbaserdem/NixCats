@@ -2,20 +2,20 @@
 -- Lazydev config
 
 return {
-  'lazydev.nvim',
+  "lazydev.nvim",
   for_cat = {
-    cat = 'languages.lua',
+    cat = "languages.lua",
     default = true,
   },
-  cmd = { 'LazyDev' },
-  ft = 'lua',
+  cmd = { "LazyDev" },
+  ft = "lua",
   after = function(plugin)
-    require('lazydev').setup({
+    require("lazydev").setup({
       library = {
-        'nvim-dap-ui',
+        "nvim-dap-ui",
         {
-          words = { 'nixCats' },
-          path = (require('nixCats').nixCatsPath or "") .. '/lua'
+          words = { "nixCats" },
+          path = (require("nixCats").nixCatsPath or "") .. "/lua",
         },
       },
     })
