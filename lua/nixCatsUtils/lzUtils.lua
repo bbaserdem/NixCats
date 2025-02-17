@@ -155,6 +155,7 @@ M.for_cat = {
 }
 
 -- Check the nixCats.extra table for a matching key/value pair
+-- This is to turn this value on if it's off
 -- Expects a table with { key = "key.subkey", value = "this_val", }
 M.in_extra = {
   spec_field = "in_extra",
@@ -162,7 +163,8 @@ M.in_extra = {
   modify = function(plugin)
     if type(plugin.in_extra) == "table" then
       if
-        (vim.g[ [[nixCats-special-rtp-entry-nixCats]] ] ~= nil)
+        (plugin.enabled == false)
+        and (vim.g[ [[nixCats-special-rtp-entry-nixCats]] ] ~= nil)
         and (type(plugin.in_extra.key) == "string")
         and (type(plugin.in_extra.value) == "string")
       then
