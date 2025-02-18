@@ -8,7 +8,12 @@
   name,
   mkNvimPlugin,
   ...
-} @ packageDef: {
+} @ packageDef: let
+  oldworld = {
+    name = "oldworld.nvim";
+    plugin = pkgs.neovimPlugins.oldworld-nvim;
+  };
+in {
   # The way the tree is established is;
   # <category>
   # ├─ main           : Plugins that should be there by default
@@ -138,11 +143,12 @@
         "catppuccin" = catppuccin-nvim;
         "cyberdream" = cyberdream-nvim;
         "gruvbox" = gruvbox-nvim;
-        "-material" = gruvbox-material-nvim;
+        "gruvbox-material" = gruvbox-material-nvim;
         "kanagawa" = kanagawa-nvim;
         "material" = material-nvim;
         "melange" = melange-nvim;
         "nightfox" = nightfox-nvim;
+        "oldworld" = oldworld;
         "onedark" = onedark-nvim;
         "rose-pine" = {
           name = "rose-pine.nvim";
@@ -175,6 +181,7 @@
       material-nvim
       melange-nvim
       nightfox-nvim
+      oldworld
       onedark-nvim
       {
         name = "rose-pine.nvim";

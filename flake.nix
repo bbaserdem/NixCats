@@ -13,12 +13,6 @@
     # Nixcats
     nixCats.url = "github:BirdeeHub/nixCats-nvim";
 
-    # Leaving this here to document how to do non-packaged plugin
-    #plugins-incline-nvim = {
-    #  url = "github:b0o/incline.nvim";
-    #  flake = false;
-    #};
-
     # Spelling libraries
     vimspell-tr = {
       url = "https://ftp.nluug.nl/pub/vim/runtime/spell/tr.utf-8.spl";
@@ -26,6 +20,12 @@
     };
     vimspell-en = {
       url = "https://ftp.nluug.nl/pub/vim/runtime/spell/en.utf-8.spl";
+      flake = false;
+    };
+
+    # Soothing color theme
+    plugins-oldworld-nvim = {
+      url = "github:dgox16/oldworld.nvim";
       flake = false;
     };
   };

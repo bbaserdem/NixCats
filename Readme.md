@@ -11,8 +11,7 @@ This flake is a configuration of the [**nixCats**](https://github.com/BirdeeHub/
 
 Just items to do later once config is stable
 
-- [ ] Conform is fucking things up
-- [ ] Disable cmp completion on whitespace
+- [ ] Ctrl-y not working as intended; nvim-cmp
 - [ ] Keybinds for aerial, snacks stuff, gitsigns, trouble, conform, obsidian, vimtex, nabla, mini-map, mini
 - [~] Snacks explorer not working; explorer not in nixpkgs yet.
 
@@ -24,6 +23,21 @@ Plugins will be provided by nix.
 Or use this flake as neovim config directory (`~/.config/nvim`).
 [paq-nvim](https://github.com/savq/paq-nvim) will be used to fetch plugins.
 And [mason.nvim](https://github.com/williamboman/mason.nvim) will be used to fetch LSPs.
+
+## Completion
+
+- Up/Down and Ctrl+n/p (next/previous) for navigating completion.
+- Enter selects entry, so should ctrl-y (yes).
+  Ctrl-e ends the completion.
+- Ctrl-space opens completion, or toggles documentation.
+  Ctrl-b/f moves back and forth in the doc menu.
+- Tab just moves to snippet parts, ctrl-tab moves around choice nodes.
+  Terminal should be configured for ctrl-tab to be sent.
+
+## Plugins
+
+Any plugin action should come after leader key; space.
+
 
 ## Testing
 
