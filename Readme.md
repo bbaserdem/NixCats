@@ -12,6 +12,8 @@ This flake is a configuration of the [**nixCats**](https://github.com/BirdeeHub/
 Just items to do later once config is stable
 
 - [ ] Ctrl-y not working as intended; nvim-cmp
+- [ ] Document workflow in this readme
+- [ ] Make shells to test paq-nvim
 - [ ] Keybinds for aerial, snacks stuff, gitsigns, trouble, conform, obsidian, vimtex, nabla, mini-map, mini
 - [~] Snacks explorer not working; explorer not in nixpkgs yet.
 
