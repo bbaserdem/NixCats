@@ -155,6 +155,7 @@ in {
           name = "rose-pine.nvim";
           plugin = rose-pine;
         };
+        "stylix" = mini-base16;
         "tokyonight" = tokyonight-nvim;
         "vscode" = vscode-nvim;
       })
