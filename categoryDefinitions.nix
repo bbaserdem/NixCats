@@ -147,6 +147,7 @@ in {
         "kanagawa" = kanagawa-nvim;
         "material" = material-nvim;
         "melange" = melange-nvim;
+        "minired" = mini-base16;
         "nightfox" = nightfox-nvim;
         "oldworld" = oldworld;
         "onedark" = onedark-nvim;

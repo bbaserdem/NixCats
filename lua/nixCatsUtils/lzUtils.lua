@@ -166,9 +166,20 @@ M.in_extra = {
         (plugin.enabled == false)
         and (vim.g[ [[nixCats-special-rtp-entry-nixCats]] ] ~= nil)
         and (type(plugin.in_extra.key) == "string")
-        and (type(plugin.in_extra.value) == "string")
+        -- and (type(plugin.in_extra.value) == "string")
       then
-        plugin.enabled = nixCats.extra(plugin.in_extra.key) == plugin.in_extra.value
+        -- Do oneshot
+        if type(plugin.in_extra.value) == "string" then
+          plugin.enabled = nixCats.extra(plugin.in_extra.key) == plugin.in_extra.value
+        -- Loop if we are given a table
+        elseif type(plugin.in_extra.value) == "table" then
+          for _, val_string in ipairs(plugin.in_extra.value) do
+            plugin.enabled = nixCats.extra(plugin.in_extra.key) == val_string
+            if plugin.enabled then
+              break
+            end
+          end
+        end
       end
     end
     return plugin

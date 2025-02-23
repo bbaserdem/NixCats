@@ -97,7 +97,7 @@
     extra = {
       weAreOld = true;
       colorscheme = {
-        name = "melange";
+        name = "minired";
         style = "dark";
         translucent = false;
       };
