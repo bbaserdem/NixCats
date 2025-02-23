@@ -204,6 +204,8 @@ in {
 
     functionality = [
       conform-nvim # Code formatter
+      hydra-nvim # Arbitrary modes
+      flash-nvim # Movement tool
       mini-nvim # Library
       mkdir-nvim # Automatically make directories when saving files
       neo-tree-nvim # File browser
