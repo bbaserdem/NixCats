@@ -15,6 +15,7 @@ return {
   { import = "pluginConf/theme/melange" },
   { import = "pluginConf/theme/minitheme" },
   { import = "pluginConf/theme/nightfox" },
+  { import = "pluginConf/theme/oldworld" },
   { import = "pluginConf/theme/onedark" },
   { import = "pluginConf/theme/rosepine" },
   { import = "pluginConf/theme/tabby" },

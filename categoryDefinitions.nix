@@ -9,10 +9,20 @@
   mkNvimPlugin,
   ...
 } @ packageDef: let
-  oldworld = {
+  # Some plugins
+  oldworld-nvim = {
     name = "oldworld.nvim";
     plugin = pkgs.neovimPlugins.oldworld-nvim;
   };
+  rosepine-nvim = {
+    name = "rose-pine.nvim";
+    plugin = pkgs.vimPlugins.rose-pine;
+  };
+  myVimspell = pkgs.runCommand "vimspell-lang" {} ''
+    mkdir -p $out/spell
+    cp ${inputs.vimspell-tr} $out/spell/tr.utf-8.spl
+    cp ${inputs.vimspell-en} $out/spell/en.utf-8.spl
+  '';
 in {
   # The way the tree is established is;
   # <category>
@@ -119,13 +129,7 @@ in {
     ];
 
     tools.vimspell = [
-      (
-        pkgs.runCommand "vimspell-lang" {} ''
-          mkdir -p $out/spell
-          cp ${inputs.vimspell-tr} $out/spell/tr.utf-8.spl
-          cp ${inputs.vimspell-en} $out/spell/en.utf-8.spl
-        ''
-      )
+      myVimspell
     ];
 
     languages.latex = [
@@ -149,12 +153,9 @@ in {
         "melange" = melange-nvim;
         "minired" = mini-base16;
         "nightfox" = nightfox-nvim;
-        "oldworld" = oldworld;
+        "oldworld" = oldworld-nvim;
         "onedark" = onedark-nvim;
-        "rose-pine" = {
-          name = "rose-pine.nvim";
-          plugin = rose-pine;
-        };
+        "rose-pine" = rosepine-nvim;
         "stylix" = mini-base16;
         "tokyonight" = tokyonight-nvim;
         "vscode" = vscode-nvim;
@@ -183,12 +184,9 @@ in {
       material-nvim
       melange-nvim
       nightfox-nvim
-      oldworld
+      oldworld-nvim
       onedark-nvim
-      {
-        name = "rose-pine.nvim";
-        plugin = rose-pine;
-      }
+      rosepine-nvim
       tokyonight-nvim
       vscode-nvim
     ];
