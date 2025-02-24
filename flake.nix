@@ -101,8 +101,8 @@
       # We also export a nixos module to allow reconfiguration from configuration.nix
       # and the same for home manager
       inheritVars = {
+        defaultPackageName = "nixCats";
         inherit
-          defaultPackageName
           dependencyOverlays
           luaPath
           categoryDefinitions
