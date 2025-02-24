@@ -117,6 +117,7 @@ in {
     # Main plugins to have
     main = [
       lze # Lazy loader for plugins (NEEDED)
+      lzextras
     ];
 
     functionality = [
@@ -213,23 +214,6 @@ in {
       nvim-lint # Linter without LSP
       pomo-nvim # Pomodoro timer
       urlview-nvim # Detects URLs (after telescope switch)
-    ];
-
-    mini = [
-      mini-ai
-      mini-align
-      mini-comment
-      mini-move
-      mini-operators
-      mini-pairs
-      mini-splitjoin
-      mini-surround
-      mini-basics
-      mini-bracketed
-      mini-jump
-      mini-cursorword
-      mini-hipatterns
-      mini-map
     ];
 
     # Autocompletion engines
@@ -351,10 +335,6 @@ in {
     # Various defaults
     main = [
       ["tools" "vimspell"]
-      ["theme"]
-    ];
-    functionality = [
-      # [ "mini" ]
     ];
     completion = {
       blink = [

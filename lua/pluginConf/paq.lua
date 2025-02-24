@@ -27,6 +27,7 @@ require("nixCatsUtils.catPaq").setup({
   -- Startup plugins
   -- Main
   { "BirdeeHub/lze" },
+  { "BirdeeHub/lzextras" },
   -- Functionality
   { "stevearc/oil.nvim" },
   { "folke/snacks.nvim" },

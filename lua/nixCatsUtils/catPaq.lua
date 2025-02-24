@@ -16,7 +16,7 @@ local M = {}
 -- opt directory for lazy loading, and add the build steps so that when theres no nix the steps are ran
 function M.setup(v)
   -- Act only if we are outside nix
-  if not require("nixCatsUtils").isNixCats then
+  if not vim.g[ [[nixCats-special-rtp-entry-nixCats]] ] then
     -- Fetch paq
     local function clone_paq()
       local path = vim.fn.stdpath("data") .. "/site/pack/paqs/start/paq-nvim"
