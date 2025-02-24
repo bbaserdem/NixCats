@@ -48,6 +48,7 @@
       main = true;
       # Package sets to include
       debug = true;
+      theme = true;
       tools = true;
       completion.cmp = true;
       functionality = true;
@@ -97,6 +98,7 @@
       # Package sets to not include
       debug = false;
       tools = false;
+      theme = false;
       completion = false;
       functionality = false;
       status = false;

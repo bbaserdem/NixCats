@@ -117,7 +117,7 @@ in {
     # Main plugins to have
     main = [
       lze # Lazy loader for plugins (NEEDED)
-      lzextras
+      lzextras # Lazy loader extras
     ];
 
     functionality = [
