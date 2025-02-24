@@ -90,6 +90,7 @@
         "nvimCats-none"
         "nx-none"
       ];
+      neovim-unwrapped = pkgs.neovim-unwrapped;
     };
     categories = {
       main = true;
