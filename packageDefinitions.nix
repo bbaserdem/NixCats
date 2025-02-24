@@ -94,6 +94,13 @@
     };
     categories = {
       main = true;
+      # Package sets to not include
+      debug = false;
+      tools = false;
+      completion = false;
+      functionality = false;
+      status = false;
+      languages = false;
     };
     extra = {
       weAreOld = true;
