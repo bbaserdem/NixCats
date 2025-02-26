@@ -28,5 +28,9 @@ vim.keymap.set("n", "<leader>gB", function()
 end, { desc = "Full blame line" })
 vim.keymap.set("n", "<leader>gw", "<cmd>Gitsigns toggle_word_diff<CR>", { desc = "Toggle word diff" })
 vim.keymap.set("n", "<leader>gx", "<cmd>Gitsigns toggle_deleted<CR>", { desc = "Toggle deleted" })
+
+-- Tree view
+vim.keymap.set("n", "<leader>gt", "<cmd>Neotree focus float git_status<CR>", { desc = "Neotree git files" })
+
 -- Text object
 vim.keymap.set({ "o", "x" }, "ih", require("gitsigns").select_hunk, { desc = "Git hunk" })

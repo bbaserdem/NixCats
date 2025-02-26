@@ -17,6 +17,8 @@ vim.keymap.set("n", "<leader>n0", "<cmd>bfirst<CR>", { desc = "First buffer" })
 vim.keymap.set("n", "<leader>nd", sb.delete, { desc = "Delete buffer" })
 vim.keymap.set("n", "<leader>nD", sb.all, { desc = "Delete all buffers" })
 vim.keymap.set("n", "<leader>nn", "<cmd>enew<CR><Esc>", { desc = "New (empty) buffer" })
+-- Neotree
+vim.keymap.set("n", "<leader>nb", "<cmd>Neotree focus float buffers<CR>", { desc = "Buffer list (neotree)" })
 
 -- Window mappings (dual hjkl and arrow navigation)
 vim.keymap.set("n", "<leader>n<Left>", "<cmd>wincmd h<CR>", { desc = "Move to left window" })

@@ -3,35 +3,35 @@
 
 return {
   { -- Preview
-    'glow.nvim',
+    "glow.nvim",
     for_cat = {
-      cat = 'languages.markdown',
+      cat = "languages.markdown",
       default = true,
     },
-    ft = { 'markdown', },
-    on_require = { 'glow', },
-    cmd = { 'Glow', },
+    ft = { "markdown" },
+    on_require = { "glow" },
+    cmd = { "Glow" },
   },
   { -- Equation parser
-    'nabla.nvim',
+    "nabla.nvim",
     for_cat = {
-      cat = 'languages.markdown',
+      cat = "languages.markdown",
       default = true,
     },
-    ft = { 'markdown', },
-    on_require = { 'nabla', },
+    ft = { "markdown" },
+    on_require = { "nabla" },
   },
   { -- Navigating markdown links
-    'mkdnflow.nvim',
+    "mkdnflow.nvim",
     for_cat = {
-      cat = 'languages.markdown',
+      cat = "languages.markdown",
       default = true,
     },
-    ft = { 'markdown', 'md', 'rmd', },
-    on_plugin = { 'nvim-cmp', },
-    on_require = { 'mkdnflow', },
-    after = function (plugin)
-      require('mkdnflow').setup({
+    ft = { "markdown", "md", "rmd" },
+    on_plugin = { "nvim-cmp" },
+    on_require = { "mkdnflow" },
+    after = function(plugin)
+      require("mkdnflow").setup({
         modules = {
           cmp = true,
         },
@@ -39,41 +39,41 @@ return {
     end,
   },
   { -- Obsidian integration
-    'obsidian.nvim',
+    "obsidian.nvim",
     for_cat = {
-      cat = 'languages.markdown',
+      cat = "languages.markdown",
       default = true,
     },
-    ft = { 'markdown', },
-    on_require = { 'obsidian', },
-    after = function (plugin)
+    ft = { "markdown" },
+    on_require = { "obsidian" },
+    after = function(plugin)
       -- Get default, or overriden, workspaces table
       local ws = {
         {
-          name = 'Buffer parent',
+          name = "Buffer parent",
           path = function()
             return assert(vim.fs.dirname(vim.api.nvim_buf_get_name(0)))
           end,
         },
       }
-      if require('nixCatsUtils').isNixCats then
-        local ws_nc = nixCats.extra('obsidian.workspaces')
+      if require("nixCatsUtils").isNixCats then
+        local ws_nc = nixCats.extra("obsidian.workspaces")
         -- Replace if not empty
         if next(ws_nc) ~= nil then
           ws = ws_nc
         end
       end
 
-      require('obsidian').setup({
+      require("obsidian").setup({
         workspaces = ws,
         mappings = {},
         new_notes_location = "current_dir",
-        preferred_link_style = 'wiki',
+        preferred_link_style = "wiki",
         follow_url_func = function(url)
-          vim.fn.jobstart('xdg-open', url)
+          vim.fn.jobstart("xdg-open", url)
         end,
         follow_img_func = function(img)
-          vim.fn.jobstart('xdg-open', img)
+          vim.fn.jobstart("xdg-open", img)
         end,
         use_advanced_uri = true,
         open_app_foreground = true,
@@ -82,9 +82,9 @@ return {
           name = 'telescope.nvim',
         --]]
         attachments = {
-          img_folder = 'Userdata/Attachments/Images',
+          img_folder = "Userdata/Attachments/Images",
           img_name_func = function()
-            return string.format('%s-', os.time())
+            return string.format("%s-", os.time())
           end,
         },
       })
