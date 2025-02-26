@@ -1,4 +1,4 @@
--- <nixCats>/lua/pluginConf/mini.lua
+-- <nixCats>/lua/pluginConf/mini/init.lua
 -- Mini.nvim entry point config
 
 return {
