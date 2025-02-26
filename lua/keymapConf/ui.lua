@@ -11,24 +11,9 @@ vim.keymap.set("n", "<Leader>uL", "<cmd>Mason<CR>", { desc = "Open Mason menu" }
 vim.keymap.set("n", "<Leader>up", "<cmd>PaqSync<CR>", { desc = "Sync packages (paq)" })
 
 -- Mini Map
--- vim.keymap.set(
---   "n",
---   "<Leader>um",
---   function() require("mini.map").toggle() end,
---   { desc = "Toggle minimap" }
--- )
--- vim.keymap.set(
---   "n",
---   "<Leader>uM",
---   function() require("mini.map").toggle_focus end,
---   { desc = "Focus minimap" }
--- )
--- vim.keymap.set(
---   "n",
---   "<Leader>u<C-m>",
---   function() require("mini.map").toggle_side,
---   { desc = "Switch side for minimap" }
--- )
+vim.keymap.set( "n", "<Leader>um", function() require("mini.map").toggle() end, { desc = "Toggle minimap" })
+vim.keymap.set( "n", "<Leader>uM", function() require("mini.map").toggle_focus end, { desc = "Focus minimap" })
+vim.keymap.set( "n", "<Leader>u<C-m>", function() require("mini.map").toggle_side, { desc = "Switch side for minimap" })
 
 -- File browsers
 vim.keymap.set("n", "<Leader>ut", "<cmd>Neotree focus<CR>", { desc = "Go to Neotree" })
