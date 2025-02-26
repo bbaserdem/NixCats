@@ -1,5 +1,5 @@
 -- <nixCats>/lua/keymapConf/symbols.lua
--- Document symbol list, <leader>s prefix
+-- <leader>s: Document symbol list,
 
 -- Function calls
 local _aerialSnacks = function()

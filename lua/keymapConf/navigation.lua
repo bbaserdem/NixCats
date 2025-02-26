@@ -1,5 +1,6 @@
 -- <nixCats>/lua/keymapConf/navigation.lua
--- Navigation keybinds; <leader>n
+-- <leader>n: Navigation keybinds
+
 local sb = require("snacks").bufdelete
 local wk = require("which-key")
 
