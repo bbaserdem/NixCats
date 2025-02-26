@@ -66,6 +66,8 @@ return {
 
       require("obsidian").setup({
         workspaces = ws,
+        -- Favor markdown-render.nvim for rendering
+        ui = { enable = false },
         mappings = {},
         new_notes_location = "current_dir",
         preferred_link_style = "wiki",
@@ -80,12 +82,47 @@ return {
         --[[
         picker = {
           name = 'telescope.nvim',
+        },
         --]]
         attachments = {
           img_folder = "Userdata/Attachments/Images",
           img_name_func = function()
             return string.format("%s-", os.time())
           end,
+        },
+      })
+    end,
+  },
+  { -- Markdown rendering
+    "render-markdown.nvim",
+    for_cat = {
+      cat = "languages.markdown",
+      default = true,
+    },
+    ft = { "markdown" },
+    cmd = { "RenderMarkdown" },
+    after = function(plugin)
+      require("render-markdown").setup({
+        enabled = true,
+        render_modes = { "n", "c", "t" },
+        max_file_size = 10.0,
+        heading = {
+          border = true,
+        },
+        pipe_table = {
+          border = {
+            "╔",
+            "╤",
+            "╗",
+            "╟",
+            "┼",
+            "╢",
+            "╚",
+            "╧",
+            "╝",
+            "│",
+            "─",
+          },
         },
       })
     end,

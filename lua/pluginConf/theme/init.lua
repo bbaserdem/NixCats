@@ -50,6 +50,7 @@ return {
       "lualine.nvim",
       "which-key.nvim",
       "neo-tree.nvim",
+      "render-markdown.nvim",
     },
     after = function(plugin)
       require("nvim-web-devicons").setup({

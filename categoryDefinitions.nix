@@ -281,6 +281,7 @@ in {
         mkdnflow-nvim # Navigate wiki links
         glow-nvim # Render markdown in nvim terminal
         obsidian-nvim # Interact with obsidian vault
+        render-markdown-nvim
       ];
     };
   };
@@ -312,6 +313,7 @@ in {
     languages = {
       markdown = python-pkgs: [
         python-pkgs.mdformat
+        python-pkgs.pylatexenc
       ];
       python = python-pkgs: [
         python-pkgs.ruff
