@@ -1,22 +1,41 @@
 -- <nixCats>/lua/keymapConf/navigation.lua
 -- <leader>n: Navigation keybinds
 
-local sb = require("snacks").bufdelete
-local wk = require("which-key")
-
 -- Hydra mode entry
--- vim.keymap.set("n", "<leader>n<leader>", function()
---   wk.show({ keys = "<leader>n", loop = true })
--- end, { desc = "Previous buffer" })
+-- vim.keymap.set(
+--   "n",
+--   "<leader>n<leader>",
+--   function()
+--     local wk = require("which-key")
+--     wk.show({ keys = "<leader>n", loop = true })
+--   end,
+--   { desc = "Previous buffer" }
+-- )
 
 -- Buffer mappings
 vim.keymap.set("n", "<leader>n[", "<cmd>bprev<CR>", { desc = "Previous buffer" })
 vim.keymap.set("n", "<leader>n]", "<cmd>bnext<CR>", { desc = "Next buffer" })
 vim.keymap.set("n", "<leader>n$", "<cmd>blast<CR>", { desc = "Last buffer" })
 vim.keymap.set("n", "<leader>n0", "<cmd>bfirst<CR>", { desc = "First buffer" })
---vim.keymap.set("n", "<leader>nd", sb.delete, { desc = "Delete buffer" })
--- vim.keymap.set("n", "<leader>nD", sb.all, { desc = "Delete all buffers" })
 vim.keymap.set("n", "<leader>nn", "<cmd>enew<CR><Esc>", { desc = "New (empty) buffer" })
+-- vim.keymap.set(
+--   "n",
+--   "<leader>nd",
+--   function()
+--     local Snacks = require("snacks")
+--     Snacks.bufdelete.delete()
+--   end,
+--   { desc = "Delete buffer" }
+-- )
+-- vim.keymap.set(
+--   "n",
+--   "<leader>nD",
+--   function()
+--     local Snacks = require("snacks")
+--     Snacks.bufdelete.all()
+--   end,
+--   { desc = "Delete all buffers" }
+-- )
 -- Neotree
 vim.keymap.set("n", "<leader>nb", "<cmd>Neotree focus float buffers<CR>", { desc = "Buffer list (neotree)" })
 
