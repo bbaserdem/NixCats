@@ -17,7 +17,6 @@ require("lze").load({
   { import = "pluginConf.flash" },
   { import = "pluginConf.fidget" },
   { import = "pluginConf.git" },
-  { import = "pluginConf.hydra" },
   { import = "pluginConf.lazydev" },
   { import = "pluginConf.lint" },
   { import = "pluginConf.lsp" },
