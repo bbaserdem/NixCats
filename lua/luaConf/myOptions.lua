@@ -1,10 +1,10 @@
 -- <nixCats>/lua/luaConf/myOptions.lua
 
 -- Needs to be setup before everything
-vim.api.nvim_set_keymap("", "<Space>", "<Nop>", { noremap = true, silent = true })
-vim.api.nvim_set_keymap("", "<C-S-Space>", "<Nop>", { noremap = true, silent = true })
-vim.g.mapleader = "<space>"
-vim.g.maplocalleader = "<space>"
+vim.keymap.del({ "n", "i" }, " ")
+vim.keymap.del({ "n", "i" }, "<C-S-Space>")
+vim.g.mapleader = "<Space>"
+vim.g.maplocalleader = "<Space>"
 
 -- Copy pasting in wayland
 if os.getenv("WAYLAND_DISPLAY") and vim.fn.exepath("wl-copy") ~= "" then
