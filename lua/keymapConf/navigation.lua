@@ -5,17 +5,17 @@ local sb = require("snacks").bufdelete
 local wk = require("which-key")
 
 -- Hydra mode entry
-vim.keymap.set("n", "<leader>n<leader>", function()
-  wk.show({ keys = "<leader>n", loop = true })
-end, { desc = "Previous buffer" })
+-- vim.keymap.set("n", "<leader>n<leader>", function()
+--   wk.show({ keys = "<leader>n", loop = true })
+-- end, { desc = "Previous buffer" })
 
 -- Buffer mappings
 vim.keymap.set("n", "<leader>n[", "<cmd>bprev<CR>", { desc = "Previous buffer" })
 vim.keymap.set("n", "<leader>n]", "<cmd>bnext<CR>", { desc = "Next buffer" })
 vim.keymap.set("n", "<leader>n$", "<cmd>blast<CR>", { desc = "Last buffer" })
 vim.keymap.set("n", "<leader>n0", "<cmd>bfirst<CR>", { desc = "First buffer" })
-vim.keymap.set("n", "<leader>nd", sb.delete, { desc = "Delete buffer" })
-vim.keymap.set("n", "<leader>nD", sb.all, { desc = "Delete all buffers" })
+--vim.keymap.set("n", "<leader>nd", sb.delete, { desc = "Delete buffer" })
+-- vim.keymap.set("n", "<leader>nD", sb.all, { desc = "Delete all buffers" })
 vim.keymap.set("n", "<leader>nn", "<cmd>enew<CR><Esc>", { desc = "New (empty) buffer" })
 -- Neotree
 vim.keymap.set("n", "<leader>nb", "<cmd>Neotree focus float buffers<CR>", { desc = "Buffer list (neotree)" })
