@@ -18,10 +18,7 @@ vim.keymap.set("n", "<Leader>n]", "<cmd>bnext<CR>", { desc = "Next buffer" })
 vim.keymap.set("n", "<Leader>n$", "<cmd>blast<CR>", { desc = "Last buffer" })
 vim.keymap.set("n", "<Leader>n0", "<cmd>bfirst<CR>", { desc = "First buffer" })
 vim.keymap.set("n", "<Leader>nn", "<cmd>enew<CR><Esc>", { desc = "New (empty) buffer" })
-vim.keymap.set("n", "<Leader>nd", function()
-  local Snacks = require("snacks")
-  Snacks.bufdelete.delete()
-end, { desc = "Delete buffer" })
+vim.keymap.set("n", "<Leader>nd", require("snacks").bufdelete.delete, { desc = "Delete buffer" })
 -- vim.keymap.set(
 --   "n",
 --   "<Leader>nD",
