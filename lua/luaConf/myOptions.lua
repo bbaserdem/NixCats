@@ -1,8 +1,8 @@
 -- <nixCats>/lua/luaConf/myOptions.lua
 
 -- Needs to be setup before everything
-vim.keymap.del({ "n", "i" }, " ")
-vim.keymap.del({ "n", "i" }, "<C-S-Space>")
+vim.api.nvim_set_keymap("", " ", "", {noremap = true})
+vim.api.nvim_set_keymap("", "<C-S-Space>", "", {noremap = true})
 vim.g.mapleader = "<Space>"
 vim.g.maplocalleader = "<Space>"
 
