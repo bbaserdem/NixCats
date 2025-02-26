@@ -14,6 +14,10 @@
     name = "oldworld.nvim";
     plugin = pkgs.neovimPlugins.oldworld-nvim;
   };
+  eink-nvim = {
+    name = "e-ink.nvim";
+    plugin = pkgs.neovimPlugins.e-ink-nvim;
+  };
   rosepine-nvim = {
     name = "rose-pine.nvim";
     plugin = pkgs.vimPlugins.rose-pine;
@@ -147,6 +151,7 @@ in {
       (builtins.getAttr (extra.colorscheme.name or "rose-pine") {
         "catppuccin" = catppuccin-nvim;
         "cyberdream" = cyberdream-nvim;
+        "e-ink" = eink-nvim;
         "gruvbox" = gruvbox-nvim;
         "gruvbox-material" = gruvbox-material-nvim;
         "kanagawa" = kanagawa-nvim;
@@ -179,6 +184,7 @@ in {
       # Themes that may be used
       catppuccin-nvim
       cyberdream-nvim
+      eink-nvim
       gruvbox-nvim
       gruvbox-material-nvim
       kanagawa-nvim

@@ -28,6 +28,11 @@
       url = "github:dgox16/oldworld.nvim";
       flake = false;
     };
+    # Grayscale color theme
+    plugins-e-ink-nvim = {
+      url = "github:alexxGmZ/e-ink.nvim";
+      flake = false;
+    };
   };
 
   outputs = {
