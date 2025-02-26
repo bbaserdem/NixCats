@@ -19,15 +19,8 @@ vim.keymap.set("n", "<Leader>n$", "<cmd>blast<CR>", { desc = "Last buffer" })
 vim.keymap.set("n", "<Leader>n0", "<cmd>bfirst<CR>", { desc = "First buffer" })
 vim.keymap.set("n", "<Leader>nn", "<cmd>enew<CR><Esc>", { desc = "New (empty) buffer" })
 vim.keymap.set("n", "<Leader>nd", require("snacks").bufdelete.delete, { desc = "Delete buffer" })
--- vim.keymap.set(
---   "n",
---   "<Leader>nD",
---   function()
---     local Snacks = require("snacks")
---     Snacks.bufdelete.all()
---   end,
---   { desc = "Delete all buffers" }
--- )
+vim.keymap.set("n", "<Leader>nD", require("snacks").bufdelete.all, { desc = "Delete all buffers" })
+
 -- Neotree
 vim.keymap.set("n", "<Leader>nb", "<cmd>Neotree focus float buffers<CR>", { desc = "Buffer list (neotree)" })
 
