@@ -54,7 +54,7 @@ vim.opt.guifont = "Iosevka"
 -- Columns and rows
 
 vim.opt.number = false -- Line numbers
-vim.opt.relativenumber = true -- Show relative numbers
+vim.opt.relativenumber = false -- Show relative numbers
 vim.opt.signcolumn = "yes" -- Always show sign column
 vim.opt.numberwidth = 4 -- Number column width
 vim.opt.cmdheight = 2 -- Number column width
