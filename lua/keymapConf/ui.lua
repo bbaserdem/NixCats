@@ -1,17 +1,19 @@
 -- <nixCats>/lua/keymapConf/ui.lua
 -- <Leader>u: Visual stuff
 local minimap_keymap = require("lzextras").keymap("mini.nvim")
+local snacks_keymap = require("lzextras").keymap("snacks.nvim")
+local snacks_toggle = require("snacks").toggle
 
--- Fidget status toggles
+-- Fidget status toggles: fF
 vim.keymap.set({ "n", "v" }, "<Leader>uf", "<cmd>Fidget suppress<CR>", { desc = "Toggle LSP info (fidget)" })
 vim.keymap.set({ "n", "v" }, "<Leader>uF", "<cmd>Fidget history<CR>", { desc = "Show LSP status history (fidget)" })
 
--- Mason & lsp config
+-- Mason & lsp config: lLp
 vim.keymap.set("n", "<Leader>ul", "<cmd>LspInfo<CR>", { desc = "Open LSPconfig menu" })
 vim.keymap.set("n", "<Leader>uL", "<cmd>Mason<CR>", { desc = "Open Mason menu" })
 vim.keymap.set("n", "<Leader>up", "<cmd>PaqSync<CR>", { desc = "Sync packages (paq)" })
 
--- Mini Map; accesed by m letter, managed by mini
+-- Mini Map: mM^m, managed by mini
 minimap_keymap.set("n", "<Leader>um", function()
   require("mini.map").toggle()
 end, { desc = "Toggle minimap" })
@@ -23,8 +25,20 @@ minimap_keymap.set("n", "<Leader>u<C-m>", function()
   require("mini.map").toggle_side()
 end, { desc = "Switch side for minimap" })
 
--- File browsers
+-- File browsers tTo
 vim.keymap.set("n", "<Leader>ut", "<cmd>Neotree focus left<CR>", { desc = "Go to Neotree" })
 vim.keymap.set("n", "<Leader>uT", "<cmd>Neotree focus float<CR>", { desc = "Floating Neotree" })
 vim.keymap.set("n", "<Leader>u<C-T>", "<cmd>Neotree toggle<CR>", { desc = "Toggle Neotree" })
 vim.keymap.set("n", "<Leader>uo", "<cmd>Oil<CR>", { desc = "Open Oil" })
+
+-- Snacks toggles aAd<tab>?nhzZ^z
+snacks_toggle.animate():map("<Leader>ua")
+snacks_toggle.scroll():map("<Leader>uA")
+snacks_toggle.diagnostics():map("<Leader>ud")
+snacks_toggle.indent():map("<Leader>u<Tab>")
+snacks_toggle.inlay_hints():map("<Leader>u?")
+snacks_toggle.line_number():map("<Leader>un")
+snacks_toggle.treesitter():map("<Leader>uh")
+snacks_toggle.dim():map("<Leader>uz")
+snacks_toggle.zen():map("<Leader>uZ")
+snacks_toggle.zoom():map("<Leader>u<C-z>")

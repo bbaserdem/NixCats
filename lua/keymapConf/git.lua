@@ -1,6 +1,7 @@
 -- <nixCats>/lua/keymapConf/git.lua
 -- <Leader>g: Git actions
 local gitsigns_keymap = require("lzextras").keymap("gitsigns.nvim")
+local snacks_keymap = require("lzextras").keymap("snacks.nvim")
 
 -- Gitsigns actions
 vim.keymap.set("n", "<Leader>gs", "<cmd>Gitsigns stage_hunk<CR>", { desc = "Stage hunk" })
@@ -35,3 +36,17 @@ vim.keymap.set("n", "<Leader>gt", "<cmd>Neotree focus float git_status<CR>", { d
 
 -- Text object
 gitsigns_keymap.set({ "o", "x" }, "ih", require("gitsigns").select_hunk, { desc = "Git hunk" })
+
+-- Snacks gitbrowse
+snacks_keymap.set("n", "<Leader>gE", function()
+  require("snacks").gitbrowse.open()
+end, { desc = "Open repo in browser" })
+snacks_keymap.set("n", "<Leader>gl", function()
+  require("snacks").lazygit.open()
+end, { desc = "Open Lazygit" })
+snacks_keymap.set("n", "<Leader>gL", function()
+  require("snacks").lazygit.log()
+end, { desc = "Open Lazygit in log view" })
+snacks_keymap.set("n", "<Leader>g<C-l>", function()
+  require("snacks").lazygit.log_file()
+end, { desc = "Open Lazygit log of buffer" })

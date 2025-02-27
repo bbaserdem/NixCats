@@ -52,7 +52,8 @@ vim.opt.timeoutlen = 2000 -- Need the timeout
 vim.opt.guifont = "Iosevka"
 
 -- Columns and rows
-vim.opt.number = true -- Line numbers
+
+vim.opt.number = false -- Line numbers
 vim.opt.relativenumber = true -- Show relative numbers
 vim.opt.signcolumn = "yes" -- Always show sign column
 vim.opt.numberwidth = 4 -- Number column width

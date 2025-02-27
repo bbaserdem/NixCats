@@ -71,9 +71,18 @@ return {
     cmd = {
       "Neotree",
     },
-    -- We want deferreduienter to modify the gutter icons
     after = function(plugin)
-      require("neo-tree").setup({})
+      -- Integrate Snacks renamer
+      local on_move = function(data)
+        Snacks.rename.on_rename_file(data.source, data.destination)
+      end
+      local events = require("neo-tree.events")
+      require("neo-tree").setup({
+        event_handlers = {
+          { event = events.FILE_MOVED, handler = on_move },
+          { event = events.FILE_RENAMED, handler = on_move },
+        },
+      })
     end,
   },
 }

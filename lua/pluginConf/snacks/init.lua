@@ -8,6 +8,9 @@ return {
     cat = "functionality",
     default = true,
   },
+  dep_of = {
+    "neo-tree.nvim",
+  },
   lazy = false,
   after = function(plugin)
     require("snacks").setup({
@@ -33,7 +36,7 @@ return {
       scroll = { enabled = true },
       statuscolumn = { enabled = true },
       terminal = { enabled = true },
-      toggle = { enabled = true },
+      toggle = require("pluginConf.snacks.toggle"),
       util = { enabled = true },
       win = { enabled = true },
       zen = { enabled = true },
