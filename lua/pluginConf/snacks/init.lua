@@ -18,6 +18,7 @@ return {
       debug = require("pluginConf.snacks.debug"),
       dim = { enabled = true },
       gitbrowse = { enabled = true },
+      image = { enabled = true },
       indent = require("pluginConf.snacks.indent"),
       input = { enabled = true },
       layout = { enabled = true },

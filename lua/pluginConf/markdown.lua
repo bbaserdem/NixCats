@@ -105,6 +105,9 @@ return {
       require("render-markdown").setup({
         enabled = true,
         render_modes = { "n", "c", "t" },
+        latex = {
+          enabled = false,
+        },
         max_file_size = 10.0,
         heading = {
           border = true,

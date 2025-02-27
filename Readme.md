@@ -7,6 +7,10 @@ In time, this will be my replacement for nvim command on my computer.
 
 This flake is a configuration of the [**nixCats**](https://github.com/BirdeeHub/nixCats-nvim) framework.
 
+![render remote images](https://gist.ro/s/remote.png)
+
+Try $\sum_{i = 1}^{10} \left| \hat{x}_i \right|^{2}$ equation rendering.
+
 # Todo
 
 Just items to do later once config is stable

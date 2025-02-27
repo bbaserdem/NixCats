@@ -65,7 +65,7 @@ in {
 
     functionality = [
       dwt1-shell-color-scripts # For terminal color scripts
-      imagemagick # For image displaying with tree
+      imagemagick # For image displaying with image.nvim and snacks.image
       wl-clipboard # Wayland clipboard communication
       xclip # Xorg clipboard communication
       universal-ctags # Tag generation for multiple languages
@@ -96,7 +96,7 @@ in {
         glow # Markdown typesetter for terminal
         ltex-ls-plus
         languagetool
-        python312Packages.pylatexenc
+        # python312Packages.pylatexenc
       ];
       nix = [
         nix-doc
@@ -314,7 +314,7 @@ in {
     languages = {
       markdown = python-pkgs: [
         python-pkgs.mdformat
-        python-pkgs.pylatexenc
+        # python-pkgs.pylatexenc
       ];
       python = python-pkgs: [
         python-pkgs.ruff
