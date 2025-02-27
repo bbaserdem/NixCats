@@ -26,6 +26,7 @@ return { -- Catppuccin theme
     "catppuccin-gruvbox",
     "catppuccin-gruvbox-light",
   },
+  event = { "DeferredUIEnter" },
   after = function(plugin)
     -- Apply any specific overrides
     local opt = {}

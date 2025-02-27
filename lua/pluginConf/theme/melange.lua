@@ -14,6 +14,7 @@ return {
   colorscheme = {
     "melange",
   },
+  event = { "DeferredUIEnter" },
   after = function(plugin)
     -- Set background
     if require("nixCatsUtils").isNixCats then

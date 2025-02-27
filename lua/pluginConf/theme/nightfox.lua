@@ -20,6 +20,7 @@ return {
     "nordfox",
     "terafox",
   },
+  event = { "DeferredUIEnter" },
   after = function(plugin)
     local _trans = false
     -- If nixCats, check to set the background hue

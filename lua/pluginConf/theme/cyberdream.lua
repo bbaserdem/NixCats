@@ -14,6 +14,7 @@ return {
   colorscheme = {
     "cyberdream",
   },
+  event = { "DeferredUIEnter" },
   after = function(plugin)
     local _trans = true
 

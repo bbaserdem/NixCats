@@ -14,6 +14,7 @@ return {
   colorscheme = {
     "onedark",
   },
+  event = { "DeferredUIEnter" },
   after = function(plugin)
     -- If nixCats, check to set the background hue
     local _style = "darker"

@@ -14,6 +14,7 @@ return {
   colorscheme = {
     "gruvbox-material",
   },
+  event = { "DeferredUIEnter" },
   after = function(plugin)
     local _trans = false
 

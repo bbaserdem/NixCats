@@ -17,6 +17,7 @@ return {
     "rose-pine-moon",
     "rose-pine",
   },
+  event = { "DeferredUIEnter" },
   after = function(plugin)
     local _trans = false
     local _style = "main"

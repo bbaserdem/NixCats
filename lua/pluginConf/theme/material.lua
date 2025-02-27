@@ -19,6 +19,7 @@ return {
     "material-oceanic",
     "material-palenight",
   },
+  event = { "DeferredUIEnter" },
   after = function(plugin)
     local _trans = false
 

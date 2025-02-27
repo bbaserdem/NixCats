@@ -17,6 +17,7 @@ return {
     "kanagawa-wave",
     "kanagawa",
   },
+  event = { "DeferredUIEnter" },
   after = function(plugin)
     local _trans = false
     local _style = "wave"

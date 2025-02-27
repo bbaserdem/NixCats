@@ -18,6 +18,7 @@ return {
     "tokyonight-storm",
     "tokyonight",
   },
+  event = { "DeferredUIEnter" },
   after = function(plugin)
     local _style = "night"
 

@@ -14,6 +14,7 @@ return {
   colorscheme = {
     "vscode",
   },
+  event = { "DeferredUIEnter" },
   after = function(plugin)
     local _trans = false
 

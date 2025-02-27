@@ -14,6 +14,7 @@ return {
   colorscheme = {
     "oldworld",
   },
+  event = { "DeferredUIEnter" },
   after = function(plugin)
     require("oldworld").setup({
       integrations = {
