@@ -96,6 +96,7 @@ in {
         glow # Markdown typesetter for terminal
         ltex-ls-plus
         languagetool
+        python312Packages.pylatexenc
       ];
       nix = [
         nix-doc
