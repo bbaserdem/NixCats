@@ -43,6 +43,7 @@ return {
       --image = { enabled = false, },
       --scope = { enabled = false, },
       --scratch = { enabled = false, },
+      styles = require("pluginConf.snacks.styles"),
     })
   end,
 }
