@@ -13,12 +13,13 @@ Try $\sum_{i = 1}^{10} \hat{x}_i^{2}$ equation rendering.
 
 Just items to do later once config is stable
 
+- [ ] Terminal has glitched prompt in starship
+- [ ] snacks.image is not rendering latex
+- [ ] flash and snacks.picker setup
+- [ ] snacks.layout maybe? perhaps add edgy?
 - [ ] Ctrl-y not working as intended; nvim-cmp
-- [ ] Add flash and hydra as plugins
 - [ ] Document workflow in this readme
 - [ ] Make shells to test paq-nvim
-- [ ] Keybinds for aerial, snacks stuff, gitsigns, trouble, conform, obsidian, vimtex, nabla, mini-map, mini
-- [~] Snacks explorer not working; explorer not in nixpkgs yet.
 
 # Workflow
 

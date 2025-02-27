@@ -49,6 +49,24 @@ snacks_toggle.treesitter():map("<Leader>uh")
 snacks_toggle.dim():map("<Leader>uz")
 snacks_toggle.zen():map("<Leader>uZ")
 snacks_toggle.zoom():map("<Leader>u<C-z>")
+-- Custom dark/light mode toggle
+snacks_toggle
+  .new({
+    name = "Dark mode",
+    which_key = true,
+    get = function()
+      return vim.o.background == "dark"
+    end,
+    notify = true,
+    set = function(state)
+      if state then
+        vim.o.background = "dark"
+      else
+        vim.o.background = "light"
+      end
+    end,
+  })
+  :map("<Leader>uC")
 
 -- Other snacks related tools
 snacks_keymap.set("n", "<Leader>ue", function()
