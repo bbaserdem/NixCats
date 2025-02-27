@@ -109,9 +109,6 @@ return {
           enabled = false,
         },
         max_file_size = 10.0,
-        heading = {
-          border = true,
-        },
         pipe_table = {
           border = {
             "╔",

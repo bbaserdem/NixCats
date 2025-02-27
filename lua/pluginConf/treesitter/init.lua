@@ -40,7 +40,7 @@ return {
         -- Highlight module
         highlight = {
           enable = true,
-          -- disable = { "latex" },
+          disable = { "latex" },
           additional_vim_regex_highlighting = { "latex", "markdown" },
         },
         -- Indent module
