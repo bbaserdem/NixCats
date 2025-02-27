@@ -7,11 +7,7 @@ In time, this will be my replacement for nvim command on my computer.
 
 This flake is a configuration of the [**nixCats**](https://github.com/BirdeeHub/nixCats-nvim) framework.
 
-![render remote images](https://gist.ro/s/remote.png)
-
-![render_local_images](/home/batuhan/Media/Pictures/Wallpapers/1920x1080/tree_stump.png)
-
-Try $$\sum_{i = 1}^{10} \left| \hat{x}_i \right|^{2}$$ equation rendering.
+Try $\sum_{i = 1}^{10} \hat{x}_i^{2}$ equation rendering.
 
 # Todo
 
