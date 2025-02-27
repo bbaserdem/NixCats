@@ -17,7 +17,6 @@ return {
   event = { "DeferredUIEnter" },
   after = function(plugin)
     local _trans = false
-
     if require("nixCatsUtils").isNixCats then
       if nixCats.extra("colorscheme.name") == "gruvbox-material" then
         if nixCats.extra("colorscheme.style") == "light" then
@@ -28,14 +27,13 @@ return {
         if nixCats.extra("colorscheme.translucent") ~= nil then
           _trans = nixCats.extra("colorscheme.translucent")
         end
+        -- Load us only if we are the main theme
+        require("gruvbox-material").setup({
+          background = {
+            transparent = _trans,
+          },
+        })
       end
     end
-
-    -- Load us
-    require("gruvbox-material").setup({
-      background = {
-        transparent = _trans,
-      },
-    })
   end,
 }
