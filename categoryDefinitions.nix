@@ -307,7 +307,7 @@ in {
 
   # lists of the functions you would have passed to
   # python.withPackages or lua.withPackages
-  extraPython3Packages = {
+  python3.libraries = {
     main = python-pkgs: [
       python-pkgs.pynvim
     ];
