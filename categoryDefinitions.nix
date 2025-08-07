@@ -281,7 +281,7 @@ in {
         nabla-nvim # Render latex equations
         mkdnflow-nvim # Navigate wiki links
         glow-nvim # Render markdown in nvim terminal
-        obsidian-nvim # Interact with obsidian vault
+        #obsidian-nvim # Interact with obsidian vault
         render-markdown-nvim
       ];
     };
