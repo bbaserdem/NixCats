@@ -164,7 +164,7 @@ in {
         "onedark" = onedark-nvim;
         "rose-pine" = rosepine-nvim;
         "stylix" = mini-base16;
-        "tokyonight" = tokyonight-nvim;
+        #"tokyonight" = tokyonight-nvim;
         "vscode" = vscode-nvim;
       })
     ];
