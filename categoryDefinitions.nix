@@ -195,7 +195,7 @@ in {
       oldworld-nvim
       onedark-nvim
       rosepine-nvim
-      tokyonight-nvim
+      # tokyonight-nvim
       vscode-nvim
     ];
 
