@@ -11,6 +11,8 @@
     name = defaultPackageName;
     packages = [
       defaultPackage
+      nodejs-slim
+      pnpm
     ];
     inputsFrom = [];
     shellHook = ''
