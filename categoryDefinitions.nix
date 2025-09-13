@@ -81,7 +81,6 @@ in {
       latex = [
         pplatex # Latex log parsing tool
         neovim-remote # Client server for vimtex to run latexmk
-        xdotool # Needed for zathura
         pstree
         bibtex-tidy # Latex cleaner
         tex-fmt
