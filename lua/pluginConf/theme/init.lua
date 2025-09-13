@@ -19,7 +19,7 @@ return {
   { import = "pluginConf/theme/onedark" },
   { import = "pluginConf/theme/rosepine" },
   { import = "pluginConf/theme/tabby" },
-  --{ import = "pluginConf/theme/tokyonight" },
+  -- { import = "pluginConf/theme/tokyonight" },
   { import = "pluginConf/theme/vscode" },
   { -- LSP kind icons
     "lspkind.nvim",

@@ -4,6 +4,17 @@
 # Get us
 !/.gitignore
 
+# System setup
+!/.envrc
+# AI specific ignores
+/.claude
+/.claude/
+/.taskmaster
+/.taskmaster/
+/.mcp.json
+/AGENT.md
+/CLAUDE.md
+
 # Get all lua files
 !/after
 !/after/**
@@ -26,3 +37,4 @@
 
 # Get all markdown
 !/**.md
+

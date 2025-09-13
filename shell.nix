@@ -11,6 +11,8 @@
     name = defaultPackageName;
     packages = [
       defaultPackage
+      pkgs.nodejs-slim
+      pkgs.pnpm
     ];
     inputsFrom = [];
     shellHook = ''
@@ -20,6 +22,8 @@
     name = "neovim-nixCats-none";
     packages = [
       packages.neovim-nixCats-none
+      pkgs.nodejs-slim
+      pkgs.pnpm
     ];
     inputsFrom = [];
     shellHook = ''
