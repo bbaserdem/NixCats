@@ -66,7 +66,6 @@ in {
     functionality = [
       dwt1-shell-color-scripts # For terminal color scripts
       imagemagick # For image displaying with image.nvim and snacks.image
-      wl-clipboard # Wayland clipboard communication
       xclip # Xorg clipboard communication
       universal-ctags # Tag generation for multiple languages
       ripgrep # Fast grep implementation
