@@ -6,14 +6,13 @@
 
 # System setup
 !/.envrc
-# AI specific ignores
-/.claude
-/.claude/
-/.taskmaster
-/.taskmaster/
-/.mcp.json
-/AGENT.md
-/CLAUDE.md
+# Claude stuff if we are using claude
+!/.claude
+!/.claude/**
+!/.taskmaster
+!/.taskmaster/**
+!/.mcp.json
+!/CLAUDE.md
 
 # Get all lua files
 !/after
@@ -35,6 +34,6 @@
 # Get the flake.lock file
 !/flake.lock
 
-# Get all markdown
+# Get all markdown files
 !/**.md
 

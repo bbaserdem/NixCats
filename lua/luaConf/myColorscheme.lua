@@ -5,7 +5,7 @@ local cs = ""
 
 if not require("nixCatsUtils").isNixCats then
   -- Default colorscheme if we are not nixCats
-  cs = "onedark"
+  cs = "melange"
 
 -- Load and do a bit of parsing if we are in nixCats
 else
@@ -17,5 +17,6 @@ else
     cs = "default"
   end
 end
+
 -- Load the specific colorscheme
 vim.cmd.colorscheme(cs)

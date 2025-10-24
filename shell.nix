@@ -18,10 +18,11 @@
     shellHook = ''
     '';
   };
+  # Shell to test minimal nvim config
   none = pkgs.mkShell {
-    name = "neovim-nixCats-none";
+    name = "nixCats-none";
     packages = [
-      packages.neovim-nixCats-none
+      packages.nixCats-none
       pkgs.nodejs-slim
       pkgs.pnpm
     ];

@@ -1,6 +1,6 @@
 -- <nixCats>/lua/luaConf/myOptions.lua
 
--- Needs to be setup before everything
+-- Needs to be setup before everything, leader key
 vim.api.nvim_set_keymap("", " ", "", { noremap = true })
 vim.api.nvim_set_keymap("", "<C-S-Space>", "", { noremap = true })
 vim.g.mapleader = " "
@@ -52,7 +52,6 @@ vim.opt.timeoutlen = 2000 -- Need the timeout
 vim.opt.guifont = "Iosevka"
 
 -- Columns and rows
-
 vim.opt.number = false -- Line numbers
 vim.opt.relativenumber = false -- Show relative numbers
 vim.opt.signcolumn = "yes" -- Always show sign column
