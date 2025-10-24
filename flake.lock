@@ -244,29 +244,12 @@
         "type": "github"
       }
     },
-    "plugins-oldworld-nvim": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1751868937,
-        "narHash": "sha256-nmekLu0N7fib6EeWZJ/jZyaGFxVCnCdlwf5inmL8WT0=",
-        "owner": "dgox16",
-        "repo": "oldworld.nvim",
-        "rev": "d0af80cf6bd5d17789cd1214a8054fe1cf23fc22",
-        "type": "github"
-      },
-      "original": {
-        "owner": "dgox16",
-        "repo": "oldworld.nvim",
-        "type": "github"
-      }
-    },
     "root": {
       "inputs": {
         "neovim-nightly-overlay": "neovim-nightly-overlay",
         "nixCats": "nixCats",
         "nixpkgs": "nixpkgs_2",
         "plugins-e-ink-nvim": "plugins-e-ink-nvim",
-        "plugins-oldworld-nvim": "plugins-oldworld-nvim",
         "vimspell-en": "vimspell-en",
         "vimspell-tr": "vimspell-tr"
       }

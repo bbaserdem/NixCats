@@ -13,6 +13,7 @@
     # Nixcats
     nixCats.url = "github:BirdeeHub/nixCats-nvim";
 
+    # ----- External Plugins ----- #
     # Spelling libraries
     vimspell-tr = {
       url = "https://ftp.nluug.nl/pub/vim/runtime/spell/tr.utf-8.spl";
@@ -23,11 +24,6 @@
       flake = false;
     };
 
-    # Soothing color theme
-    plugins-oldworld-nvim = {
-      url = "github:dgox16/oldworld.nvim";
-      flake = false;
-    };
     # Grayscale color theme
     plugins-e-ink-nvim = {
       url = "github:alexxGmZ/e-ink.nvim";
@@ -46,8 +42,10 @@
     # Path for lua file entry is here
     luaPath = "${./.}";
 
-    # Generate shell config for everything
+    # Generate config for all systems
     forEachSystem = utils.eachSystem nixpkgs.lib.platforms.all;
+
+    # Grab nonfree packages
     extra_pkg_config = {
       allowUnfree = true;
     };
@@ -61,7 +59,9 @@
     ];
 
     # Category definitions are here; this variable should be a function!
-    categoryDefinitions = import ./categoryDefinitions.nix {inherit inputs;};
+    categoryDefinitions = import ./categoryDefinitions.nix {
+      inherit inputs;
+    };
 
     # Package definitions are here, this should be an attrset
     packageDefinitions = import ./packageDefinitions.nix {
@@ -69,7 +69,7 @@
     };
 
     # The default package to use from packageDefinitions
-    defaultPackageName = "neovim-nixCats-full";
+    defaultPackageName = "nixCats";
   in
     forEachSystem (system: let
       # The builder function

@@ -6,53 +6,62 @@
   utils,
   ...
 }: {
-  # The way the category tree is established is;
+  # The way the tree is established is;
   # <category>
-  # ├─ main           : Plugins that should be there by default
-  # ├─ debug          : Debug related tooling
-  # ├─*theme          : Plugins to theme look and feel
-  # ├─ tools
+  # ├─ system         : Plugins that should be there by default
+  # ├─ tools          : Functionality that is language agnostic
+  # │  ├─ debug       : Debug related tooling
+  # │  ├─ git         : Git integration
+  # │  ├─ completion  : Code completion
+  # │  ├─ files       : File browser
+  # │  ├─ formatting  : Linting and spelling
+  # │  ├─ motions     : Movement related plugins
+  # │  ├─ search      : Pickers functionality
+  # │  ├─ snippets    : Snippet engine
   # │  ├─ treesitter  : Code parsing
-  # │  ├─*vimspell    : Dictionary languages
-  # │  └─ git         : Git integration
-  # ├─ completion
-  # │  ├─ cmp         : Code completion using nvim-cmp
-  # │  ├─ blink       : Code completion using blink.cmp
-  # │  └─ snippets
-  # │     └─ luasnip  : Snippet engine
-  # ├─ functionality  : Various functionality
-  # ├─ status         : Status displaying UI elements
-  # └─ languages
-  #    └─ <specific language settings>
+  # │  └─ utility     : Small functionalities
+  # ├─ ui             : Viewing related plugins
+  # │  ├─ bar         : Status bar items
+  # │  ├─ theme       : Colorscheme and theme
+  # │  ├─ views       : Screens for viewing code status
+  # │  └─ icons       : Icon usage
+  # └─ languages      : Configured languages
+  #    ├─ c
+  #    ├─ latex
+  #    ├─ lua
+  #    ├─ markdown
+  #    ├─ nix
+  #    ├─ python
+  #    ├─ shell
+  #    └─ typescript
 
-  neovim-nixCats-full = {pkgs, ...} @ misc: {
+  nixCats = {pkgs, ...} @ misc: {
     # Full neovim instance
 
     # they contain a settings set defined above
     # see :help nixCats.flake.outputs.settings
     settings = {
+      suffix-path = true;
+      suffix-LD = true;
       wrapRc = true;
-      aliases = [
-        "nvim-nixCats-full"
-        "neovimCats-full"
-        "nvimCats-full"
-        "nx-full"
-      ];
-      # Still load configuration from base neovim, to allow for system integration
-      configDirName = "neovim-nixCats-full";
+      configDirName = "neovim-nixCats";
       neovim-unwrapped = inputs.neovim-nightly-overlay.packages.${pkgs.system}.neovim;
+      hosts = {
+        python3.enable = true;
+        node.enable = true;
+      };
+      # Extra aliases
+      aliases = [
+        "neovim-nixCats-full"
+        "nixCats-full"
+        "nc-full"
+      ];
     };
 
     # and a set of categories that you want
     categories = {
-      main = true;
-      # Package sets to include
-      debug = true;
-      theme = true;
+      system = true;
       tools = true;
-      completion.cmp = true;
-      functionality = true;
-      status = true;
       languages = true;
     };
 
@@ -69,45 +78,39 @@
         host = "";
         user = "";
       };
-      obsidian = {
-        workspaces = [
-          {
-            name = "Test";
-            path = "~/Media/Notes";
-          }
-        ];
-      };
     };
   };
 
   # An empty installation of neovim, to use with the system
-  neovim-nixCats-none = {pkgs, ...} @ misc: {
+  nixCats-none = {pkgs, ...} @ misc: {
     settings = {
+      suffix-path = true;
+      suffix-LD = true;
       wrapRc = true;
       configDirName = "neovim-nixCats-none";
-      aliases = [
-        "nvim-nixCats-none"
-        "neovimCats-none"
-        "nvimCats-none"
-        "nx-none"
-      ];
       neovim-unwrapped = pkgs.neovim-unwrapped;
+      hosts = {
+        python3.enable = false;
+        node.enable = false;
+      };
+      # Extra aliases
+      aliases = [
+        "neovim-nixCats-none"
+        "nixCats-none"
+        "nc-none"
+      ];
     };
     categories = {
-      main = true;
-      # Package sets to not include
-      debug = false;
+      # Disable everything but the needed plugins
+      system = true;
       tools = false;
-      theme = false;
-      completion = false;
-      functionality = false;
-      status = false;
       languages = false;
     };
     extra = {
+      # Just a marker to make sure some behavior is disabled
       weAreOld = true;
       colorscheme = {
-        name = "minired";
+        name = "stylix";
         style = "dark";
         translucent = false;
       };

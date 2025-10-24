@@ -10,17 +10,9 @@
   ...
 } @ packageDef: let
   # Some plugins
-  oldworld-nvim = {
-    name = "oldworld.nvim";
-    plugin = pkgs.neovimPlugins.oldworld-nvim;
-  };
   eink-nvim = {
     name = "e-ink.nvim";
     plugin = pkgs.neovimPlugins.e-ink-nvim;
-  };
-  rosepine-nvim = {
-    name = "rose-pine.nvim";
-    plugin = pkgs.vimPlugins.rose-pine;
   };
   myVimspell = pkgs.runCommand "vimspell-lang" {} ''
     mkdir -p $out/spell
@@ -30,23 +22,32 @@
 in {
   # The way the tree is established is;
   # <category>
-  # ├─ main           : Plugins that should be there by default
-  # ├─ debug          : Debug related tooling
-  # ├─*theme          : Plugins to theme look and feel
-  # ├─ tools
+  # ├─ system         : Plugins that should be there by default
+  # ├─ tools          : Functionality that is language agnostic
+  # │  ├─ debug       : Debug related tooling
+  # │  ├─ git         : Git integration
+  # │  ├─ completion  : Code completion
+  # │  ├─ files       : File browser
+  # │  ├─ formatting  : Linting and spelling
+  # │  ├─ motions     : Movement related plugins
+  # │  ├─ search      : Pickers functionality
+  # │  ├─ snippets    : Snippet engine
   # │  ├─ treesitter  : Code parsing
-  # │  ├─*vimspell    : Dictionary languages
-  # │  └─ git         : Git integration
-  # ├─ completion
-  # │  ├─ cmp         : Code completion using nvim-cmp
-  # │  ├─ blink       : Code completion using blink.cmp
-  # │  └─ snippets
-  # │     └─ luasnip  : Snippet engine
-  # ├─ functionality  : Various functionality
-  # ├─ status         : Status displaying UI elements
-  # ├─ ...
-  # └─ languages
-  #    └─ <specific language settings>
+  # │  └─ utility     : Small functionalities
+  # ├─ ui             : Viewing related plugins
+  # │  ├─ bar         : Status bar items
+  # │  ├─ theme       : Colorscheme and theme
+  # │  ├─ views       : Screens for viewing code status
+  # │  └─ icons       : Icon usage
+  # └─ languages      : Configured languages
+  #    ├─ c
+  #    ├─ latex
+  #    ├─ lua
+  #    ├─ markdown
+  #    ├─ nix
+  #    ├─ python
+  #    ├─ shell
+  #    └─ typescript
 
   # System level requirements
   # These packages should be available to the nixCat instance
@@ -54,6 +55,9 @@ in {
   # This is LSPs and system-wide tooling
   lspsAndRuntimeDeps = with pkgs; {
     tools = {
+      files = [
+        imagemagick # For image displaying with image.nvim and snacks.image
+      ];
       treesitter = [
         tree-sitter
       ];
@@ -61,17 +65,22 @@ in {
         git
         lazygit
       ];
+      search = [
+        ripgrep # Fast grep implementation
+        fd # Fast find implementation
+        findutils # Find implementation
+      ];
+      utility = [
+        xclip # Xorg clipboard communication
+        universal-ctags # Tag generation for multiple languages
+      ];
     };
 
-    functionality = [
-      dwt1-shell-color-scripts # For terminal color scripts
-      imagemagick # For image displaying with image.nvim and snacks.image
-      xclip # Xorg clipboard communication
-      universal-ctags # Tag generation for multiple languages
-      ripgrep # Fast grep implementation
-      fd # Fast find implementation
-      findutils # Find implementation
-    ];
+    ui = {
+      views = [
+        dwt1-shell-color-scripts # For terminal color scripts
+      ];
+    };
 
     languages = {
       c = [
@@ -94,7 +103,6 @@ in {
         glow # Markdown typesetter for terminal
         ltex-ls-plus
         languagetool
-        # python312Packages.pylatexenc
       ];
       nix = [
         nix-doc
@@ -109,7 +117,7 @@ in {
         dash
         dotenv-linter
       ];
-      ts = [
+      typescript = [
         nodePackages.typescript-language-server
       ];
     };
@@ -118,121 +126,47 @@ in {
   # Plugins that don't need lazy loading
   startupPlugins = with pkgs.vimPlugins; {
     # Main plugins to have
-    main = [
+    system = [
       lze # Lazy loader for plugins (NEEDED)
       lzextras # Lazy loader extras
     ];
 
-    functionality = [
-      oil-nvim # File browser
-      snacks-nvim # Large library with many small plugins
-    ];
+    tools = {
+      files = [
+        oil-nvim # File browser
+        snacks-nvim # Large library with many small plugins
+      ];
 
-    theme = [
-      nvim-web-devicons
-    ];
+      formatting = [
+        myVimspell
+      ];
+    };
 
-    tools.vimspell = [
-      myVimspell
-    ];
+    ui = {
+      theme = [
+        nvim-web-devicons
+      ];
+    };
 
-    languages.latex = [
-      vimtex # LaTeX suite, can't be lazy loaded
-    ];
+    languages = {
+      latex = [
+        vimtex # LaTeX suite, can't be lazy loaded
+      ];
+    };
   };
 
   # Lazy loading plugins
   optionalPlugins = with pkgs.vimPlugins; {
-    # Main plugins to have
-    main = [
+    system = [
       plenary-nvim # Library for other plugins
       nui-nvim
-      (builtins.getAttr (extra.colorscheme.name or "rose-pine") {
-        "catppuccin" = catppuccin-nvim;
-        "cyberdream" = cyberdream-nvim;
-        "e-ink" = eink-nvim;
-        "gruvbox" = gruvbox-nvim;
-        "gruvbox-material" = gruvbox-material-nvim;
-        "kanagawa" = kanagawa-nvim;
-        "material" = material-nvim;
-        "melange" = melange-nvim;
-        "minired" = mini-base16;
-        "nightfox" = nightfox-nvim;
-        "oldworld" = oldworld-nvim;
-        "onedark" = onedark-nvim;
-        "rose-pine" = rosepine-nvim;
-        "stylix" = mini-base16;
-        #"tokyonight" = tokyonight-nvim;
-        "vscode" = vscode-nvim;
-      })
+      mini-base16 # Request the minimal theme
     ];
-
-    # Debug tools
-    debug = [
-      nvim-nio # Library for asyncronous IO for nvim
-      nvim-dap # Debug adapter protocol for nvim
-      nvim-dap-ui # DAP ui
-      nvim-dap-virtual-text # DAP virtual text support
-    ];
-
-    # Theme related things
-    theme = [
-      lspkind-nvim # Add pictograms to built-in lsp
-      lualine-nvim # Statusline
-      tabby-nvim # Tabline
-      # Themes that may be used
-      catppuccin-nvim
-      cyberdream-nvim
-      eink-nvim
-      gruvbox-nvim
-      gruvbox-material-nvim
-      kanagawa-nvim
-      material-nvim
-      melange-nvim
-      nightfox-nvim
-      oldworld-nvim
-      onedark-nvim
-      rosepine-nvim
-      # tokyonight-nvim
-      vscode-nvim
-    ];
-
-    status = [
-      # Leaving this here on how to include non-packaged plugin
-      # { name = "incline.nvim"; plugin = pkgs.neovimPlugins.incline-nvim; }
-      aerial-nvim # Code outline window
-      fidget-nvim # Shows LSP progress in a text box
-      trouble-nvim # Sidebar that shows diagnostics and such
-      which-key-nvim # Shows keybind groups
-    ];
-
-    functionality = [
-      conform-nvim # Code formatter
-      flash-nvim # Movement tool
-      mini-nvim # Library
-      mkdir-nvim # Automatically make directories when saving files
-      neo-tree-nvim # File browser
-      image-nvim # Image display for neo-tree
-      nvim-lspconfig
-      nvim-window-picker # File browser dependency
-      nvim-lint # Linter without LSP
-      pomo-nvim # Pomodoro timer
-      urlview-nvim # Detects URLs (after telescope switch)
-    ];
-
-    # Autocompletion engines
-    completion = {
-      blink = [
-        blink-cmp # Completion plugin
-        # Engines
-        blink-compat # Enables compatibility with cmp
-        blink-cmp-spell # Suggestions from spellsuggest
-        blink-emoji-nvim # Emoji inserter
-        blink-ripgrep-nvim # Ripgrep completion from entire project
-        cmp-vimtex # Vimtex source for cmp
-      ];
-      cmp = [
-        nvim-cmp
+    tools = {
+      # Completion engines
+      completion = [
+        nvim-lspconfig # LSP default configuration
+        nvim-cmp # Completion engine
         # Completion engines
         cmp_luasnip # Snippet suggestions
         cmp-nvim-lsp # LSP suggestions
@@ -246,27 +180,70 @@ in {
         cmp-rg # Ripgrep
         cmp-dap # DAP buffer completion
       ];
-      snippets = {
-        luasnip = [
-          luasnip
-          friendly-snippets
-        ];
-      };
-    };
-
-    # Toolskits with joint plugins
-    tools = {
-      # We want to have treesitter for things
+      # Debug tools
+      debug = [
+        nvim-nio # Library for asyncronous IO for nvim
+        nvim-dap # Debug adapter protocol for nvim
+        nvim-dap-ui # DAP ui
+        nvim-dap-virtual-text # DAP virtual text support
+      ];
+      files = [
+        yazi-nvim # File browser
+      ];
+      formatting = [
+        conform-nvim # Code formatter
+        nvim-lint # Linter without LSP
+      ];
+      git = [
+        gitsigns-nvim
+        vim-fugitive
+      ];
+      motions = [
+        flash-nvim # Movement tool
+        mini-nvim # Library for motions
+      ];
+      snippets = [
+        luasnip
+        friendly-snippets
+      ];
       treesitter = [
         nvim-treesitter.withAllGrammars
         nvim-treesitter-context
         nvim-treesitter-refactor
         nvim-treesitter-textobjects
       ];
-      # Git related toolkit
-      git = [
-        gitsigns-nvim
-        vim-fugitive
+      utility = [
+        mkdir-nvim # Automatically make directories when saving files
+        urlview-nvim # Detects URLs
+        pomo-nvim # Pomodoro timer
+      ];
+    };
+
+    ui = {
+      theme = [
+        # Themes that may be used
+        catppuccin-nvim
+        cyberdream-nvim
+        eink-nvim
+        gruvbox-nvim
+        gruvbox-material-nvim
+        kanagawa-nvim
+        melange-nvim
+        nightfox-nvim
+        onedark-nvim
+      ];
+      bar = [
+        lualine-nvim # Statusline
+        tabby-nvim # Tabline
+      ];
+      views = [
+        aerial-nvim # Code outline window
+        fidget-nvim # Shows LSP progress in a text box
+        trouble-nvim # Sidebar that shows diagnostics and such
+        which-key-nvim # Shows keybind groups
+      ];
+      icons = [
+        lspkind-nvim # Add pictograms to built-in lsp
       ];
     };
 
@@ -279,7 +256,6 @@ in {
         nabla-nvim # Render latex equations
         mkdnflow-nvim # Navigate wiki links
         glow-nvim # Render markdown in nvim terminal
-        #obsidian-nvim # Interact with obsidian vault
         render-markdown-nvim
       ];
     };
@@ -287,13 +263,15 @@ in {
 
   # shared libraries to be added to LD_LIBRARY_PATH
   # variable available to nvim runtime
-  sharedLibraries = {
-    main = with pkgs; [
-      libnotify
-    ];
-    git = with pkgs; [
-      libgit2
-    ];
+  sharedLibraries = with pkgs; {
+    tools = {
+      utilities = [
+        libnotify
+      ];
+      git = [
+        libgit2
+      ];
+    };
   };
 
   environmentVariables = {
@@ -306,49 +284,45 @@ in {
   # lists of the functions you would have passed to
   # python.withPackages or lua.withPackages
   python3.libraries = {
-    main = python-pkgs: [
-      python-pkgs.pynvim
-    ];
+    system = python-pkgs:
+      with python-pkgs; [
+        pynvim # Python client for neovim
+      ];
     languages = {
-      markdown = python-pkgs: [
-        python-pkgs.mdformat
-        # python-pkgs.pylatexenc
-      ];
-      python = python-pkgs: [
-        python-pkgs.ruff
-      ];
+      markdown = python-pkgs:
+        with python-pkgs; [
+          mdformat # Markdown formatter
+          pylatexenc # Latex to unicode and back conversion
+        ];
+      python = python-pkgs:
+        with python-pkgs; [
+          ruff # Python linter and code formatter
+          uv # Package manager for python
+        ];
     };
   };
 
-  # populates $LUA_PATH and $LUA_CPATH
+  # Populates $LUA_PATH and $LUA_CPATH
   extraLuaPackages = {
-    functionality = [
-      (lua-pkgs: [
-        lua-pkgs.magick
-        lua-pkgs.image-nvim
-      ])
-    ];
-    completion.luasnip = [
-      (lua-pkgs: [
-        lua-pkgs.jsregexp
-      ])
-    ];
+    tools = {
+      files = [
+        (lua-pkgs:
+          with lua-pkgs; [
+            magick # Imagemagick lua bindings
+            image-nvim # Image library for nvim
+          ])
+      ];
+      snippets = [
+        (lua-pkgs:
+          with lua-pkgs; [
+            jsregexp # JavaScript regex for lua
+          ])
+      ];
+    };
   };
 
   # Defining language = [ "language" "default"]; in this attrset would
   # cause any import of a subcategory of language to import language.default as well
   extraCats = {
-    # Various defaults
-    main = [
-      ["tools" "vimspell"]
-    ];
-    completion = {
-      blink = [
-        ["completion" "snippets" "luasnip"]
-      ];
-      cmp = [
-        ["completion" "snippets" "luasnip"]
-      ];
-    };
   };
 }
