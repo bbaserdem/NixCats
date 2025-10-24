@@ -24,11 +24,11 @@ in {
   # <category>
   # ├─ system         : Plugins that should be there by default
   # ├─ tools          : Functionality that is language agnostic
-  # │  ├─ debug       : Debug related tooling
-  # │  ├─ git         : Git integration
   # │  ├─ completion  : Code completion
+  # │  ├─ debug       : Debug related tooling
   # │  ├─ files       : File browser
   # │  ├─ formatting  : Linting and spelling
+  # │  ├─ git         : Git integration
   # │  ├─ motions     : Movement related plugins
   # │  ├─ search      : Pickers functionality
   # │  ├─ snippets    : Snippet engine
@@ -134,9 +134,7 @@ in {
     tools = {
       files = [
         oil-nvim # File browser
-        snacks-nvim # Large library with many small plugins
       ];
-
       formatting = [
         myVimspell
       ];
@@ -162,6 +160,7 @@ in {
       nui-nvim
       mini-base16 # Request the minimal theme
     ];
+
     tools = {
       # Completion engines
       completion = [
@@ -201,6 +200,8 @@ in {
       motions = [
         flash-nvim # Movement tool
         mini-nvim # Library for motions
+      ];
+      search = [
       ];
       snippets = [
         luasnip
