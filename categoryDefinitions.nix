@@ -87,7 +87,7 @@ in {
         clang-tools
       ];
       latex = [
-        pplatex # Latex log parsing tool
+        # pplatex # Latex log parsing tool
         neovim-remote # Client server for vimtex to run latexmk
         pstree
         bibtex-tidy # Latex cleaner
