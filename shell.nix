@@ -5,12 +5,10 @@
   defaultPackage,
   packages,
   ...
-} @ args: {
-  # Default shell to test the nvim config
-  default = pkgs.mkShell {
-    name = defaultPackageName;
+} @ args: let
+  mergeAttrs = pkgs.lib.recursiveUpdate;
+  defaultShellDefinition = {
     packages = [
-      defaultPackage
       pkgs.nodejs-slim
       pkgs.pnpm
     ];
@@ -18,16 +16,17 @@
     shellHook = ''
     '';
   };
-  # Shell to test minimal nvim config
-  none = pkgs.mkShell {
-    name = "nixCats-none";
-    packages = [
-      packages.nixCats-none
-      pkgs.nodejs-slim
-      pkgs.pnpm
-    ];
-    inputsFrom = [];
-    shellHook = ''
-    '';
-  };
+in {
+  # Default shell has ts runtime for AI agents
+  default = pkgs.mkShell defaultShellDefinition;
+  nixCats = pkgs.mkShell (
+    mergeAttrs defaultShellDefinition {
+      packages = [defaultPackage];
+    }
+  );
+  nixCats-none = pkgs.mkShell (
+    mergeAttrs defaultShellDefinition {
+      packages = [packages.nixCats-none];
+    }
+  );
 }
