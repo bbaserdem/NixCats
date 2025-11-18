@@ -2,6 +2,7 @@
 {
   description = "bbaserdem's NixCats-nvim configuration";
 
+
   inputs = {
     # ----- System Flakes ----- #
     # Nixpkgs

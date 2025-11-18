@@ -68,11 +68,11 @@
     # Extra arguments ta be made available to nixCats
     extra = {
       colorscheme = {
-        name = "gruvbox";
-        style = "dark";
+        name = "material";
+        style = "darker";
         translucent = true;
       };
-      # Override this in a home-manager config
+      # Override this in a home-manager config file
       nix = {
         flake = "";
         host = "";
