@@ -6,15 +6,15 @@ local M = {
   -- mini-base16, lze?
   {
     "plenary.nvim",
-    dep_of = [
+    dep_of = {
       "neo-tree.nvim",
-    ],
+    },
   },
   {
     "nui.nvim",
-    dep_of = [
+    dep_of = {
       "neo-tree.nvim",
-    ],
+    },
   },
 }
 
