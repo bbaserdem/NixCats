@@ -1,5 +1,5 @@
 -------------------------------------------------
--- Latex files behavior
+-- Markdown files behavior
 -------------------------------------------------
 
 if require("nixCatsUtils").getExtraOrDefault("weAreOld", false) ~= true then

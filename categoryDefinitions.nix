@@ -134,6 +134,7 @@ in {
     tools = {
       files = [
         oil-nvim # File browser
+        oil-git-status-nvim
       ];
       formatting = [
         myVimspell

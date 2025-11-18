@@ -5,7 +5,7 @@
 local M = {
   -- { import = "pluginConf.tools.completion"},
   -- { import = "pluginConf.tools.debug"},
-  -- { import = "pluginConf.tools.files"},
+  { import = "pluginConf.tools.files" },
   -- { import = "pluginConf.tools.formatting"},
   -- { import = "pluginConf.tools.git"},
   -- { import = "pluginConf.tools.motions"},
