@@ -63,6 +63,7 @@
       system = true;
       tools = true;
       languages = true;
+      ui = true;
     };
 
     # Extra arguments ta be made available to nixCats

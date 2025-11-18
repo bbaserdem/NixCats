@@ -189,6 +189,9 @@ in {
       ];
       files = [
         yazi-nvim # File browser
+        neo-tree-nvim # Sidebar file browser
+        nvim-lsp-file-operations
+        image-nvim
       ];
       formatting = [
         conform-nvim # Code formatter

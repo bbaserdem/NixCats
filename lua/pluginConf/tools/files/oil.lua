@@ -1,8 +1,7 @@
--- <nixCats>/lua/pluginConf/oil.lua
+-- <nixCats>/lua/pluginConf/tools/files/oil.lua
 -- Oil nvim; replacement for netrc
 -- Not lazy loaded due to netrc setting
 
--- Configuring oil.nvim
 return {
   {
     "oil.nvim",
@@ -52,16 +51,7 @@ return {
           natural_order = false,
         },
       })
-    end,
-  },
-  {
-    "oil-git-status.nvim",
-    for_cat = {
-      cat = "tools.files",
-      default = true,
-    },
-    on_plugin = "oil.nvim",
-    after = function(plugin)
+      -- Oil git signs config
       require("oil-git-status").setup({
         index = {
           ["!"] = "!", -- Ignored
@@ -89,5 +79,13 @@ return {
         },
       })
     end,
+  },
+  {
+    "oil-git-status.nvim",
+    for_cat = {
+      cat = "tools.files",
+      default = true,
+    },
+    on_plugin = "oil.nvim",
   },
 }
