@@ -230,6 +230,7 @@ in {
         gruvbox-nvim
         gruvbox-material-nvim
         kanagawa-nvim
+        material-nvim
         melange-nvim
         nightfox-nvim
         onedark-nvim

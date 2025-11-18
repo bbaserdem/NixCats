@@ -1,4 +1,4 @@
--- <nixCats>/lua/pluginConf/theme/material.lua
+-- <nixCats>/lua/pluginConf/ui/theme/material.lua
 -- Material theme for nvim
 
 return {
