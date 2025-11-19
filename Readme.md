@@ -58,7 +58,7 @@ Some functionality is borrowed from [VSCode bindings](https://code.visualstudio.
 | --- |:--- |
 | F1  | Help menu |
 | F2  | Rename symbols |
-| *F3*  | Toggle file browser |
+| *F3*  |  |
 | F4  | Preview |
 | F5  | Start/continue debug. (Shift: Stop debug) |
 | *F6*  | Toggle AI |
