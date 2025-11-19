@@ -12,6 +12,7 @@ return {
       "nvim-dap-ui",
       "nvim-dap-virtual-text",
       "nvim-dap-python",
+      "cmp-dap",
     },
     on_require = { "dap" },
     cmd = {
