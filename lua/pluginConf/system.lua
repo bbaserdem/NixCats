@@ -6,6 +6,10 @@ local M = {
   -- mini-base16, lze?
   {
     "plenary.nvim",
+    for_cat = {
+      cat = "system",
+      default = true,
+    },
     dep_of = {
       "yazi.nvim",
       "neo-tree.nvim",
@@ -13,8 +17,22 @@ local M = {
   },
   {
     "nui.nvim",
+    for_cat = {
+      cat = "system",
+      default = true,
+    },
     dep_of = {
       "neo-tree.nvim",
+    },
+  },
+  {
+    "nvim-nio",
+    for_cat = {
+      cat = "system",
+      default = true,
+    },
+    dep_of = {
+      "nvim-dap-ui",
     },
   },
 }

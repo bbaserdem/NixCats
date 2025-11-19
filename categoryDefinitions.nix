@@ -159,6 +159,7 @@ in {
     system = [
       plenary-nvim # Library for other plugins
       nui-nvim
+      nvim-nio
       mini-base16 # Request the minimal theme
     ];
 
@@ -185,10 +186,11 @@ in {
         # Snippets
         luasnip
         friendly-snippets
+        # Other
+        lspkind-nvim # Add pictograms to built-in lsp
       ];
       # Debug tools
       debug = [
-        nvim-nio # Library for asyncronous IO for nvim
         nvim-dap # Debug adapter protocol for nvim
         nvim-dap-ui # DAP ui
         nvim-dap-virtual-text # DAP virtual text support
@@ -249,9 +251,6 @@ in {
         fidget-nvim # Shows LSP progress in a text box
         trouble-nvim # Sidebar that shows diagnostics and such
         which-key-nvim # Shows keybind groups
-      ];
-      icons = [
-        lspkind-nvim # Add pictograms to built-in lsp
       ];
     };
 
