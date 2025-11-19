@@ -19,7 +19,7 @@ require("keymapConf.files")
 --   { "<Leader>d", group = "(D)ebug" },
 --   { "<Leader>f", group = "(F)ile operations" },
 --   { "<Leader>g", group = "(Git) functions" },
---   { "<Leader>l", group = "(L)inting & formatting" },
+--   { "<Leader>l", group = "(C)ode linting & formatting" },
 --   { "<Leader>s", group = "(S)earch functions" },
 --   { "<Leader>t", group = "(T)ab functions" },
 --   { "<Leader>u", group = "(U)I elements" },

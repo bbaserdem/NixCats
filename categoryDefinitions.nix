@@ -41,11 +41,13 @@ in {
   # │  └─ icons       : Icon usage
   # └─ languages      : Configured languages
   #    ├─ c
+  #    ├─ go
   #    ├─ latex
   #    ├─ lua
   #    ├─ markdown
   #    ├─ nix
   #    ├─ python
+  #    ├─ rust
   #    ├─ shell
   #    └─ typescript
 
@@ -86,8 +88,13 @@ in {
       c = [
         clang-tools
       ];
+      go = [
+        go
+        gci
+      ];
       latex = [
         # pplatex # Latex log parsing tool
+        texlivePackages.chktex # Linter
         neovim-remote # Client server for vimtex to run latexmk
         pstree
         bibtex-tidy # Latex cleaner
@@ -100,6 +107,7 @@ in {
         stylua
       ];
       markdown = [
+        vale # Linter
         glow # Markdown typesetter for terminal
         ltex-ls-plus
         languagetool
@@ -113,10 +121,14 @@ in {
         ruff
         ty
       ];
+      rust = [
+        rustfmt
+      ];
       shell = [
         bash
         dash
         dotenv-linter
+        shellcheck
       ];
       typescript = [
         nodePackages.typescript-language-server
@@ -311,6 +323,10 @@ in {
           uv # Package manager for python
           debugpy # Debugger adapter
         ];
+      other = python-pkgs:
+        with python-pkgs; [
+          yq # Yaml parser
+        ];
     };
   };
 
@@ -328,6 +344,14 @@ in {
         (lua-pkgs:
           with lua-pkgs; [
             jsregexp # JavaScript regex for lua
+          ])
+      ];
+    };
+    languages = {
+      lua = [
+        (lua-pkgs:
+          with lua-pkgs; [
+            luacheck # Lua linter
           ])
       ];
     };
