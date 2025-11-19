@@ -90,7 +90,7 @@ in {
       ];
       go = [
         go
-        gci
+        gotools
       ];
       latex = [
         # pplatex # Latex log parsing tool

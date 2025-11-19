@@ -27,7 +27,7 @@ return {
             "rustfmt",
           },
           go = {
-            "gci",
+            "goimports",
             "gofmt",
           },
           nix = {

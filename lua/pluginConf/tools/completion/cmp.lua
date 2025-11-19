@@ -135,7 +135,17 @@ return {
               end
             end,
             s = cmp.mapping.confirm({ select = true }),
-            c = cmp.mapping.confirm({ behavior = cmp.ConfirmBehavior.Replace, select = true }),
+            c = function(fallback)
+              if cmp.visible() then
+                if cmp.get_active_entry() then
+                  cmp.confirm({ behavior = cmp.ConfirmBehavior.Replace, select = false })
+                else
+                  fallback()
+                end
+              else
+                fallback()
+              end
+            end,
           }),
 
           -- ctrl b/f : scroll the docs (back/forth) if they are visible
