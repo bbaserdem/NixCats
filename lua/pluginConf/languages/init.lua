@@ -4,7 +4,7 @@
 -- Plugin configs, with one call to lze
 local M = {
   -- { import = "pluginConf.languages.c"},
-  -- { import = "pluginConf.languages.latex"},
+  { import = "pluginConf.languages.latex" },
   -- { import = "pluginConf.languages.lua"},
   -- { import = "pluginConf.languages.markdown"},
   -- { import = "pluginConf.languages.nix"},
