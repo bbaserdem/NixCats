@@ -52,9 +52,7 @@
       };
       # Extra aliases
       aliases = [
-        "neovim-nixCats-full"
-        "nixCats-full"
-        "nc-full"
+        "neovim-nixCats"
       ];
     };
 
@@ -97,8 +95,6 @@
       # Extra aliases
       aliases = [
         "neovim-nixCats-none"
-        "nixCats-none"
-        "nc-none"
       ];
     };
     categories = {

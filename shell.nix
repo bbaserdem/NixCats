@@ -11,6 +11,7 @@
     packages = [
       pkgs.nodejs-slim
       pkgs.pnpm
+      defaultPackage
     ];
     inputsFrom = [];
     shellHook = ''
@@ -19,14 +20,4 @@
 in {
   # Default shell has ts runtime for AI agents
   default = pkgs.mkShell defaultShellDefinition;
-  nixCats = pkgs.mkShell (
-    mergeAttrs defaultShellDefinition {
-      packages = [defaultPackage];
-    }
-  );
-  nixCats-none = pkgs.mkShell (
-    mergeAttrs defaultShellDefinition {
-      packages = [packages.nixCats-none];
-    }
-  );
 }

@@ -167,18 +167,24 @@ in {
       completion = [
         nvim-lspconfig # LSP default configuration
         nvim-cmp # Completion engine
-        # Completion engines
+        # Completion engines; general
         cmp_luasnip # Snippet suggestions
         cmp-nvim-lsp # LSP suggestions
         cmp-nvim-lsp-signature-help # LSP signature help
-        cmp-spell # Autocomplete from spelllang
         cmp-async-path # Autocomplete from filesystem (no-block)
-        cmp-vimtex # Vimtex source for cmp
+        cmp-rg # Ripgrep
+        cmp-buffer # Buffer completion
+        cmp-spell # Autocomplete from spelllang
+        # Completion engines; commandline
         cmp-cmdline # Commandline completion
         cmp-cmdline-history # Commandline history completion
-        cmp-buffer # Buffer completion
-        cmp-rg # Ripgrep
+        # Completion engines; language
+        cmp-vimtex # Vimtex source for cmp
+        # Completion engines, other
         cmp-dap # DAP buffer completion
+        # Snippets
+        luasnip
+        friendly-snippets
       ];
       # Debug tools
       debug = [
@@ -206,10 +212,6 @@ in {
         mini-nvim # Library for motions
       ];
       search = [
-      ];
-      snippets = [
-        luasnip
-        friendly-snippets
       ];
       treesitter = [
         nvim-treesitter.withAllGrammars
@@ -318,7 +320,7 @@ in {
             image-nvim # Image library for nvim
           ])
       ];
-      snippets = [
+      completion = [
         (lua-pkgs:
           with lua-pkgs; [
             jsregexp # JavaScript regex for lua
