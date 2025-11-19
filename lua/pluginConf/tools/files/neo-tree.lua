@@ -11,6 +11,8 @@ return {
     cmd = "Neotree",
     after = function(plugin)
       require("neo-tree").setup({
+        enable_git_status = true,
+        enable_diagnostics = true,
         window = {
           mappings = {
             ["P"] = {
@@ -18,7 +20,29 @@ return {
               config = {
                 use_float = true,
                 use_image_nvim = true,
+                use_snacks_image = false,
               },
+            },
+          },
+        },
+        filesystem = {
+          filtered_items = {
+            visible = false,
+            hide_dotfiles = true,
+            hide_gitignored = false,
+            always_show = {
+              ".gitignore",
+              ".envrc",
+              ".env",
+              ".env.local",
+              ".env.develop",
+              ".env.develop.local",
+              ".cursor",
+              ".taskmaster",
+            },
+            never_show = {
+              ".DS_Store",
+              "thumbs.db",
             },
           },
         },
@@ -46,7 +70,7 @@ return {
     after = function(plugin)
       require("image").setup({
         backend = "kitty",
-        processor = "magick_rock",
+        processor = "magick_cli",
         integrations = {
           markdown = {
             enabled = true,

@@ -4,6 +4,9 @@
 # Get us
 !/.gitignore
 
+# For testing
+!/logo.png
+
 # System setup
 !/.envrc
 # Claude stuff if we are using claude

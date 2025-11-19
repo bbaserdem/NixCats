@@ -1,5 +1,7 @@
 # NixCats
 
+![Local logo](logo.png)
+
 This is my Neovim config flake, meant to work with my NixOS and Nix-Darwin systems.
 It is also configured to work without nix.
 
