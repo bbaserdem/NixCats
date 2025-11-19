@@ -111,6 +111,7 @@ in {
       ];
       python = [
         ruff
+        ty
       ];
       shell = [
         bash
@@ -256,6 +257,9 @@ in {
 
     # Plugins to lazy load on given languages
     languages = {
+      python = [
+        nvim-dap-python
+      ];
       lua = [
         lazydev-nvim # Configure editing nvim configuration files
       ];
@@ -305,6 +309,7 @@ in {
         with python-pkgs; [
           ruff # Python linter and code formatter
           uv # Package manager for python
+          debugpy # Debugger adapter
         ];
     };
   };

@@ -8,7 +8,7 @@ local M = {
   -- { import = "pluginConf.languages.lua"},
   -- { import = "pluginConf.languages.markdown"},
   -- { import = "pluginConf.languages.nix"},
-  -- { import = "pluginConf.languages.python"},
+  { import = "pluginConf.languages.python" },
   -- { import = "pluginConf.languages.shell"},
   -- { import = "pluginConf.languages.typescript"},
 }
