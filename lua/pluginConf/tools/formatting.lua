@@ -79,7 +79,7 @@ return {
         dotenv = { "dotenv_linter" },
         yaml = { "yq" },
         python = { "ruff" },
-        lua = { "luacheck" },
+        -- lua = { "luacheck" }, -- Not working for some reason
         latex = { "chktex" },
         markdown = { "vale" },
       }

@@ -45,7 +45,7 @@
       suffix-LD = true;
       wrapRc = true;
       configDirName = "neovim-nixCats";
-      neovim-unwrapped = inputs.neovim-nightly-overlay.packages.${pkgs.system}.neovim;
+      neovim-unwrapped = inputs.neovim-nightly-overlay.packages.${pkgs.stdenv.hostPlatform.system}.neovim;
       hosts = {
         python3.enable = true;
         node.enable = true;
