@@ -2,23 +2,26 @@
 -- Keybinds entry point
 
 -- Keybinds for each functionality
-require("keymapConf.clipboard")
-require("keymapConf.diagnostics")
-require("keymapConf.git")
-require("keymapConf.lint")
-require("keymapConf.navigation")
-require("keymapConf.picker")
-require("keymapConf.symbols")
-require("keymapConf.ui")
+-- require("keymapConf.buffer")
+-- require("keymapConf.debug")
+require("keymapConf.files")
+-- require("keymapConf.git")
+-- require("keymapConf.lint")
+-- require("keymapConf.search")
+-- require("keymapConf.tab")
+-- require("keymapConf.ui")
+-- require("keymapConf.window")
 
 -- Load which-key group names
 local wk = require("which-key")
 wk.add({
-  { "<Leader>d", group = "Diagnostics" },
-  { "<Leader>g", group = "Git Functions" },
-  { "<Leader>l", group = "Linting & Formatting" },
-  { "<Leader>p", group = "Pickers" },
-  { "<Leader>n", group = "Navigation" },
-  { "<Leader>s", group = "Symbols" },
-  { "<Leader>u", group = "Elements with UI" },
+  { "<Leader>b", group = "(B)uffer functions" },
+  { "<Leader>d", group = "(D)ebug" },
+  { "<Leader>f", group = "(F)ile operations" },
+  { "<Leader>g", group = "(Git) functions" },
+  { "<Leader>l", group = "(L)inting & formatting" },
+  { "<Leader>s", group = "(S)earch functions" },
+  { "<Leader>t", group = "(T)ab functions" },
+  { "<Leader>u", group = "(U)I elements" },
+  { "<Leader>w", group = "(W)indow functions" },
 })

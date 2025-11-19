@@ -7,6 +7,7 @@ local M = {
   {
     "plenary.nvim",
     dep_of = {
+      "yazi.nvim",
       "neo-tree.nvim",
     },
   },

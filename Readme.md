@@ -58,10 +58,10 @@ Some functionality is borrowed from [VSCode bindings](https://code.visualstudio.
 | --- |:--- |
 | F1  | Help menu |
 | F2  | Rename symbols |
-| F3  |  |
+| *F3*  | Toggle file browser |
 | F4  | Preview |
 | F5  | Start/continue debug. (Shift: Stop debug) |
-| F6  |  |
+| *F6*  | Toggle AI |
 | F7  | Start/toggle build (continuous if available) |
 | F8  | Go to error warning (Shift: reverse direction) |
 | F9  | Toggle breakpoint |
