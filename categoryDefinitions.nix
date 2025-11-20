@@ -223,7 +223,6 @@ in {
         vim-fugitive
       ];
       motions = [
-        flash-nvim # Movement tool
         mini-nvim # Library for motions
       ];
       search = [
