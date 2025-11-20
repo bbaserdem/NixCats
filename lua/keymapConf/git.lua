@@ -5,11 +5,21 @@
 local gs_status, gs = pcall(require, "gitsigns")
 if gs_status then
   -- Closures
-  local next = function() gs.nav_hunk('next') end
-  local prev = function() gs.nav_hunk('prev') end
-  local blame = function() gs.blame_line({full = true}) end
-  local diff = function() gs.diffthis("~") end
-  local qfix = function() gs.setqflist("all") end
+  local next = function()
+    gs.nav_hunk("next")
+  end
+  local prev = function()
+    gs.nav_hunk("prev")
+  end
+  local blame = function()
+    gs.blame_line({ full = true })
+  end
+  local diff = function()
+    gs.diffthis("~")
+  end
+  local qfix = function()
+    gs.setqflist("all")
+  end
   -- Keymaps from plugin
   vim.keymap.set("n", "<Leader>gn", next, { desc = "Next hunk" })
   vim.keymap.set("n", "<Leader>gp", prev, { desc = "Previous hunk" })
@@ -27,5 +37,5 @@ if gs_status then
   vim.keymap.set("n", "<Leader>g<C-b>", gs.toggle_current_line_blame, { desc = "Toggle line blame" })
   vim.keymap.set("n", "<Leader>g<C-d>", gs.toggle_word_diff, { desc = "Toggle word diff" })
   -- Text object
-  vim.keymap.set({"o", "x", "ih", gs.select_hunk, { desc = "Select hunk" })
+  vim.keymap.set({ "o", "x" }, "ih", gs.select_hunk, { desc = "Select hunk" })
 end

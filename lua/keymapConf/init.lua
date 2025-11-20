@@ -5,7 +5,7 @@
 -- require("keymapConf.buffer")
 -- require("keymapConf.debug")
 require("keymapConf.files")
--- require("keymapConf.git")
+require("keymapConf.git")
 -- require("keymapConf.lint")
 -- require("keymapConf.search")
 -- require("keymapConf.tab")
