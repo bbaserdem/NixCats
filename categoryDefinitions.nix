@@ -66,6 +66,7 @@ in {
       git = [
         git
         lazygit
+        gh
       ];
       search = [
         ripgrep # Fast grep implementation
@@ -113,6 +114,7 @@ in {
         languagetool
       ];
       nix = [
+        manix
         nix-doc
         nixd
         alejandra
@@ -226,6 +228,11 @@ in {
         mini-nvim # Library for motions
       ];
       search = [
+        telescope-nvim
+        # Extensions
+        telescope-manix
+        telescope-fzf-native-nvim
+        telescope-dap-nvim
       ];
       treesitter = [
         nvim-treesitter.withAllGrammars
