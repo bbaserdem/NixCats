@@ -13,6 +13,7 @@ local M = {
     dep_of = {
       "yazi.nvim",
       "neo-tree.nvim",
+      "telescope.nvim",
     },
   },
   {
@@ -23,6 +24,7 @@ local M = {
     },
     dep_of = {
       "neo-tree.nvim",
+      "telescope.nvim",
     },
   },
   {
