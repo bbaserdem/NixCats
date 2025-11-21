@@ -293,7 +293,7 @@ in {
   # variable available to nvim runtime
   sharedLibraries = with pkgs; {
     tools = {
-      utilities = [
+      utility = [
         libnotify
       ];
       git = [

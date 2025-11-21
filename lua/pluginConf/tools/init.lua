@@ -10,8 +10,7 @@ local M = {
   { import = "pluginConf.tools.git" },
   { import = "pluginConf.tools.motions" },
   { import = "pluginConf.tools.search" },
-  -- { import = "pluginConf.tools.snippets"},
-  -- { import = "pluginConf.tools.treesitter"},
+  { import = "pluginConf.tools.treesitter" },
   -- { import = "pluginConf.tools.utility"},
 }
 

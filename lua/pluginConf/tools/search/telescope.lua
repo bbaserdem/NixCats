@@ -8,6 +8,9 @@ return {
       cat = "tools.search",
       default = true,
     },
+    dep_of = {
+      "urlview.nvim",
+    },
     after = function(plugin)
       local telescope = require("telescope")
 
