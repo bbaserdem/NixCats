@@ -233,6 +233,7 @@ in {
         telescope-manix
         telescope-fzf-native-nvim
         telescope-dap-nvim
+        telescope-ui-select-nvim
       ];
       treesitter = [
         nvim-treesitter.withAllGrammars
