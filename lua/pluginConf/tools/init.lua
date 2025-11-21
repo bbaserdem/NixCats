@@ -11,7 +11,7 @@ local M = {
   { import = "pluginConf.tools.motions" },
   { import = "pluginConf.tools.search" },
   { import = "pluginConf.tools.treesitter" },
-  -- { import = "pluginConf.tools.utility"},
+  { import = "pluginConf.tools.utility" },
 }
 
 return M
