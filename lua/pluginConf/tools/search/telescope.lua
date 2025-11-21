@@ -21,9 +21,16 @@ return {
             override_generic_sorter = true,
             override_file_sorter = true,
             case_mode = "smart_case",
+            ["ui-select"] = {
+              telescope.get_dropdown({}),
+            },
           },
         },
       })
+
+      -- Load the extensions
+      telescope.load_extension("fzf")
+      telescope.load_extension("ui-select")
 
       -- Optional extensions
       local dap_status, dap = pcall(require, "dap")
@@ -35,6 +42,14 @@ return {
         telescope.load_extension("manix")
       end
     end,
+  },
+  {
+    "telescope-ui-select.nvim",
+    for_cat = {
+      cat = { "tools.search" },
+      default = true,
+    },
+    dep_of = "telescope.nvim",
   },
   {
     "telescope-fzf-native.nvim",
