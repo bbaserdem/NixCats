@@ -243,7 +243,6 @@ in {
       utility = [
         mkdir-nvim # Automatically make directories when saving files
         urlview-nvim # Detects URLs
-        pomo-nvim # Pomodoro timer
       ];
     };
 

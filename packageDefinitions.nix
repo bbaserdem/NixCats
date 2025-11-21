@@ -66,6 +66,7 @@
 
     # Extra arguments ta be made available to nixCats
     extra = {
+      spelling = false;
       colorscheme = {
         name = "material";
         style = "darker";
