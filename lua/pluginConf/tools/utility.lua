@@ -20,6 +20,18 @@ return {
       })
     end,
   },
+  { -- Delete buffers without closing windows
+    "bufdelete.nvim",
+    for_cat = {
+      cat = "tools.utility",
+      default = true,
+    },
+    on_require = { "bufdelete " },
+    cmd = {
+      "Bdelete",
+      "Bwipeout",
+    },
+  },
   { -- Make directories for buffers
     "mkdir.nvim",
     for_cat = {

@@ -5,7 +5,9 @@
 local M = {
   { import = "pluginConf.ui.views.aerial" },
   { import = "pluginConf.ui.views.fidget" },
+  { import = "pluginConf.ui.views.indent-blankline" },
   { import = "pluginConf.ui.views.trouble" },
+  { import = "pluginConf.ui.views.twilight" },
   { import = "pluginConf.ui.views.which-key" },
 }
 

@@ -231,10 +231,12 @@ in {
         nvim-treesitter-context
         nvim-treesitter-refactor
         nvim-treesitter-textobjects
+        rainbow-delimiters-nvim # Rainbow delimiters with tree-sitter
       ];
       utility = [
         mkdir-nvim # Automatically make directories when saving files
         urlview-nvim # Detects URLs
+        bufdelete-nvim # Delete buffers without touching windows
       ];
     };
 
@@ -261,6 +263,8 @@ in {
         fidget-nvim # Shows LSP progress in a text box
         trouble-nvim # Sidebar that shows diagnostics and such
         which-key-nvim # Shows keybind groups
+        twilight-nvim # Dims inactive code
+        indent-blankline-nvim # Creates indent tracking lines
       ];
       picker = [
         telescope-nvim
