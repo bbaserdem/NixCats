@@ -159,6 +159,9 @@ in {
       theme = [
         nvim-web-devicons
       ];
+      views = [
+        snacks-nvim
+      ];
     };
 
     languages = {
@@ -231,7 +234,6 @@ in {
         nvim-treesitter-context
         nvim-treesitter-refactor
         nvim-treesitter-textobjects
-        rainbow-delimiters-nvim # Rainbow delimiters with tree-sitter
       ];
       utility = [
         mkdir-nvim # Automatically make directories when saving files
@@ -264,7 +266,6 @@ in {
         trouble-nvim # Sidebar that shows diagnostics and such
         which-key-nvim # Shows keybind groups
         twilight-nvim # Dims inactive code
-        indent-blankline-nvim # Creates indent tracking lines
       ];
       picker = [
         telescope-nvim

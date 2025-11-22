@@ -2,7 +2,6 @@
 -- Treesitter config
 
 local M = {
-  { import = "pluginConf.tools.treesitter.rainbow" },
   {
     "nvim-treesitter-context",
     for_cat = {
