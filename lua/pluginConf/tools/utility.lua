@@ -40,4 +40,15 @@ return {
     },
     event = { "DeferredUIEnter" },
   },
+  { -- Make directories for buffers
+    "tmux.nvim",
+    for_cat = {
+      cat = "tools.utility",
+      default = true,
+    },
+    event = { "DeferredUIEnter" },
+    after = function(plugin)
+      require("tmux").setup({})
+    end,
+  },
 }

@@ -239,6 +239,7 @@ in {
         mkdir-nvim # Automatically make directories when saving files
         urlview-nvim # Detects URLs
         bufdelete-nvim # Delete buffers without touching windows
+        tmux-nvim # Integrate nvim with tmux
       ];
     };
 
@@ -290,6 +291,9 @@ in {
         mkdnflow-nvim # Navigate wiki links
         glow-nvim # Render markdown in nvim terminal
         render-markdown-nvim
+      ];
+      latex = [
+        nabla-nvim
       ];
     };
   };

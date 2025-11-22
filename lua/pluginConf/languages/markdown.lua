@@ -2,15 +2,6 @@
 -- Lazy loaded plugins config
 
 local M = {
-  { -- Equation parser
-    "nabla.nvim",
-    for_cat = {
-      cat = { "languages.markdown", "languages.latex" },
-      default = true,
-    },
-    ft = { "markdown" },
-    on_require = { "nabla" },
-  },
   { -- Preview
     "glow.nvim",
     for_cat = {

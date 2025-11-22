@@ -14,7 +14,16 @@ if wk_status then
   wk.add({ { "<Leader>l", group = "(L)atex functions (vimtex)" } })
 end
 
--- VSCode like functions
-vim.keymap.set("n", "<F7>", "<plug>(vimtex-compile)", { desc = "Start compilation" })
-vim.keymap.set("n", "<F19>", "<plug>(vimtex-stop)", { desc = "Stop compilation" })
-vim.keymap.set("n", "<F55>", "<plug>(vimtex-stop-all)", { desc = "Stop ALL compilation" })
+-- VSCode like functions;
+--  F7 toggles vimtex compilation
+--  SHIFT + F7 cleans build
+vim.keymap.set("n", "<F7>", "<plug>(vimtex-compile)", { desc = "Toggle compilation" })
+vim.keymap.set("n", "<F19>", "<plug>(vimtex-clean)", { desc = "Clean build" })
+-- F4 does forward search
+vim.keymap.set("n", "<F4>", "<plug>(vimtex-view)", { desc = "Compile file", buffer = true })
+
+-- F5 previews latex equation, shift F5 previews them all
+vim.keymap.set("n", "<F5>", require("nabla").popup, { desc = "Render   eqn.", buffer = true })
+vim.keymap.set("n", "<F17>", require("nabla").toggle_virt, { desc = "Render all   eqn.", buffer = true })
+
+-- F6 renders equation, shift-F6 renders all equations
