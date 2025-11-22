@@ -19,6 +19,9 @@ Just items to do later once config is stable
 - [ ] Document workflow in this readme
 - [ ] Make shells to test paq-nvim
 
+Testing;
+$$ \sin\left(x\right) = \frac{\exp\left( i x \right) - \exp\left( - i x \right)}{2i} $$
+
 # Workflow
 
 ## Setup

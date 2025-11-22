@@ -152,6 +152,7 @@ in {
       ];
       formatting = [
         myVimspell
+        nvim-lspconfig
       ];
     };
 

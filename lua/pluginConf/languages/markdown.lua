@@ -11,6 +11,9 @@ local M = {
     ft = { "markdown" },
     on_require = { "glow" },
     cmd = { "Glow" },
+    after = function(plugin)
+      require("glow").setup({})
+    end,
   },
   { -- Navigating markdown links
     "mkdnflow.nvim",

@@ -3,6 +3,14 @@
 
 return {
   {
+    "nvim-lspconfig",
+    for_cat = {
+      cat = "tools.formatting",
+      default = true,
+    },
+    lazy = false,
+  },
+  {
     "conform.nvim",
     for_cat = {
       cat = "tools.formatting",
