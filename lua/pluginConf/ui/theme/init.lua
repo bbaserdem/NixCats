@@ -5,16 +5,16 @@
 
 -- Register themeing related plugins to lazyload
 return {
-  { import = "pluginConf/theme/catppuccin" },
-  { import = "pluginConf/theme/cyberdream" },
-  { import = "pluginConf/theme/eink" },
-  { import = "pluginConf/theme/gruvbox" },
-  { import = "pluginConf/theme/gruvboxMaterial" },
-  { import = "pluginConf.ui.theme/kanagawa" },
+  { import = "pluginConf.ui.theme.catppuccin" },
+  { import = "pluginConf.ui.theme.cyberdream" },
+  { import = "pluginConf.ui.theme.eink" },
+  { import = "pluginConf.ui.theme.gruvbox" },
+  { import = "pluginConf.ui.theme.gruvboxMaterial" },
+  { import = "pluginConf.ui.theme.kanagawa" },
   { import = "pluginConf.ui.theme.material" },
-  { import = "pluginConf/theme/melange" },
-  { import = "pluginConf/theme/nightfox" },
-  { import = "pluginConf/theme/onedark" },
+  { import = "pluginConf.ui.theme.melange" },
+  { import = "pluginConf.ui.theme.nightfox" },
+  { import = "pluginConf.ui.theme.onedark" },
 
   -- Web-Devicons
   {

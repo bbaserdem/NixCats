@@ -14,7 +14,6 @@ return {
   colorscheme = {
     "e-ink",
   },
-  event = { "DeferredUIEnter" },
   after = function(plugin)
     if require("nixCatsUtils").isNixCats then
       if nixCats.extra("colorscheme.name") == "e-ink" then

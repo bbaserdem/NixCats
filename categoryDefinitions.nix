@@ -30,15 +30,14 @@ in {
   # │  ├─ formatting  : Linting and spelling
   # │  ├─ git         : Git integration
   # │  ├─ motions     : Movement related plugins
-  # │  ├─ search      : Pickers functionality
   # │  ├─ snippets    : Snippet engine
   # │  ├─ treesitter  : Code parsing
   # │  └─ utility     : Small functionalities
   # ├─ ui             : Viewing related plugins
   # │  ├─ bar         : Status bar items
   # │  ├─ theme       : Colorscheme and theme
-  # │  ├─ views       : Screens for viewing code status
-  # │  └─ icons       : Icon usage
+  # │  ├─ picker      : The picker to use (telescope)
+  # │  └─ views       : Screens for viewing code status
   # └─ languages      : Configured languages
   #    ├─ c
   #    ├─ go
@@ -227,14 +226,6 @@ in {
       motions = [
         mini-nvim # Library for motions
       ];
-      search = [
-        telescope-nvim
-        # Extensions
-        telescope-manix
-        telescope-fzf-native-nvim
-        telescope-dap-nvim
-        telescope-ui-select-nvim
-      ];
       treesitter = [
         nvim-treesitter.withAllGrammars
         nvim-treesitter-context
@@ -270,6 +261,14 @@ in {
         fidget-nvim # Shows LSP progress in a text box
         trouble-nvim # Sidebar that shows diagnostics and such
         which-key-nvim # Shows keybind groups
+      ];
+      picker = [
+        telescope-nvim
+        # Extensions
+        telescope-manix
+        telescope-fzf-native-nvim
+        telescope-dap-nvim
+        telescope-ui-select-nvim
       ];
     };
 
