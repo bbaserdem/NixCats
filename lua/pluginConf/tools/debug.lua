@@ -25,6 +25,9 @@ return {
       cat = "tools.debug",
       default = true,
     },
+    dep_of = {
+      "lazydev.nvim",
+    },
     on_require = {
       "dapui",
     },

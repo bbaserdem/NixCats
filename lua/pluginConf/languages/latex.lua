@@ -1,4 +1,4 @@
--- <nixCats>/lua/pluginConf/vimtex.lua
+-- <nixCats>/lua/pluginConf/languages/latex.lua
 -- Vimtex configuration, can't be lazy loaded (or type loaded) for inverse search to work
 
 -- Vimscript mappings

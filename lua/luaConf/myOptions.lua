@@ -52,10 +52,10 @@ vim.opt.timeoutlen = 2000 -- Need the timeout
 vim.opt.guifont = "Iosevka"
 
 -- Columns and rows
-vim.opt.number = false -- Line numbers
+vim.opt.number = true -- Line numbers
 vim.opt.relativenumber = false -- Show relative numbers
 vim.opt.signcolumn = "yes" -- Always show sign column
-vim.opt.numberwidth = 4 -- Number column width
+vim.opt.numberwidth = 3 -- Number column width
 vim.opt.cmdheight = 2 -- Number column width
 vim.opt.pumheight = 10 -- Number column width
 vim.opt.showtabline = 2 -- Show the top tabline even with a single tab

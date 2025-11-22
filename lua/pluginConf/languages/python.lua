@@ -1,4 +1,4 @@
--- <nixCats>/lua/pluginConf/python.lua
+-- <nixCats>/lua/pluginConf/languages/python.lua
 -- Python plugins
 
 return {
@@ -10,4 +10,7 @@ return {
   },
   ft = { "python" },
   on_require = { "dap-python" },
+  after = function(plugin)
+    require("dap-python").setup("python3")
+  end,
 }
