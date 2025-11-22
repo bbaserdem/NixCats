@@ -182,6 +182,12 @@ in {
     ];
 
     tools = {
+      # Ai tools
+      ai = [
+        claudecode-nvim
+        claude-fzf-nvim
+        fzf-lua
+      ];
       # Completion engines
       completion = [
         nvim-lspconfig # LSP default configuration

@@ -2,6 +2,7 @@
 -- Keybinds entry point
 
 -- Keybinds for each functionality
+require("keymapConf.ai")
 -- require("keymapConf.buffer")
 -- require("keymapConf.debug")
 require("keymapConf.files")
@@ -16,6 +17,7 @@ require("keymapConf.git")
 local wk_status, wk = pcall(require, "which-key")
 if wk_status then
   wk.add({
+    { "<Leader>b", group = "(A)I tools" },
     { "<Leader>b", group = "(B)uffer functions" },
     { "<Leader>d", group = "(D)ebug" },
     { "<Leader>f", group = "(F)ile operations" },

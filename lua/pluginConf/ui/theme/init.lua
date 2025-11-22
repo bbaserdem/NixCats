@@ -29,6 +29,7 @@ return {
     dep_of = {
       "oil.nvim",
       "neo-tree.nvim",
+      "fzf-lua",
     },
     after = function(plugin)
       require("nvim-web-devicons").setup({

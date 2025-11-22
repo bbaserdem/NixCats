@@ -3,6 +3,7 @@
 
 -- Plugin configs, with one call to lze
 local M = {
+  { import = "pluginConf.tools.ai" },
   { import = "pluginConf.tools.completion" },
   { import = "pluginConf.tools.debug" },
   { import = "pluginConf.tools.files" },
