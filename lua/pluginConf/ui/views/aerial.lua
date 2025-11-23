@@ -32,6 +32,7 @@ return {
       layout = {
         default_direction = "prefer_left",
       },
+      lazy_load = false,
       attach_mode = "global",
       show_guides = true,
       guides = {

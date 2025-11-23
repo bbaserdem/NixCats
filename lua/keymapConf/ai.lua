@@ -14,7 +14,7 @@ if cc_status then
   vim.keymap.set("n", "<Leader>aD", "<cmd>ClaudeCodeDiffDeny<CR>", { desc = "Deny diff" })
   vim.keymap.set("n", "<Leader>as", "<cmd>ClaudeCodeTreeAdd<CR>", {
     desc = "Add file to claude",
-    ft = { "NvimTree", "neo-tree", "oil", "minifiles", "netrw" },
+    -- ft = { "NvimTree", "neo-tree", "oil", "minifiles", "netrw" },
   })
 end
 

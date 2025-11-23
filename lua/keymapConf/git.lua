@@ -1,6 +1,14 @@
 -- <nixCats>/lua/keymapConf/git.lua
 -- <Leader>g: Git operations
 
+-- Telescope
+vim.keymap.set("n", "<Leader>gf", "<cmd>Telescope git_files<CR>", { desc = "Search git ls-files" })
+vim.keymap.set("n", "<Leader>gC", "<cmd>Telescope git_commits<CR>", { desc = "Search commits" })
+vim.keymap.set("n", "<Leader>gc", "<cmd>Telescope git_bcommits<CR>", { desc = "Search commits in the buffer" })
+vim.keymap.set("n", "<Leader>gB", "<cmd>Telescope git_branches<CR>", { desc = "Search branches" })
+vim.keymap.set("n", "<Leader>g?", "<cmd>Telescope git_status<CR>", { desc = "Search gitstatus" })
+vim.keymap.set("n", "<Leader>gs", "<cmd>Telescope git_stash<CR>", { desc = "Search stash" })
+
 -- Gitsigns
 local gs_status, gs = pcall(require, "gitsigns")
 if gs_status then

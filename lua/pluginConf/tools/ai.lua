@@ -55,7 +55,13 @@ return {
       "ClaudeCodeDiffDeny",
     },
     after = function(plugin)
-      require("claudecode").setup({})
+      require("claudecode").setup({
+        git_repo_cwd = true,
+        terminal = {
+          -- Need this so snacks terminal doesn't get used
+          provider = "native",
+        },
+      })
     end,
   },
 }

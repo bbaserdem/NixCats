@@ -67,11 +67,6 @@ in {
         lazygit
         gh
       ];
-      search = [
-        ripgrep # Fast grep implementation
-        fd # Fast find implementation
-        findutils # Find implementation
-      ];
       utility = [
         xclip # Xorg clipboard communication
         universal-ctags # Tag generation for multiple languages
@@ -81,6 +76,11 @@ in {
     ui = {
       views = [
         dwt1-shell-color-scripts # For terminal color scripts
+      ];
+      picker = [
+        ripgrep # Fast grep implementation
+        fd # Fast find implementation
+        findutils # Find implementation
       ];
     };
 

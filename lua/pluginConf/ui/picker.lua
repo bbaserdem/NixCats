@@ -11,6 +11,8 @@ return {
     dep_of = {
       "urlview.nvim",
     },
+    require = { "telescope", "telescope.builtin" },
+    cmd = { "Telescope" },
     after = function(plugin)
       local telescope = require("telescope")
 
