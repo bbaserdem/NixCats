@@ -26,3 +26,6 @@ vim.keymap.set(
   { desc = "LSP definition, reference, ... (trouble)" }
 )
 vim.keymap.set("n", "<Leader>dL", "<cmd>Trouble loclist toggle<CR>", { desc = "Location list (trouble)" })
+
+-- Telescope
+vim.keymap.set("n", "<Leader>dd", "<cmd>Telescope diagnostics<CR>", { desc = "Search diagnostics" })

@@ -143,6 +143,7 @@ in {
     system = [
       lze # Lazy loader for plugins (NEEDED)
       lzextras # Lazy loader extras
+      nvim-lspconfig
     ];
 
     tools = {
@@ -152,7 +153,6 @@ in {
       ];
       formatting = [
         myVimspell
-        nvim-lspconfig
       ];
     };
 

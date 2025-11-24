@@ -27,3 +27,6 @@ vim.keymap.set("n", "<Leader>vo", "<cmd>tab split<CR>", { desc = "Open new tab" 
 vim.keymap.set("n", "<Leader>vO", "<cmd>tabnew<CR>", { desc = "Open new empty tab" })
 vim.keymap.set("n", "<Leader>vx", "<cmd>tabclose<CR>", { desc = "Close tab" })
 vim.keymap.set("n", "<Leader>vX", "<cmd>tabonly<CR>", { desc = "Close all other tabs" })
+
+-- Other navigation
+vim.keymap.set("n", "<Leader>vj", "<cmd>Telescope jumplist<CR>", { desc = "View jump list entries" })

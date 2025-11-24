@@ -38,15 +38,21 @@ local M = {
     },
   },
   {
+    "nvim-lspconfig",
+    for_cat = {
+      cat = "system",
+      default = true,
+    },
+    lazy = false,
+  },
+  {
     "mini.base16",
     for_cat = {
       cat = "system",
       default = true,
     },
+    event = { "DeferredUIEnter" },
     colorscheme = { "minicyan", "minischeme", "minicrimson" },
-    after = function(plugin)
-      require("mini.base16").setup({})
-    end,
   },
 }
 
