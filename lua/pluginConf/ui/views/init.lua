@@ -5,6 +5,7 @@
 local M = {
   { import = "pluginConf.ui.views.aerial" },
   { import = "pluginConf.ui.views.fidget" },
+  { import = "pluginConf.ui.views.minimap" },
   { import = "pluginConf.ui.views.snacks" },
   { import = "pluginConf.ui.views.trouble" },
   { import = "pluginConf.ui.views.twilight" },

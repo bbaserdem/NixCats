@@ -34,6 +34,9 @@ return {
     after = function(plugin)
       require("claude-fzf").setup({
         batch_size = 10,
+        logging = {
+          level = "WARN",
+        },
       })
     end,
   },
