@@ -24,6 +24,7 @@
       # Extra aliases
       aliases = [
         "neovim-nixCats"
+        "nx"
       ];
     };
 
@@ -70,6 +71,7 @@
       # Extra aliases
       aliases = [
         "neovim-nixCats-python"
+        "nx-python"
       ];
     };
 
@@ -112,6 +114,7 @@
       # Extra aliases
       aliases = [
         "neovim-nixCats-none"
+        "nx-none"
       ];
     };
     categories = {
