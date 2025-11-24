@@ -37,6 +37,17 @@ local M = {
       "nvim-dap-ui",
     },
   },
+  {
+    "mini.base16",
+    for_cat = {
+      cat = "system",
+      default = true,
+    },
+    colorscheme = { "minicyan", "minischeme", "minicrimson" },
+    after = function(plugin)
+      require("mini.base16").setup({})
+    end,
+  },
 }
 
 return M

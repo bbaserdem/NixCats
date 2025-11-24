@@ -234,7 +234,13 @@ in {
         vim-fugitive
       ];
       motions = [
-        mini-nvim # Library for motions
+        mini-ai
+        mini-align
+        mini-comment
+        mini-move
+        mini-pairs
+        mini-splitjoin
+        mini-surround
       ];
       treesitter = [
         nvim-treesitter.withAllGrammars
@@ -274,6 +280,7 @@ in {
         trouble-nvim # Sidebar that shows diagnostics and such
         which-key-nvim # Shows keybind groups
         twilight-nvim # Dims inactive code
+        mini-map # Code visual overview
       ];
       picker = [
         telescope-nvim

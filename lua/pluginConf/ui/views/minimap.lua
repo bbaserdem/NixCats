@@ -7,9 +7,15 @@ return {
     default = true,
   },
   require = { "mini.map" },
-  cmd = { "MiniMap" },
-  -- We want deferreduienter to modify the gutter icons
+  event = { "DeferredUIEnter" },
   after = function(plugin)
-    require("mini.map").setup({})
+    local map = require("mini.map")
+    map.setup({
+      integrations = {
+        map.gen_integration.builtin_search(),
+        map.gen_integration.diagnostic(),
+        map.gen_integration.gitsigns(),
+      },
+    })
   end,
 }
