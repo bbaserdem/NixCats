@@ -30,13 +30,9 @@ if require("nixCatsUtils").isNixCats then
 end
 
 vim.lsp.config("nixd", {
-  cmd = { "nixd" },
   root_markers = {
     "flake.nix",
     "flake.lock",
-  },
-  filetypes = {
-    "nix",
   },
   -- Global config options
   settings = {

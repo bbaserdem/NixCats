@@ -12,8 +12,8 @@ require("luaConf.myColorscheme")
 -- Autocommands
 require("luaConf.myAutocmd")
 
--- Keybinds
-require("keymapConf")
-
 -- LSP global configuration
 require("luaConf.myLspGlobal")
+
+-- Keybinds
+require("keymapConf")

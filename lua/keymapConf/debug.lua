@@ -1,6 +1,14 @@
 -- <nixCats>/lua/keymapConf/debug.lua
 -- <Leader>d: Debugging functions
 
+-- FN actions; F5 toggle debug, F9 toggle breakpoint, F10/11 steop over/into-out
+vim.keymap.set("n", "<F5>", "<cmd>DapNew<CR>", { desc = "Start DAP session" })
+vim.keymap.set("n", "<F17>", "<cmd>DapTerminate<CR>", { desc = "End DAP session" })
+vim.keymap.set("n", "<F9>", "<cmd>DapToggleBreakpoint<CR>", { desc = "Toggle breakpoint" })
+vim.keymap.set("n", "<F10>", "<cmd>DapStepOver<CR>", { desc = "Step over" })
+vim.keymap.set("n", "<F11>", "<cmd>DapStepInto<CR>", { desc = "Step into" })
+vim.keymap.set("n", "<F23>", "<cmd>DapStepOut<CR>", { desc = "Step out" })
+
 -- Diagnostics
 vim.keymap.set("n", "zk", vim.diagnostic.open_float, { desc = "Open floating diagnostic message" })
 
@@ -29,3 +37,5 @@ vim.keymap.set("n", "<Leader>dL", "<cmd>Trouble loclist toggle<CR>", { desc = "L
 
 -- Telescope
 vim.keymap.set("n", "<Leader>dd", "<cmd>Telescope diagnostics<CR>", { desc = "Search diagnostics" })
+
+-- Debug functionality

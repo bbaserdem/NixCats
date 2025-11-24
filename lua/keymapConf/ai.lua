@@ -1,6 +1,9 @@
 -- <nixCats>/lua/keymapConf/ai.lua
 -- <Leader>f: AI keymaps
 
+-- FN keymaps
+vim.keymap.set("n", "<F6>", "<cmd>ClaudeCode<CR>", { desc = "Toggle Claude" })
+
 local cc_status, cc = pcall(require, "claudecode")
 if cc_status then
   vim.keymap.set("n", "<Leader>a<Space>", "<cmd>ClaudeCode<CR>", { desc = "Toggle Claude" })

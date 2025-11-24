@@ -1,6 +1,11 @@
 -- <nixCats>/lua/keymapConf/code.lua
 -- <Leader>c: Code formatting and linting
 
+-- FN actions
+vim.keymap.set("n", "<F2>", vim.lsp.buf.rename, { desc = "Rename symbol" })
+vim.keymap.set("n", "<F8>", "<cmd>lnext<CR>", { desc = "Next warning" })
+vim.keymap.set("n", "<F20>", "<cmd>lprev<CR>", { desc = "Prev warning" })
+
 local lint_status, lint = pcall(require, "lint")
 if lint_status then
   vim.keymap.set("n", "<Leader>cl", lint.try_lint, { desc = "Use [l]inter" })

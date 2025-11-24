@@ -28,3 +28,6 @@ if wk_status then
     { "<Leader>v", group = "[V]iew (windows + tabs) functions" },
   })
 end
+
+-- Global FN actions;
+vim.g.keymap()

@@ -1,6 +1,12 @@
+<div align="center">
+
 # NixCats
 
-![Local logo](logo.png)
+<img src="https://bbaserdem.github.io/assets/img/icon.svg" width="384">
+
+---
+
+</div>
 
 This is my Neovim config flake, meant to work with my NixOS and Nix-Darwin systems.
 It is also configured to work without nix.
