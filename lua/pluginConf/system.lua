@@ -52,7 +52,7 @@ local M = {
       default = true,
     },
     event = { "DeferredUIEnter" },
-    colorscheme = { "minicyan", "minischeme", "minicrimson" },
+    colorscheme = { "minicyan", "minischeme", "minicrimson", "stylix" },
   },
 }
 
