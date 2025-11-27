@@ -8,11 +8,10 @@ return {
   },
   dep_of = { "nvim-cmp" },
   cmd = {
-  function
+    "HighlightColors",
   },
   event = { "DeferredUIEnter" },
   after = function(plugin)
-    require("nvim-highlight-colors").setup({
-    })
+    require("nvim-highlight-colors").setup({})
   end,
 }
