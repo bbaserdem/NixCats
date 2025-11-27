@@ -13,6 +13,10 @@ It is also configured to work without nix.
 
 This flake is a configuration of the [**nixCats**](https://github.com/BirdeeHub/nixCats-nvim) framework.
 
+# Table of Contents
+
+1) [Keybinds](Keybinds.md)
+
 # Todo
 
 Just items to do later once config is stable
