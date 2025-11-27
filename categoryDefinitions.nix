@@ -281,6 +281,7 @@ in {
         which-key-nvim # Shows keybind groups
         twilight-nvim # Dims inactive code
         mini-map # Code visual overview
+        nvim-highlight-colors # Render colors with highlights
       ];
       picker = [
         telescope-nvim
