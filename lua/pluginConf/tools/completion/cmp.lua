@@ -34,6 +34,27 @@ return {
       local cmp = require("cmp")
       local luasnip = require("luasnip")
       local lspkind = require("lspkind")
+      local nhc_status, nhc = pcall(require, "nvim-highlight-colors")
+      local lspkind_settings = {
+        mode = "symbol_text",
+        maxwidth = 50,
+        ellipsis_char = "…",
+        menu = {
+          luasnip = "  ",
+          nvim_lsp = "  ",
+          nvim_lsp_signature_help = "󰅏  ",
+          buffer = "󰊄  ",
+          cmdline = "  ",
+          cmdline_history = "󰋚  ",
+          spell = "  ",
+          async_path = "  ",
+          vimtex = "  ",
+          rg = "  ",
+          lazydev = "󰢱  ",
+          mkdnflow = "  ",
+          dap = "  ",
+        },
+      }
 
       -- Configure cmp
       cmp.setup({
@@ -41,26 +62,18 @@ return {
         -- Formatting cmp appearance
         formatting = {
           fields = { "menu", "abbr", "kind" },
-          format = lspkind.cmp_format({
-            mode = "symbol_text",
-            maxwidth = 50,
-            ellipsis_char = "…",
-            menu = {
-              luasnip = "  ",
-              nvim_lsp = "  ",
-              nvim_lsp_signature_help = "󰅏  ",
-              buffer = "󰊄  ",
-              cmdline = "  ",
-              cmdline_history = "󰋚  ",
-              spell = "  ",
-              async_path = "  ",
-              vimtex = "  ",
-              rg = "  ",
-              lazydev = "󰢱  ",
-              mkdnflow = "  ",
-              dap = "  ",
-            },
-          }),
+          format = function(entry, item)
+            -- Make lspkind play nice with nvim-highlight-colors
+            item = lspkind.cmp_format(lspkind_settings)(entry, item)
+            if nhc_status then
+              local color_item = nhc.format(entry, { kind = item.kind })
+              if color_item.abbr_hl_group then
+                item.kind_hl_group = color_item.abbr_hl_group
+                item.kind = color_item.abbr
+              end
+            end
+            return item
+          end,
         },
 
         -- Snippet settings
