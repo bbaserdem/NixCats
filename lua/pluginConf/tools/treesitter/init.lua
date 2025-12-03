@@ -29,6 +29,7 @@ local M = {
       "telescope.nvim",
       "nvim-dap.nvim",
       "nvim-cmp",
+      "sidekick.nvim",
     },
     event = "DeferredUIEnter",
     load = function(name)

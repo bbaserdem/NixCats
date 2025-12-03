@@ -9,7 +9,7 @@ if cc_status then
   vim.keymap.set("n", "<Leader>a<Space>", "<cmd>ClaudeCode<CR>", { desc = "Toggle Claude" })
   vim.keymap.set("n", "<Leader>af", "<cmd>ClaudeCodeFocus<CR>", { desc = "Focus Claude" })
   vim.keymap.set("n", "<Leader>ar", "<cmd>ClaudeCode --resume<CR>", { desc = "Resume Claude" })
-  vim.keymap.set("n", "<Leader>ac", "<cmd>ClaudeCode --continue<CR>", { desc = "Continue Claude" })
+  vim.keymap.set("n", "<Leader>aR", "<cmd>ClaudeCode --continue<CR>", { desc = "Continue Claude" })
   vim.keymap.set("n", "<Leader>am", "<cmd>ClaudeCodeSelectModel<CR>", { desc = "Select Claude model" })
   vim.keymap.set("n", "<Leader>ab", "<cmd>ClaudeCodeAdd %<CR>", { desc = "Add current buffer" })
   vim.keymap.set("v", "<Leader>as", "<cmd>ClaudeCodeSend<CR>", { desc = "Send to Claude" })

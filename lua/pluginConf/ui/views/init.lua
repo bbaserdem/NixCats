@@ -10,6 +10,7 @@ local M = {
   { import = "pluginConf.ui.views.snacks" },
   { import = "pluginConf.ui.views.trouble" },
   { import = "pluginConf.ui.views.twilight" },
+  { import = "pluginConf.ui.views.vscode-diff" },
   { import = "pluginConf.ui.views.which-key" },
 }
 

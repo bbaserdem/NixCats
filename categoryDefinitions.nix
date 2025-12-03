@@ -56,6 +56,9 @@ in {
   # This is LSPs and system-wide tooling
   lspsAndRuntimeDeps = with pkgs; {
     tools = {
+      ai = [
+        copilot-cli
+      ];
       files = [
         imagemagick # For image displaying with image.nvim and snacks.image
       ];
@@ -187,6 +190,7 @@ in {
         claudecode-nvim
         claude-fzf-nvim
         fzf-lua
+        sidekick-nvim
       ];
       # Completion engines
       completion = [
@@ -282,6 +286,7 @@ in {
         twilight-nvim # Dims inactive code
         mini-map # Code visual overview
         nvim-highlight-colors # Render colors with highlights
+        vscode-diff-nvim # Diff rendere like vscode
       ];
       picker = [
         telescope-nvim

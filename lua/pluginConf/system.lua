@@ -25,6 +25,7 @@ local M = {
     dep_of = {
       "neo-tree.nvim",
       "telescope.nvim",
+      "vscode-diff.nvim",
     },
   },
   {

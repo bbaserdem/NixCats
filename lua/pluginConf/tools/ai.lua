@@ -67,4 +67,19 @@ return {
       })
     end,
   },
+  { -- Git status signs in the num column
+    "sidekick.nvim",
+    for_cat = {
+      cat = "tools.ai",
+      default = true,
+    },
+    on_require = { "sidekick" },
+    cmd = {
+      "Sidekick",
+      "LspCopilotSignIn",
+    },
+    after = function(plugin)
+      require("sidekick").setup({})
+    end,
+  },
 }
