@@ -96,7 +96,7 @@ in {
         gotools
       ];
       latex = [
-        # pplatex # Latex log parsing tool
+        pplatex # Latex log parsing tool
         texlivePackages.chktex # Linter
         neovim-remote # Client server for vimtex to run latexmk
         pstree
