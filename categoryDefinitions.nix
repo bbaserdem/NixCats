@@ -74,10 +74,24 @@ in {
         lazygit
         gh
       ];
-      utility = [
-        xclip # Xorg clipboard communication
-        universal-ctags # Tag generation for multiple languages
-      ];
+      utility =
+        [
+          universal-ctags # Tag generation for multiple languages
+        ]
+        ++ (
+          if pkgs.stdenv.hostPlatform.isLinux
+          then [
+            # Linux only utilities
+            wl-clipboard # Wayland clipboard
+            xclip # Xorg clipboard communication
+          ]
+          else if pkgs.stdenv.hostPlatform.isDarwin
+          then [
+            # MacOS only utilities
+          ]
+          else [
+          ]
+        );
     };
 
     ui = {
