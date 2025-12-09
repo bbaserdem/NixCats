@@ -18,22 +18,15 @@ return {
   after = function(plugin)
     local _trans = false
     if require("nixCatsUtils").isNixCats then
-      if nixCats.extra("colorscheme.name") == "gruvbox-material" then
-        if nixCats.extra("colorscheme.style") == "light" then
-          vim.o.background = "light"
-        else
-          vim.o.background = "dark"
-        end
-        if nixCats.extra("colorscheme.translucent") ~= nil then
-          _trans = nixCats.extra("colorscheme.translucent")
-        end
-        -- Load us only if we are the main theme
-        require("gruvbox-material").setup({
-          background = {
-            transparent = _trans,
-          },
-        })
+      if nixCats.extra("colorscheme.translucent") ~= nil then
+        _trans = nixCats.extra("colorscheme.translucent")
       end
     end
+    -- Load us only if we are the main theme
+    require("gruvbox-material").setup({
+      background = {
+        transparent = _trans,
+      },
+    })
   end,
 }

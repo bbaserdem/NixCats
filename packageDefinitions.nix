@@ -40,9 +40,9 @@
     extra = {
       spelling = false;
       colorscheme = {
-        name = "material";
-        style = "darker";
-        translucent = true;
+        translucent = false;
+        dark = "terafox";
+        light = "dawnfox";
       };
       # Override this in a home-manager config file
       nix = {

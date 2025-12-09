@@ -20,21 +20,14 @@ return {
   },
   event = { "DeferredUIEnter" },
   after = function(plugin)
-    local _trans = false
-
     -- If nixCats, check to set defaults
+    local _trans = false
     if require("nixCatsUtils").isNixCats then
-      if nixCats.extra("colorscheme.name") == "gruvbox" then
-        if nixCats.extra("colorscheme.style") == "light" then
-          vim.o.background = "light"
-        else
-          vim.o.background = "dark"
-        end
-        if nixCats.extra("colorscheme.translucent") ~= nil then
-          _trans = nixCats.extra("colorscheme.translucent")
-        end
+      if nixCats.extra("colorscheme.translucent") ~= nil then
+        _trans = nixCats.extra("colorscheme.translucent")
       end
     end
+
     -- Load us
     require("gruvbox").setup({
       invert_selection = false,

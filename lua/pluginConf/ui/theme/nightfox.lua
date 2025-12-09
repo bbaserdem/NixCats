@@ -22,20 +22,18 @@ return {
   },
   event = { "DeferredUIEnter" },
   after = function(plugin)
-    local _trans = false
     -- If nixCats, check to set the background hue
-
+    local _trans = false
     if require("nixCatsUtils").isNixCats then
-      if string.sub(nixCats.extra("colorscheme.name"), -3) == "fox" then
-        -- Style doesn't work here
-        if nixCats.extra("colorscheme.translucent") ~= nil then
-          _trans = nixCats.extra("colorscheme.translucent")
-        end
+      if nixCats.extra("colorscheme.translucent") ~= nil then
+        _trans = nixCats.extra("colorscheme.translucent")
       end
     end
     -- Load us
-    require("nightfox").setup({ options = {
-      transparent = _trans,
-    } })
+    require("nightfox").setup({
+      options = {
+        transparent = _trans,
+      },
+    })
   end,
 }

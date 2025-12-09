@@ -3,6 +3,7 @@
 
 -- Plugin configs, with one call to lze
 local M = {
+  { import = "pluginConf.system.darklight" },
   -- mini-base16, lze?
   {
     "plenary.nvim",

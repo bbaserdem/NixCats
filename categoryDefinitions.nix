@@ -14,6 +14,10 @@
     name = "e-ink.nvim";
     plugin = pkgs.neovimPlugins.e-ink-nvim;
   };
+  darklight-nvim = {
+    name = "darklight.nvim";
+    plugin = pkgs.neovimPlugins.darklight-nvim;
+  };
   myVimspell = pkgs.runCommand "vimspell-lang" {} ''
     mkdir -p $out/spell
     cp ${inputs.vimspell-tr} $out/spell/tr.utf-8.spl
@@ -182,6 +186,7 @@ in {
       nui-nvim
       nvim-nio
       mini-base16 # Request the minimal theme
+      darklight-nvim
     ];
 
     tools = {

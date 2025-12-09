@@ -24,11 +24,8 @@ return {
     local _trans = false
 
     if require("nixCatsUtils").isNixCats then
-      if nixCats.extra("colorscheme.name") == "material" then
-        vim.g.material_style = nixCats.extra("colorscheme.style")
-        if nixCats.extra("colorscheme.translucent") ~= nil then
-          _trans = nixCats.extra("colorscheme.translucent")
-        end
+      if nixCats.extra("colorscheme.translucent") ~= nil then
+        _trans = nixCats.extra("colorscheme.translucent")
       end
     end
 

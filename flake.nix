@@ -2,7 +2,6 @@
 {
   description = "bbaserdem's NixCats-nvim configuration";
 
-
   inputs = {
     # ----- System Flakes ----- #
     # Nixpkgs
@@ -28,6 +27,11 @@
     # Grayscale color theme
     plugins-e-ink-nvim = {
       url = "github:alexxGmZ/e-ink.nvim";
+      flake = false;
+    };
+    # Theme switcher
+    plugins-darklight-nvim = {
+      url = "github:eliseshaffer/darklight.nvim";
       flake = false;
     };
   };

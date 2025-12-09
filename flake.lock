@@ -104,6 +104,22 @@
         "type": "github"
       }
     },
+    "plugins-darklight-nvim": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1707161788,
+        "narHash": "sha256-/MdGhcZ0kQsAzDl02lJK4zMf/5fC5Md0iuvWrz0ZR6Q=",
+        "owner": "eliseshaffer",
+        "repo": "darklight.nvim",
+        "rev": "5db97e2d132ebdf32c7e5edb5b0c68be9ae43038",
+        "type": "github"
+      },
+      "original": {
+        "owner": "eliseshaffer",
+        "repo": "darklight.nvim",
+        "type": "github"
+      }
+    },
     "plugins-e-ink-nvim": {
       "flake": false,
       "locked": {
@@ -125,6 +141,7 @@
         "neovim-nightly-overlay": "neovim-nightly-overlay",
         "nixCats": "nixCats",
         "nixpkgs": "nixpkgs_2",
+        "plugins-darklight-nvim": "plugins-darklight-nvim",
         "plugins-e-ink-nvim": "plugins-e-ink-nvim",
         "vimspell-en": "vimspell-en",
         "vimspell-tr": "vimspell-tr"

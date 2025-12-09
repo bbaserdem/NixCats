@@ -12,7 +12,7 @@ The leader key is **`<Space>`** (space bar).
 |:---|:---|:---|
 | **F1** | Help menu | - |
 | **F2** | Rename symbols (LSP) | - |
-| **F3** | *Unassigned* | - |
+| **F3** | Toggle light/dark mode | - |
 | **F4** | Preview | - |
 | **F5** | Start/continue debug (DAP) | `<S-F5>` Stop debug |
 | **F6** | Toggle Claude AI | - |

@@ -9,12 +9,12 @@ if not require("nixCatsUtils").isNixCats then
 
 -- Load and do a bit of parsing if we are in nixCats
 else
-  -- Load variable
-  cs = nixCats.extra("colorscheme.name")
+  -- Load variable, default to dark colorscheme
+  cs = nixCats.extra("colorscheme.dark")
 
-  -- If not configured, just use the default nvim theme
+  -- If not configured, just use the minicyan theme
   if (cs == "") or (cs == nil) or not cs then
-    cs = "default"
+    cs = "minicyan"
   end
 end
 
