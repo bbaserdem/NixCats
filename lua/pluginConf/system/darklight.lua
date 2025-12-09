@@ -8,7 +8,7 @@ return {
     default = true,
   },
   on_require = { "darklight" },
-  on_cmd = { "DarkLightSwitch" },
+  cmd = { "DarkLightSwitch" },
   after = function(plugin)
     -- Switching function
     local set_mode = function(mode)
