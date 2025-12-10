@@ -17,9 +17,9 @@ return {
   event = { "DeferredUIEnter" },
   after = function(plugin)
     -- Load us
-    require("cyberdream").setup({
-      variant = "auto",
-      transparent = true,
-    })
+    -- require("cyberdream").setup({
+    --   variant = "auto",
+    --   transparent = true,
+    -- })
   end,
 }
