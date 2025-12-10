@@ -4,7 +4,7 @@
 return {
   "cyberdream.nvim",
   for_cat = {
-    cat = "theme",
+    cat = "ui.theme",
     default = true,
   },
   in_extra = {
@@ -17,9 +17,9 @@ return {
   event = { "DeferredUIEnter" },
   after = function(plugin)
     -- Load us
-    -- require("cyberdream").setup({
-    --   variant = "auto",
-    --   transparent = true,
-    -- })
+    require("cyberdream").setup({
+      variant = "auto",
+      transparent = true,
+    })
   end,
 }
