@@ -18,6 +18,10 @@
     name = "darklight.nvim";
     plugin = pkgs.neovimPlugins.darklight-nvim;
   };
+  agentic-nvim = {
+    name = "agentic.nvim";
+    plugin = pkgs.neovimPlugins.agentic-nvim;
+  };
   myVimspell = pkgs.runCommand "vimspell-lang" {} ''
     mkdir -p $out/spell
     cp ${inputs.vimspell-tr} $out/spell/tr.utf-8.spl
@@ -210,6 +214,7 @@ in {
         claude-fzf-nvim
         fzf-lua
         sidekick-nvim
+        agentic-nvim
       ];
       # Completion engines
       completion = [

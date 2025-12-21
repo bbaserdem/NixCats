@@ -34,6 +34,11 @@
       url = "github:eliseshaffer/darklight.nvim";
       flake = false;
     };
+    # Theme switcher
+    plugins-agentic-nvim = {
+      url = "github:carlos-algms/agentic.nvim";
+      flake = false;
+    };
   };
 
   outputs = {

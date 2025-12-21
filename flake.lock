@@ -104,6 +104,22 @@
         "type": "github"
       }
     },
+    "plugins-agentic-nvim": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1766344244,
+        "narHash": "sha256-goa9iB5Uv6GpKhrFZG50UNXtQerIIzAFEJg6bUlq7YE=",
+        "owner": "carlos-algms",
+        "repo": "agentic.nvim",
+        "rev": "1462bc333914a8ef56af3505ad459e16712394a3",
+        "type": "github"
+      },
+      "original": {
+        "owner": "carlos-algms",
+        "repo": "agentic.nvim",
+        "type": "github"
+      }
+    },
     "plugins-darklight-nvim": {
       "flake": false,
       "locked": {
@@ -141,6 +157,7 @@
         "neovim-nightly-overlay": "neovim-nightly-overlay",
         "nixCats": "nixCats",
         "nixpkgs": "nixpkgs_2",
+        "plugins-agentic-nvim": "plugins-agentic-nvim",
         "plugins-darklight-nvim": "plugins-darklight-nvim",
         "plugins-e-ink-nvim": "plugins-e-ink-nvim",
         "vimspell-en": "vimspell-en",

@@ -2,11 +2,22 @@
 -- <Leader>f: AI keymaps
 
 -- FN keymaps
-vim.keymap.set("n", "<F6>", "<cmd>ClaudeCode<CR>", { desc = "Toggle Claude" })
+local agentic_status, agentic = pcall(require, "agentic")
+if agentic_status then
+  vim.keymap.set({ "n", "v", "i" }, "<F6>", function()
+    agentic.toggle()
+  end, { desc = "Toggle Agentic" })
+  vim.keymap.set({ "n", "v" }, "<Leader>a<Space>", function()
+    agentic.add_selection_or_file_to_context()
+  end, { desc = "Add to Agentic context" })
+  vim.keymap.set({ "n", "v" }, "<Leader>aa", function()
+    agentic.new_session()
+  end, { desc = "New agentic session" })
+end
 
 local cc_status, cc = pcall(require, "claudecode")
 if cc_status then
-  vim.keymap.set("n", "<Leader>a<Space>", "<cmd>ClaudeCode<CR>", { desc = "Toggle Claude" })
+  vim.keymap.set("n", "<Leader>ac", "<cmd>ClaudeCode<CR>", { desc = "Toggle Claude" })
   vim.keymap.set("n", "<Leader>af", "<cmd>ClaudeCodeFocus<CR>", { desc = "Focus Claude" })
   vim.keymap.set("n", "<Leader>ar", "<cmd>ClaudeCode --resume<CR>", { desc = "Resume Claude" })
   vim.keymap.set("n", "<Leader>aR", "<cmd>ClaudeCode --continue<CR>", { desc = "Continue Claude" })
