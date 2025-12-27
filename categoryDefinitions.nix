@@ -71,7 +71,7 @@ in {
         imagemagick # For image displaying with image.nvim and snacks.image
       ];
       treesitter = [
-        tree-sitter
+        (tree-sitter {})
       ];
       git = [
         git
