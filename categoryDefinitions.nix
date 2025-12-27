@@ -70,9 +70,9 @@ in {
       files = [
         imagemagick # For image displaying with image.nvim and snacks.image
       ];
-      treesitter = [
-        (tree-sitter {})
-      ];
+      # treesitter = [
+      #   tree-sitter
+      # ];
       git = [
         git
         lazygit
