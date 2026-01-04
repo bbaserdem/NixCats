@@ -35,7 +35,7 @@ local M = {
     load = function(name)
       vim.cmd.packadd(name)
       -- vim.cmd.packadd("nvim-treesitter-refactor")
-      vim.cmd.packadd("nvim-treesitter-textobjects")
+      -- vim.cmd.packadd("nvim-treesitter-textobjects")
     end,
     after = function(plugin)
       -- Configure treesitter
@@ -61,7 +61,7 @@ local M = {
           },
         },
         -- Text objects
-        textobjects = require("pluginConf.tools.treesitter.textobjects"),
+        -- textobjects = require("pluginConf.tools.treesitter.textobjects"),
         -- Refactor module
         -- refactor = require("pluginConf.tools.treesitter.refactor"),
       })

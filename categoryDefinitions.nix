@@ -274,7 +274,7 @@ in {
         nvim-treesitter.withAllGrammars
         nvim-treesitter-context
         #nvim-treesitter-refactor
-        nvim-treesitter-textobjects
+        #nvim-treesitter-textobjects
       ];
       utility = [
         mkdir-nvim # Automatically make directories when saving files
