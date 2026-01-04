@@ -273,7 +273,7 @@ in {
       treesitter = [
         nvim-treesitter.withAllGrammars
         nvim-treesitter-context
-        nvim-treesitter-refactor
+        #nvim-treesitter-refactor
         nvim-treesitter-textobjects
       ];
       utility = [
